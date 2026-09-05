@@ -1,0 +1,203 @@
+{
+  "id": "processor-frontier-story",
+  "version": "1.0",
+  "title": "The frontier moves down and to the right",
+  "description": "A faster processor need not require more energy per completed task.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "processor-frontier",
+      "version": "1.0",
+      "title": "The frontier moves down and to the right",
+      "subtitle": "Synthetic processor generations · performance versus task energy",
+      "takeaway": "A faster processor need not require more energy per completed task.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "The frontier moves down and to the right. A faster processor need not require more energy per completed task."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "task",
+          "text": "The task is fixed across these synthetic generations. Bubble area encodes an illustrative silicon budget, not performance."
+        },
+        {
+          "id": "frontier",
+          "text": "The accelerator has the greatest performance gain and the largest task-energy reduction in this fixture.",
+          "entityId": "accelerator"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "scatter",
+      "data": [
+        {
+          "id": "cpu-a",
+          "label": "CPU A",
+          "year": 2020,
+          "performance": 70,
+          "joules": 90,
+          "silicon": 40
+        },
+        {
+          "id": "cpu-a",
+          "label": "CPU A",
+          "year": 2022,
+          "performance": 100,
+          "joules": 75,
+          "silicon": 40
+        },
+        {
+          "id": "cpu-a",
+          "label": "CPU A",
+          "year": 2024,
+          "performance": 130,
+          "joules": 65,
+          "silicon": 40
+        },
+        {
+          "id": "cpu-b",
+          "label": "CPU B",
+          "year": 2020,
+          "performance": 100,
+          "joules": 110,
+          "silicon": 55
+        },
+        {
+          "id": "cpu-b",
+          "label": "CPU B",
+          "year": 2022,
+          "performance": 130,
+          "joules": 87,
+          "silicon": 55
+        },
+        {
+          "id": "cpu-b",
+          "label": "CPU B",
+          "year": 2024,
+          "performance": 158,
+          "joules": 72,
+          "silicon": 55
+        },
+        {
+          "id": "accelerator",
+          "label": "Accelerator",
+          "year": 2020,
+          "performance": 80,
+          "joules": 100,
+          "silicon": 70
+        },
+        {
+          "id": "accelerator",
+          "label": "Accelerator",
+          "year": 2022,
+          "performance": 150,
+          "joules": 64,
+          "silicon": 70
+        },
+        {
+          "id": "accelerator",
+          "label": "Accelerator",
+          "year": 2024,
+          "performance": 225,
+          "joules": 38,
+          "silicon": 70
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "x": "performance",
+        "y": "joules",
+        "size": "silicon"
+      },
+      "xLabel": "Performance index",
+      "yLabel": "Joules / synthetic task",
+      "xDomain": [
+        0,
+        250
+      ],
+      "yDomain": [
+        0,
+        120
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "cpu-start",
+      "visualId": "processor-frontier",
+      "title": "Three designs, one fixed task",
+      "caption": "Read performance horizontally and task energy vertically.",
+      "state": {
+        "time": 2020
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "task"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "cpu-middle",
+      "visualId": "processor-frontier",
+      "title": "The accelerator separates",
+      "caption": "The same bubble moves down and right as performance rises and task energy falls.",
+      "state": {
+        "time": 2022
+      },
+      "focusIds": [
+        "accelerator"
+      ],
+      "annotationIds": [
+        "task"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "cpu-end",
+      "visualId": "processor-frontier",
+      "title": "A new efficiency frontier",
+      "caption": "Restore all three designs to compare their final positions.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "frontier"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

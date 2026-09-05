@@ -1,0 +1,23 @@
+{
+  "framework": "8fef4d0b542bfbb11b0ff80ec81710db3f6c8d55",
+  "privacy": {
+    "schemaVersion": 1,
+    "passed": true,
+    "reports": [
+      {
+        "output": "dist",
+        "scannedFiles": 150,
+        "skippedBinaryFiles": 1
+      }
+    ],
+    "violations": []
+  },
+  "reactCore": [
+    "../../node_modules/.pnpm/react@19.2.8/node_modules/react/cjs/react.production.js"
+  ],
+  "reactDom": [
+    "../../node_modules/.pnpm/react-dom@19.2.8_react@19.2.8/node_modules/react-dom/cjs/react-dom-client.production.js"
+  ],
+  "studioContainsVizForgeClock": false,
+  "studioContainsDatapassPlayer": true
+}

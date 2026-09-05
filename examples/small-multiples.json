@@ -1,0 +1,218 @@
+{
+  "id": "regional-recovery-story",
+  "version": "1.1",
+  "title": "Equal scales expose unequal recoveries",
+  "description": "Dune rises fastest; Cove remains close to its starting level.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "regional-recovery",
+      "version": "1.1",
+      "title": "Equal scales expose unequal recoveries",
+      "subtitle": "Synthetic regional output index · 2018 = 100",
+      "takeaway": "Dune rises fastest; Cove remains close to its starting level.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "Equal scales expose unequal recoveries. Dune rises fastest; Cove remains close to its starting level."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "shared",
+          "text": "Every panel uses the same horizontal and vertical scale. Panel positions remain fixed while time advances."
+        },
+        {
+          "id": "uneven",
+          "text": "Dune ends at 168 on this synthetic index; Cove ends at 110.",
+          "entityId": "dune"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "small-multiples",
+      "data": [
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2020,
+          "value": 91
+        },
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2022,
+          "value": 120
+        },
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2024,
+          "value": 143
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2020,
+          "value": 86
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2022,
+          "value": 114
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2024,
+          "value": 136
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2020,
+          "value": 95
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2022,
+          "value": 104
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2024,
+          "value": 110
+        },
+        {
+          "id": "dune",
+          "label": "Dune",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "dune",
+          "label": "Dune",
+          "year": 2020,
+          "value": 102
+        },
+        {
+          "id": "dune",
+          "label": "Dune",
+          "year": 2022,
+          "value": 139
+        },
+        {
+          "id": "dune",
+          "label": "Dune",
+          "year": 2024,
+          "value": 168
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "columns": 2,
+      "yDomain": [
+        0,
+        180
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "panels-start",
+      "visualId": "regional-recovery",
+      "title": "Begin from a common baseline",
+      "caption": "All four regions begin at an index of 100.",
+      "state": {
+        "time": 2018
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "shared"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "panels-middle",
+      "visualId": "regional-recovery",
+      "title": "The interruption is uneven",
+      "caption": "Three regions dip below the baseline; Dune remains above it.",
+      "state": {
+        "time": 2020
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "shared"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "panels-end",
+      "visualId": "regional-recovery",
+      "title": "Recovery separates the regions",
+      "caption": "Dune climbs fastest while Cove stays near its starting level.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "uneven"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

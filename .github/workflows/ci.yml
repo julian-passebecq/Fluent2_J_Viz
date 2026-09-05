@@ -1,17 +1,38 @@
 name: VizForge web engine
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run browser:install -- --with-deps
-      - run: npm run check
+          node-version: 24.19.0
+          cache: pnpm
+      - run: node --experimental-strip-types scripts/bootstrap-framework.ts
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm browser:install --with-deps
+      - run: pnpm release:gate
+      - name: Record exact hosted release identity
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const evidence = {
+            repository: process.env.GITHUB_REPOSITORY,
+            commit: process.env.GITHUB_SHA,
+            framework: JSON.parse(readFileSync('datapass.json')).commit,
+            runId: process.env.GITHUB_RUN_ID,
+            runAttempt: process.env.GITHUB_RUN_ATTEMPT,
+            releaseGate: 'success',
+          };
+          writeFileSync('docs/qa/hosted-release.json', JSON.stringify(evidence, null, 2) + '\n');
+          NODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:

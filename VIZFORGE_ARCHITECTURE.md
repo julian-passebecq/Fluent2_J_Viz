@@ -1,47 +1,30 @@
-# VizForge V1 architecture
+# VizForge architecture
 
-## Data flow
+`data -> canonical semantic spec -> SAME D3 renderer -> standalone DOM / React / Datapass / future Power BI`
 
-```text
-Application data
-  → ChartSpec | TableSpec | MatrixSpec (version 1.0)
-  → StorySpec.visuals + StorySpec.scenes
-  → runtime validation
-  → StoryPlayer (discrete semantic state)
-  → D3 layout + keyed SVG / semantic HTML table
-  → standalone DOM or thin React/host adapter
-```
+The engine has no React, Fluent, Datapass or Power BI imports. Its public functions remain `parseVisualization`, `parseStory`, `createRenderer`, `layoutChart`, `StoryPlayer`, `mountFigure`, and the React `Figure` / `StoryView` adapter exports. The maintainability pass preserves all V1 layouts exactly: 100 comparisons across every SVG scene and widths 280, 390, 800 and 1440 match the original baseline; table and matrix behavior remains covered by existing tests.
 
-`src/core/spec.ts` defines the public types and runtime schemas. `parseVisualization` and `parseStory` add relationship validation to the structural schemas. Call these parsers, not the bare Zod schemas, at trust boundaries. Invalid references, duplicate temporal keys, cycles, invalid intervals and nonfinite measures fail before layout.
+## Responsibilities
 
-`src/core/player.ts` owns an immutable snapshot, subscription set and one cancellable timer. It is independent of the DOM and rendering. Manual next, previous, seek and reset pause the clock. Play advances one scene each interval and stops at the final scene. Resume starts a fresh dwell interval; it does not recover a hidden wall-clock offset. Rendering never determines which scene is current.
+- `src/core/spec.ts`: strict versioned grammar and semantic validation.
+- `src/core/player.ts`: standalone deterministic playback only.
+- `src/renderers/layout.ts`: family dispatch; `layout-shared.ts`: geometry types, stable colors, snapshots, scales and axes.
+- `src/renderers/families/`: ranking, shared time/forecast, scatter, dumbbell, contribution, flow and map layout modules. HTML table/matrix layout remains in `tables.ts`.
+- `src/renderers/joins.ts`: stable entity/mark reconciliation and named D3 transitions; `svg.ts`: SVG construction; `data-accessibility.ts`: canonical data tables; `styles.ts`: engine presentation.
+- `src/renderers/dom.ts`: mounted renderer lifecycle, metadata, annotations, responsive sizing, motion preferences and settlement. It coordinates the shared renderer and owns cleanup.
+- `src/adapters/`: public standalone DOM/React hosts.
+- `src/studio/`: real Datapass registry adapter, Fluent shell, catalog, hosted workbench, inspector, lazy editor and SVG/JSON export in separate modules. Styles are split into shell, workbench, catalog, responsive and Datapass presentation sheets.
 
-`src/renderers/layout.ts` converts an analytical spec and scene into pixel-space marks. D3 supplies scales, grouping, lines, areas, geographic projection and Sankey layout. The result has entity IDs separate from mark roles. Layout is deterministic for the same input, width and scene.
+The hosted adapter directly paints the scene selected by Datapass FigurePlayer. It never constructs a StoryPlayer. The Studio stores only the selected integer frame; outline navigation and shortcuts activate native playback actions. Changing stories or applying a valid edited story resets the native player through a new workbench instance. Source and theme mapping stay at the boundary. Standalone mounting retains its own StoryPlayer and cleanup contract.
 
-`src/renderers/dom.ts` owns one figure subtree. The entity join key is `(visual.id, entity.id)`; child marks use `(mark.key, mark.tag)`. A rank change updates the existing bar and group. Revealed map events retain their previous nodes. Time-series paths keep series identity. A different visual ID represents a different visual object; cross-family scenes preserve the figure frame and story navigation rather than implying identical geometric objects.
+Datapass is an exact source distribution, not an npm-published SDK. The official bootstrap verifies all 91 selected files against the accepted Git commit before and after release. The engine's ESM library has no bundled React; the Studio uses one deduplicated React 19.2.8 host. The build gate analyzes all reachable Studio source maps and rejects an embedded VizForge playback clock or a second React implementation.
 
-D3 transitions use one named channel, interrupted before every update. Numeric positions, sizes and path geometry encode changes in data; opacity encodes focus and scene reveal. New marks appear at their true coordinates. `settle()` cancels interpolation and writes the selected semantic state immediately. Pause/reset and reduced motion settle to a readable endpoint. There are no looping decorative effects. The keyed join follows [D3’s object-constancy API](https://d3js.org/d3-selection/joining).
+Scene state is absolute. Focus and annotations refer to stable semantic IDs; scales use the full authored data where meaningful. Reduced motion settles immediately and disables hosted autoplay while allowing manual steps. Custom SVG export settles the current scene synchronously and serializes the same renderer output. Future Power BI remains `DataView -> adapter -> canonical VizForge spec -> SAME D3 renderer -> SVG`.
 
-`src/renderers/tables.ts` produces native tables with scoped headers, keyed body rows, explicit sorting, data bars, variance, labeled status icons, sparklines and totals. Matrix aggregation traverses leaf IDs only, avoiding double counting of row/column subtotals. Sparse cells distinguish absence from a real zero.
+## V1.1 extension
 
-## Ownership boundaries
+The original renderer APIs have no breaking changes. `timelineStory` and `chapterStory` are additive pure authoring exports. Common grammar moved to `core/grammar.ts`; the five new strict, versioned types and their semantic checks live in `core/extensions.ts`. New family modules extend the existing layout dispatcher and keyed SVG joins. No alternate host geometry exists.
 
-| Module               | Imports from host UI frameworks | Responsibility                                  |
-| -------------------- | ------------------------------- | ----------------------------------------------- |
-| `core/*`             | None                            | Contracts, validation, formatting, playback     |
-| `renderers/*`        | None                            | D3/SVG, accessible HTML, responsive layout      |
-| `adapters/react.tsx` | React                           | Mounting, cleanup, state subscription, controls |
-| `adapters/host.ts`   | None                            | VizForge-owned renderer envelope, mount/dispose |
-| `studio/*`           | React                           | Local catalog, draft editor, workbench, export  |
+The final catalog contains 15 families and 22 canonical examples, with source modules split between `examples/v1.ts`, `gallery.ts` and `packs/`. SHA-256 provenance is generated with canonical JSON and validated in the release gate. The original ten families and all eleven original JSON examples are unchanged.
 
-There are no Fluent, Power BI, ConceptMotion, Monaco or Datapass imports. The studio uses a simple textarea until the official Datapass code-editor seam is confirmed. The published-style ESM entry point does not export the studio or sample data. Its React adapter is a separate subpath. The standalone production entry has no React entry point.
-
-## Responsive and accessible behavior
-
-SVG layouts recompute from the host width through ResizeObserver; they do not simply shrink a desktop canvas. Ranking labels move above bars on phones. Direct line labels use pixel-space collision resolution. Maps retain location and simplify labels. Annotations beyond the first on phones are available in a disclosure. Wide analytical tables scroll inside a labeled, keyboard-focusable region. Sources and notes remain readable text.
-
-SVG has an accessible title, descriptive text and a summary including scene values. Every chart also provides a disclosure containing its exact canonical data. Tables use native semantics. The player supports native buttons and scoped keyboard navigation, and announces scene text in a polite live region. Reduced motion follows the OS and can also be enabled in the studio; a local preference cannot override an OS request to reduce motion.
-
-## V1 boundaries
-
-This is a small family-specific grammar, not an arbitrary chart language. Time is numeric (an ordinal, year or epoch); adapters normalize dates before authoring. Maps support schematic polygons or simple equirectangular geography, not tiles, geocoding or a full GIS. Flow graphs must be directed and acyclic, matching [d3-sankey’s input model](https://github.com/d3/d3-sankey). Dense labels may require host-authored shorter names or fewer entities. No article CMS, authentication, SQL teaching, lineage, function calling or `.pbiviz` packaging is included.
+The four Datapass packages are Studio development dependencies. Keeping them out of engine runtime dependencies preserves private packed-engine consumption without requiring unpublished framework source packages. Release checks mount the packed adapter in an isolated React 18.3.1 host in addition to the production React 19.2.8 Studio.

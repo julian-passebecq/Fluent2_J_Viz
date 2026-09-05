@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "map-start",
+      "violations": []
+    },
+    {
+      "sceneId": "map-middle",
+      "violations": []
+    },
+    {
+      "sceneId": "map-end",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

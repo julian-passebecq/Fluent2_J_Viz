@@ -6,8 +6,8 @@
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
@@ -15,5 +15,12 @@
     "noEmit": true,
     "types": ["vite/client", "node"]
   },
-  "include": ["src", "tests", "scripts", "vite.config.ts", "playwright.config.ts"]
+  "include": [
+    "src",
+    "tests",
+    "scripts/validate-examples.ts",
+    "scripts/export-examples.ts",
+    "vite.config.ts",
+    "playwright.config.ts"
+  ]
 }

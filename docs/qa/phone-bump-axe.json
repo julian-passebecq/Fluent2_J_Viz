@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "bump-start",
+      "violations": []
+    },
+    {
+      "sceneId": "bump-cross",
+      "violations": []
+    },
+    {
+      "sceneId": "bump-end",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

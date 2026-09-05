@@ -1,0 +1,117 @@
+/* Consumer layout of the real Datapass surfaces. */
+.dp-app-shell.app-shell {
+  display: block;
+}
+.app-shell .topbar {
+  min-height: 72px;
+}
+.app-shell .dp-app-shell__body {
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+.app-shell .dp-app-shell__side {
+  min-width: 0;
+}
+.app-shell .sidebar {
+  height: 100%;
+}
+.app-shell .dp-app-shell__main {
+  padding: 0;
+  min-width: 0;
+}
+.integrated-workbench.dp-workbench {
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 0;
+}
+.integrated-workbench .dp-workbench__surface {
+  padding: 0;
+  background: white;
+}
+.integrated-workbench .dp-workbench__canvas {
+  border: 0;
+  box-shadow: none;
+  min-width: 0;
+}
+.integrated-workbench .dp-workbench__inspector {
+  min-width: 0;
+  border: 0;
+}
+.integrated-workbench .dp-visualization-surface {
+  border: 0;
+  box-shadow: none;
+}
+.integrated-workbench .vf-react-figure {
+  width: 100%;
+  min-width: 0;
+}
+.integrated-workbench .dp-timeline-controls {
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.integrated-workbench .dp-figure-player__caption {
+  padding: 12px 20px;
+}
+.spec-editor {
+  min-width: 0;
+}
+@media (max-width: 1100px) {
+  .integrated-workbench.dp-workbench {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .integrated-workbench .dp-workbench__inspector {
+    grid-column: 1;
+  }
+}
+@media (max-width: 760px) {
+  .app-shell .dp-app-shell__body {
+    display: block;
+  }
+  .app-shell .dp-app-shell__side {
+    display: block;
+  }
+  .app-shell .sidebar {
+    height: auto;
+  }
+  .app-shell .topbar {
+    min-height: 62px;
+  }
+}
+.integrated-workbench.dp-workbench[data-has-navigation] {
+  grid-template-areas: 'canvas inspector';
+  align-items: start;
+}
+.integrated-workbench .dp-workbench__inspector {
+  padding: 0;
+}
+.integrated-workbench .dp-inspector-panel__content {
+  padding: 0;
+}
+.integrated-workbench .dp-inspector-panel__header {
+  padding: 16px 20px;
+}
+.integrated-workbench .narrative {
+  min-height: 0;
+  padding: 18px 22px;
+  border-bottom: 1px solid #dce3e5;
+}
+.integrated-workbench .vf-react-figure {
+  padding: 16px 20px;
+}
+.integrated-workbench .vf-react-figure[data-repeated-title='true'] .vf-figure > figcaption > h2 {
+  display: none;
+}
+.integrated-workbench .vf-figure > .vf-source {
+  display: none;
+}
+.integrated-workbench .dp-figure-player__motion {
+  padding: 0 20px 16px;
+}
+@media (max-width: 1100px) {
+  .integrated-workbench.dp-workbench[data-has-navigation] {
+    grid-template-areas: 'canvas' 'inspector';
+  }
+}
+@media (max-width: 540px) {
+  .integrated-workbench .vf-react-figure {
+    padding: 12px 8px;
+  }
+}

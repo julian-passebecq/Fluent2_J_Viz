@@ -1,0 +1,274 @@
+{
+  "id": "market-paths-story",
+  "version": "1.0",
+  "title": "The highest finish takes a rougher path",
+  "description": "A shared starting value makes paths comparable without hiding drawdowns.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "market-paths",
+      "version": "1.0",
+      "title": "The highest finish takes a rougher path",
+      "subtitle": "Synthetic stock baskets · price index, 2018 = 100",
+      "takeaway": "A shared starting value makes paths comparable without hiding drawdowns.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "The highest finish takes a rougher path. A shared starting value makes paths comparable without hiding drawdowns."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "indexed",
+          "text": "All synthetic baskets begin at 100. This is a price-index fixture: no dividends, fees or investment returns are implied."
+        },
+        {
+          "id": "drawdown",
+          "text": "The compute basket has the largest 2021–2022 drop despite finishing highest.",
+          "entityId": "compute"
+        },
+        {
+          "id": "market-end",
+          "text": "A final ranking alone would hide the drawdown along the way.",
+          "entityId": "compute"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "time-series",
+      "data": [
+        {
+          "id": "broad",
+          "label": "Broad market",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "broad",
+          "label": "Broad market",
+          "year": 2019,
+          "value": 112
+        },
+        {
+          "id": "broad",
+          "label": "Broad market",
+          "year": 2020,
+          "value": 93
+        },
+        {
+          "id": "broad",
+          "label": "Broad market",
+          "year": 2021,
+          "value": 135
+        },
+        {
+          "id": "broad",
+          "label": "Broad market",
+          "year": 2022,
+          "value": 118
+        },
+        {
+          "id": "broad",
+          "label": "Broad market",
+          "year": 2023,
+          "value": 149
+        },
+        {
+          "id": "broad",
+          "label": "Broad market",
+          "year": 2024,
+          "value": 172
+        },
+        {
+          "id": "compute",
+          "label": "Compute basket",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "compute",
+          "label": "Compute basket",
+          "year": 2019,
+          "value": 119
+        },
+        {
+          "id": "compute",
+          "label": "Compute basket",
+          "year": 2020,
+          "value": 105
+        },
+        {
+          "id": "compute",
+          "label": "Compute basket",
+          "year": 2021,
+          "value": 165
+        },
+        {
+          "id": "compute",
+          "label": "Compute basket",
+          "year": 2022,
+          "value": 113
+        },
+        {
+          "id": "compute",
+          "label": "Compute basket",
+          "year": 2023,
+          "value": 173
+        },
+        {
+          "id": "compute",
+          "label": "Compute basket",
+          "year": 2024,
+          "value": 219
+        },
+        {
+          "id": "energy",
+          "label": "Energy basket",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "energy",
+          "label": "Energy basket",
+          "year": 2019,
+          "value": 104
+        },
+        {
+          "id": "energy",
+          "label": "Energy basket",
+          "year": 2020,
+          "value": 72
+        },
+        {
+          "id": "energy",
+          "label": "Energy basket",
+          "year": 2021,
+          "value": 110
+        },
+        {
+          "id": "energy",
+          "label": "Energy basket",
+          "year": 2022,
+          "value": 139
+        },
+        {
+          "id": "energy",
+          "label": "Energy basket",
+          "year": 2023,
+          "value": 135
+        },
+        {
+          "id": "energy",
+          "label": "Energy basket",
+          "year": 2024,
+          "value": 148
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "area": false,
+      "yDomain": [
+        0,
+        230
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "markets-base",
+      "visualId": "market-paths",
+      "title": "Start from the same point",
+      "caption": "Three synthetic baskets begin at 100, so subsequent movement is directly comparable.",
+      "state": {
+        "time": 2018
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "indexed"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "markets-rise",
+      "visualId": "market-paths",
+      "title": "Compute opens a lead",
+      "caption": "Compute rises faster than the other two baskets through 2021.",
+      "state": {
+        "time": 2021
+      },
+      "focusIds": [
+        "compute"
+      ],
+      "annotationIds": [
+        "indexed"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "markets-drop",
+      "visualId": "market-paths",
+      "title": "The leader gives back its gains",
+      "caption": "A sharp decline takes compute below the broad market index.",
+      "state": {
+        "time": 2022
+      },
+      "focusIds": [
+        "compute"
+      ],
+      "annotationIds": [
+        "drawdown"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "markets-end",
+      "visualId": "market-paths",
+      "title": "A strong finish does not erase the path",
+      "caption": "Compute ends highest after the largest drawdown. The whole trajectory carries the story.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "market-end"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

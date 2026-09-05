@@ -1,31 +1,17 @@
-# Datapass integration — deferred external seam
+# Datapass integration
 
-VizForge core, studio and React/DOM adapters are implemented inside this repository. No Datapass files were read, modified or pinned. The pack reports accepted baseline `19c87dceeaac4ef6a1f642a28ef0033a140c8545` and successful hosted CI `33980374447`; those are supplied baseline facts, not independently reverified by this task.
+The accepted seam is consumed at exact framework commit `8fef4d0b542bfbb11b0ff80ec81710db3f6c8d55`. Hosted framework CI `33988679372` was independently verified successful. The V1 VizForge baseline is `3a5bd0b7bdfb987a18f2e9154b43fc92756120b8`, hosted CI `33989227514`, also independently verified successful.
 
-The user explicitly asked to keep Datapass unchanged and to build the standalone engine now. The pack also defers the final framework pin until the external renderer seam pass returns an exact revision. Therefore this repository does not pretend that a local mock is a real FigureView integration proof.
+A disposable external `learning` starter was generated at the accepted SHA in `.local/learning-starter`; its official bootstrap and release helpers were copied without edits. `datapass.json` pins the source workspace. Bootstrap selects 91 immutable source files in seven framework packages, including the existing ConceptMotion dependency closure. Only `@datapass/ui`, `@datapass/content`, `@datapass/figure` and `@datapass/code` are direct Datapass dependencies. No canonical learning corpus or framework install is used. `vendor/` is ignored and verified before and after release.
 
-## Available VizForge seam
+The Studio uses one React 19.2.8 / ReactDOM 19.2.8 host and aligned React types. The reusable React adapter declares peers `>=18.3 <20`; React is not embedded in the engine library. Vite deduplicates React, and the build audit checks the complete Studio graph including lazy chunks. Node 24.19.0 and pnpm 11.19.0 run the release gate with one consumer-owned `pnpm-lock.yaml`. TypeScript 7.0.2 matches the official starter; consumer typechecking uses its unused-code policy because unchanged framework source contains unused declarations. The independent engine library retains strict unused-code checks.
 
-`src/adapters/host.ts` exports `rendererId = "vizforge.d3"` and `mountFigure(host,envelope)`. The envelope is `{rendererId,spec}` and accepts a validated canonical visualization or StorySpec. Mounting owns only a child figure; disposal removes listeners, cancels the player and interrupts transitions. A story mount exposes its player so a host can bind generic controls.
+`src/studio/datapass.tsx` registers `vizforge.d3` on a stable `createDefaultFigureRendererRegistry()` instance. The validator parses the canonical StorySpec. Real FigurePlayer receives the exact scene count and captions; its frameIndex selects an absolute scene and its reducedMotion flag reaches the same D3 renderer. There is no hosted StoryPlayer, secondary timer or synthetic ConceptMotion marker. Native timeline controls own play, pause, reset, previous, next, seek and speed. Standalone VizForge retains its existing StoryPlayer.
 
-This is a VizForge-owned seam to map to the framework’s confirmed `FigureRendererAdapter` / registry contract. It does not import or reproduce an assumed framework interface. The React subpath can also supply a component renderer if the confirmed contract expects one.
+Datapass surface tokens map to chart ink, muted ink, grid and background at the consumer boundary. AppShell and Workbench provide Fluent surfaces. JsonSpecEditor lazily loads local Monaco and workers only when the semantic spec editor is opened. Invalid drafts remain drafts. The external exportAction settles the selected VizForge scene and serializes its real SVG, retaining source/note in SVG description and canonical JSON. Export is a static snapshot; it does not introduce playback ownership. Tables and matrices use JSON export.
 
-## Integration procedure when the seam is confirmed
+Initial integration checkpoint: 87 unit tests, 32 production browser tests, all ten V1 families, standalone, actual ranking midpoint/stable identity, keyboard playback, reduced motion, valid/invalid Monaco editing, SVG download, 1440px/390px, zero serious/critical Axe and no page overflow. Bundle audit verifies private-URL/source-map privacy and exactly one React core/client. The final release report records the subsequent refactor/expansion and exact hosted release SHA.
 
-1. Receive the exact framework SHA and official external-consumer bootstrap/scaffold instructions.
-2. Add the consumer dependency at that explicit pin and update this repository’s lockfile deliberately.
-3. Import confirmed generic APIs from `@datapass/ui`, `@datapass/code`, `@datapass/figure` and `@datapass/content` only as needed. Replace the provisional studio textarea with the official JsonSpecEditor, without importing Monaco directly.
-4. Wrap the canonical StorySpec in renderer-neutral FigureSpec metadata. Register `vizforge.d3` through the actual FigureRendererRegistry and map mount/update/dispose to the confirmed adapter API.
-5. Render `examples/ranking.json` inside real FigureView with the registry passed through its supported prop.
-6. Run the frozen consumer install, build and production desktop/390px flow; exercise keyboard playback, reduced motion, Axe and overflow in that real host.
-7. Record the exact pin, lockfile, test command and actual FigureView proof here.
+Final consumer package selection is in devDependencies: the official bootstrap supports dependencies and devDependencies, and the selected source closure is unchanged. This keeps Datapass in the Studio toolchain while the independently packed engine installs with D3/Zod and React peers only. The release gate verifies the packed React adapter in a separate React 18.3.1 consumer, as well as the React 19.2.8 production Studio.
 
-Host theme tokens should map to VizForge semantic theme roles at the adapter boundary. Figure controls must have one owner: either a host’s generic player binds to StoryPlayer, or the VizForge wrapper supplies controls. Two independent clocks must never advance one figure.
-
-## Current gate status
-
-- Standalone core/renderers, React mounting and VizForge host envelope: implemented and locally tested.
-- Official external-consumer bootstrap and framework pin: awaiting confirmed external seam details.
-- Real Datapass FigureView proof: **not run; deferred integration gate**.
-
-This deferred milestone is distinct from the complete standalone web implementation. SQL transformations, technical teaching, DAGs, architecture and lineage remain outside VizForge.
+CatalogShell/SearchFilterBar and InspectorPanel now compose the catalog and workbench alongside AppShell and FigurePlayer. The expansion adds five V1.1 visual families and six synthetic domain packs, using the same registry and renderer. The final catalog is 15 families and 22 canonical examples/story compositions. Datapass's native 1200 ms/speed playback cadence is retained; VizForge intervalMs remains standalone-only.

@@ -1,0 +1,47 @@
+[
+  {
+    "file": "00_READ_FIRST.md",
+    "bytes": 798,
+    "sha256": "321df75de534f0477ecadc247903539ccf3ca4f1ee5d16fd83fa165e4fc848ad"
+  },
+  {
+    "file": "01_AUDIT_SNAPSHOT.md",
+    "bytes": 1640,
+    "sha256": "21b9c955eb6e32f3c582c2aeb7e6e5e611a0f0031d70e25dae1824727b39bf51"
+  },
+  {
+    "file": "02_CODEX_MASTER_PROMPT.md",
+    "bytes": 1398,
+    "sha256": "b945ee55d0b5e5b54d78cb0b2f158cdb89c637ad23491f706aaa18d825ab7990"
+  },
+  {
+    "file": "03_REAL_DATAPASS_INTEGRATION.md",
+    "bytes": 2248,
+    "sha256": "bfde9422e780e9b323d265c4afc0a1b2ac9e1dce305a39781cc0857cf13a22e8"
+  },
+  {
+    "file": "04_REACT_AND_PACKAGE_STRATEGY.md",
+    "bytes": 710,
+    "sha256": "189b8c800d46c9ca3b5d28a9069f6025104f40a5a07a2e3c2c5edf7f2fe99ff4"
+  },
+  {
+    "file": "05_REFACTOR_BEFORE_EXPANSION.md",
+    "bytes": 723,
+    "sha256": "f21fbcf39a92144f3fd84592d219f12340106fbacf9cbe9f532c390dc9621fd9"
+  },
+  {
+    "file": "06_V15_GALLERY_AND_STORY_PACKS.md",
+    "bytes": 1317,
+    "sha256": "b931a10d33853aed729509650b885cb327839e37b1e0f9066ff099ae58e971d2"
+  },
+  {
+    "file": "07_POWERBI_BOUNDARY.md",
+    "bytes": 525,
+    "sha256": "b7be5280a01ad288b6ac0b8cd0bca9a1d5f2be95fd69e91c80447986e08c290c"
+  },
+  {
+    "file": "08_QA_AND_DELIVERY.md",
+    "bytes": 1500,
+    "sha256": "e3da31b52056214488b1d9d9a9bcfcc1ac1be1fbd988d719c8f578797c7e6f99"
+  }
+]

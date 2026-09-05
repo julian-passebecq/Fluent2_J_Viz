@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "dist-start",
+      "violations": []
+    },
+    {
+      "sceneId": "dist-middle",
+      "violations": []
+    },
+    {
+      "sceneId": "dist-end",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

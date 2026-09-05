@@ -1,0 +1,181 @@
+{
+  "description": "All 22 fixtures are consumer-authored synthetic demonstrations. No third-party dataset or observed statistics are included.",
+  "fixtures": [
+    {
+      "file": "examples/time-series.json",
+      "synthetic": true,
+      "sha256": "9ec7f75e0ac8bfa953c3ccd4abdeb590a0372d2d7784cf3470a0b91f17c19b0f",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/ranking.json",
+      "synthetic": true,
+      "sha256": "b1366fac7d97d7dae8f877333fecc30fd335c1873a502102ac0be92211337837",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/scatter.json",
+      "synthetic": true,
+      "sha256": "ea48008aa122fab7d256a3f4e6c289070042e565bc987b686c85b19ccf2914ab",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/dumbbell.json",
+      "synthetic": true,
+      "sha256": "ca8136ad2df3e0303f01cbf0c7cf9f046a2f99c82b4bf5ef49f84f3acec53ced",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/contribution.json",
+      "synthetic": true,
+      "sha256": "f3541c10ace45080c19a2e12ba2c6077ae687e6bad0cc2d96d431070db675d53",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/flow.json",
+      "synthetic": true,
+      "sha256": "587ba2717fe3068d7735566f8df2e4c231230c576f3dc2f05b67b526be6435f6",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/forecast.json",
+      "synthetic": true,
+      "sha256": "0bac0044e4b76d62915293baee80d8cb318d00563dc610e62fc60c98c0331540",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/event-map.json",
+      "synthetic": true,
+      "sha256": "1798b6a37c35a8571cae327434b81606387b0e10e63643c98ef3b8f5a493af2a",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/table.json",
+      "synthetic": true,
+      "sha256": "9a3ad7ec0495ab5100dc2591714c02e0b8fd9a78c6b0b1a47e946845b64ecfdf",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/matrix.json",
+      "synthetic": true,
+      "sha256": "a9cbe336bbf2c169a1c1dbc7f30ad1dd13768aa4fb954d18e9f44893f023c94d",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/bump.json",
+      "synthetic": true,
+      "sha256": "afd5a5a0f906737cc7b6c4a0a68cf47a244fe2160f7fb3d376dc0b4f12a05c3e",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/histogram.json",
+      "synthetic": true,
+      "sha256": "36cce9146c535626947f84173c719ba79dbd33a607f2ecf9469a0502917166fe",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/small-multiples.json",
+      "synthetic": true,
+      "sha256": "c298bd2fc949c7ac23e59851ee91cd9cb0eb286cb8dd36b1d5c6cf201b95de0f",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/stacked-area.json",
+      "synthetic": true,
+      "sha256": "15695cc48149a0da7600f3763010b93db1b70197acfefa1e4036c1146675d743",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/choropleth.json",
+      "synthetic": true,
+      "sha256": "0471a582a128c682dd9c344d3cde36e93bb61dfcf00a910d917f540d6b2bae41",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/pack-markets.json",
+      "synthetic": true,
+      "sha256": "c0e83e3e6648f46bb1a1e704f0d757de3ce9db29443c373fe40d7951c95d01dd",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/pack-gdp.json",
+      "synthetic": true,
+      "sha256": "d505c9988353643fc45c344fa7905e6d68800e2233c7e5dee237756a6ec25c16",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/pack-processors.json",
+      "synthetic": true,
+      "sha256": "4816af8d0069d4cd6dea5fbb22f0495ae7a2e5b9f27a494821a18f28ec916036",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/pack-ai-energy.json",
+      "synthetic": true,
+      "sha256": "44823179ededfc63de583154b7fa911de133b7120b27411220bc14d48d4d33a4",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/pack-earthquakes.json",
+      "synthetic": true,
+      "sha256": "f33f3a40508571cc5ec2f880ef1faf195caa31b64a799187ee2b9103ef5239e6",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/pack-franchises.json",
+      "synthetic": true,
+      "sha256": "d1529b54b07dd1089d2989a66905856c04eef503bc32044a76eef0b54c2aa416",
+      "sources": [
+        "VizForge V1.1 synthetic fixtures, authored 2026-09-05"
+      ]
+    },
+    {
+      "file": "examples/editorial.json",
+      "synthetic": true,
+      "sha256": "2dcf6b9a7417bd8efedf4638ed4ad64fe7578a27de35ea620a5d62e819175ed2",
+      "sources": [
+        "VizForge synthetic demonstration data, 2026"
+      ]
+    }
+  ]
+}

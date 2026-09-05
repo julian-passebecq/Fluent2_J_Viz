@@ -1,0 +1,11 @@
+packages:
+  - "vendor/datapass-platform/project/conceptmotion_studio/packages/*"
+  - "vendor/datapass-platform/project/conceptmotion_studio/content"
+
+allowBuilds:
+  esbuild: true
+
+minimumReleaseAgeExclude:
+  - '@playwright/test@1.63.0'
+  - playwright-core@1.63.0
+  - playwright@1.63.0

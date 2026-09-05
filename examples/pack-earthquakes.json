@@ -1,0 +1,173 @@
+{
+  "id": "quake-sequence-story",
+  "version": "1.0",
+  "title": "Later events cluster along the central corridor",
+  "description": "Cumulative steps retain earlier events so the changing cluster stays visible.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "quake-sequence",
+      "version": "1.0",
+      "title": "Later events cluster along the central corridor",
+      "subtitle": "Synthetic earthquake events · geographic coordinates",
+      "takeaway": "Cumulative steps retain earlier events so the changing cluster stays visible.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "Later events cluster along the central corridor. Cumulative steps retain earlier events so the changing cluster stays visible."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "synthetic-quakes",
+          "text": "Synthetic epicenters, times and impact indices. Circle area shows the illustrative impact index, not earthquake magnitude. No observed events or basemap are represented."
+        },
+        {
+          "id": "cluster",
+          "text": "The largest synthetic event appears in the central corridor. Earlier events remain visible for temporal context.",
+          "entityId": "q4"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "event-map",
+      "data": [
+        {
+          "id": "q1",
+          "label": "Offshore A",
+          "day": 1,
+          "longitude": -161,
+          "latitude": 47,
+          "impact": 5
+        },
+        {
+          "id": "q2",
+          "label": "Offshore B",
+          "day": 2,
+          "longitude": -151,
+          "latitude": 28,
+          "impact": 3
+        },
+        {
+          "id": "q3",
+          "label": "Central A",
+          "day": 2,
+          "longitude": -138,
+          "latitude": 41,
+          "impact": 8
+        },
+        {
+          "id": "q4",
+          "label": "Central B",
+          "day": 3,
+          "longitude": -132,
+          "latitude": 26,
+          "impact": 12
+        },
+        {
+          "id": "q5",
+          "label": "Central C",
+          "day": 4,
+          "longitude": -127,
+          "latitude": 37,
+          "impact": 7
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "day",
+        "x": "longitude",
+        "y": "latitude",
+        "size": "impact"
+      },
+      "coordinates": "geographic",
+      "regions": [],
+      "xDomain": [
+        -170,
+        -110
+      ],
+      "yDomain": [
+        10,
+        55
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "quake-start",
+      "visualId": "quake-sequence",
+      "title": "The first event anchors the sequence",
+      "caption": "One fictional offshore event provides the starting point.",
+      "state": {
+        "time": 1
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "synthetic-quakes"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "quake-spread",
+      "visualId": "quake-sequence",
+      "title": "Two more events broaden the pattern",
+      "caption": "The early point remains while two later points appear.",
+      "state": {
+        "time": 2
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "synthetic-quakes"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "quake-cluster",
+      "visualId": "quake-sequence",
+      "title": "The later reports cluster centrally",
+      "caption": "Five synthetic events now show the full sequence and the largest impact index.",
+      "state": {
+        "time": 4
+      },
+      "focusIds": [
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "annotationIds": [
+        "cluster"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}
