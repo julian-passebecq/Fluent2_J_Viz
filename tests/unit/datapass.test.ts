@@ -22,4 +22,10 @@ describe('real external Figure contract', () => {
     expect(html).toContain(catalog[0].story.scenes[0].caption);
     expect(html).not.toContain('data-vizforge-host');
   });
+  it('revalidates same-object edits rather than trusting a previously valid reference', () => {
+    const figure = storyFigure(structuredClone(catalog[0].story));
+    expect(vizforgeAdapter.validate!(figure)).toEqual([]);
+    (figure.spec as Record<string, unknown>).unexpected = undefined;
+    expect(vizforgeAdapter.validate!(figure)).not.toEqual([]);
+  });
 });

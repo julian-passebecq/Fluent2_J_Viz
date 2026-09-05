@@ -1,0 +1,521 @@
+{
+  "id": "franchise-story",
+  "version": "1.1",
+  "title": "A challenger rewrites the order",
+  "description": "Bump, ranking and time-series chapters share one synthetic franchise dataset.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "franchise-ranks",
+      "version": "1.1",
+      "title": "The new series overtakes the flagship",
+      "subtitle": "Synthetic franchise audience scores",
+      "takeaway": "Rank trajectories reveal the crossover; values reveal the size of the lead.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "The new series overtakes the flagship. Rank trajectories reveal the crossover; values reveal the size of the lead."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "new-leader",
+          "text": "Beacon passes Arc in 2022 and extends its lead by 2024. All franchise names and scores are fictional.",
+          "entityId": "beacon"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "bump",
+      "data": [
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2018,
+          "value": 90
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2020,
+          "value": 96
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2022,
+          "value": 103
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2024,
+          "value": 112
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2018,
+          "value": 32
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2020,
+          "value": 62
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2022,
+          "value": 106
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2024,
+          "value": 145
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2018,
+          "value": 75
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2020,
+          "value": 81
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2022,
+          "value": 91
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2024,
+          "value": 99
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2018,
+          "value": 44
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2020,
+          "value": 53
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2022,
+          "value": 67
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2024,
+          "value": 84
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "order": "descending"
+    },
+    {
+      "id": "franchise-final",
+      "version": "1.0",
+      "title": "Beacon finishes with a clear lead",
+      "subtitle": "Synthetic franchise audience scores · 2024",
+      "takeaway": "Beacon reaches 145, compared with Arc at 112.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "Beacon finishes with a clear lead. Beacon reaches 145, compared with Arc at 112."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "new-leader",
+          "text": "Beacon passes Arc in 2022 and extends its lead by 2024. All franchise names and scores are fictional.",
+          "entityId": "beacon"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "ranking",
+      "data": [
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2018,
+          "value": 90
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2020,
+          "value": 96
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2022,
+          "value": 103
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2024,
+          "value": 112
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2018,
+          "value": 32
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2020,
+          "value": 62
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2022,
+          "value": 106
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2024,
+          "value": 145
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2018,
+          "value": 75
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2020,
+          "value": 81
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2022,
+          "value": 91
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2024,
+          "value": 99
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2018,
+          "value": 44
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2020,
+          "value": 53
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2022,
+          "value": 67
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2024,
+          "value": 84
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "topN": 8
+    },
+    {
+      "id": "franchise-history",
+      "version": "1.0",
+      "title": "The lead comes from sustained growth",
+      "subtitle": "Synthetic franchise audience scores · 2018–2024",
+      "takeaway": "Beacon grows throughout the timeline while Arc advances gradually.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "The lead comes from sustained growth. Beacon grows throughout the timeline while Arc advances gradually."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "new-leader",
+          "text": "Beacon passes Arc in 2022 and extends its lead by 2024. All franchise names and scores are fictional.",
+          "entityId": "beacon"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "time-series",
+      "data": [
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2018,
+          "value": 90
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2020,
+          "value": 96
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2022,
+          "value": 103
+        },
+        {
+          "id": "arc",
+          "label": "Arc",
+          "year": 2024,
+          "value": 112
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2018,
+          "value": 32
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2020,
+          "value": 62
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2022,
+          "value": 106
+        },
+        {
+          "id": "beacon",
+          "label": "Beacon",
+          "year": 2024,
+          "value": 145
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2018,
+          "value": 75
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2020,
+          "value": 81
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2022,
+          "value": 91
+        },
+        {
+          "id": "circuit",
+          "label": "Circuit",
+          "year": 2024,
+          "value": 99
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2018,
+          "value": 44
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2020,
+          "value": 53
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2022,
+          "value": 67
+        },
+        {
+          "id": "drift",
+          "label": "Drift",
+          "year": 2024,
+          "value": 84
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "area": false
+    }
+  ],
+  "scenes": [
+    {
+      "id": "franchise-start",
+      "visualId": "franchise-ranks",
+      "title": "Arc starts on top",
+      "caption": "Beacon begins last among the four fictional franchises.",
+      "state": {
+        "time": 2018
+      },
+      "focusIds": [],
+      "annotationIds": [],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "franchise-cross",
+      "visualId": "franchise-ranks",
+      "title": "Beacon moves into first",
+      "caption": "The trajectories cross in 2022.",
+      "state": {
+        "time": 2022
+      },
+      "focusIds": [
+        "beacon"
+      ],
+      "annotationIds": [
+        "new-leader"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "franchise-gap",
+      "visualId": "franchise-final",
+      "title": "Measure the final gap",
+      "caption": "The final ranking makes the score difference explicit.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "new-leader"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "franchise-path",
+      "visualId": "franchise-history",
+      "title": "Return to the whole trajectory",
+      "caption": "The same values show how sustained growth produced the lead.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "new-leader"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    }
+  ]
+}

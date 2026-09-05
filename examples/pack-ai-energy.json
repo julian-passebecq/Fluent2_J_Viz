@@ -1,0 +1,249 @@
+{
+  "id": "ai-energy-story",
+  "version": "1.1",
+  "title": "From workload mix to energy drivers",
+  "description": "Two views reconcile the same synthetic energy demand.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "ai-energy-mix",
+      "version": "1.1",
+      "title": "Serving becomes the largest energy demand",
+      "subtitle": "Synthetic AI workload · kWh per fixed reporting window",
+      "takeaway": "Serving growth accounts for two thirds of the total increase.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "Serving becomes the largest energy demand. Serving growth accounts for two thirds of the total increase."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD",
+        "unit": "kWh"
+      },
+      "annotations": [
+        {
+          "id": "absolute",
+          "text": "These are absolute synthetic energy totals, not normalized shares. The reporting window stays fixed."
+        },
+        {
+          "id": "serving-growth",
+          "text": "Serving adds 60 kWh out of a total increase of 90 kWh.",
+          "entityId": "serving"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "stacked-area",
+      "data": [
+        {
+          "id": "training",
+          "label": "Training",
+          "year": 2020,
+          "value": 60
+        },
+        {
+          "id": "training",
+          "label": "Training",
+          "year": 2022,
+          "value": 70
+        },
+        {
+          "id": "training",
+          "label": "Training",
+          "year": 2024,
+          "value": 80
+        },
+        {
+          "id": "serving",
+          "label": "Serving",
+          "year": 2020,
+          "value": 30
+        },
+        {
+          "id": "serving",
+          "label": "Serving",
+          "year": 2022,
+          "value": 60
+        },
+        {
+          "id": "serving",
+          "label": "Serving",
+          "year": 2024,
+          "value": 90
+        },
+        {
+          "id": "network",
+          "label": "Network",
+          "year": 2020,
+          "value": 10
+        },
+        {
+          "id": "network",
+          "label": "Network",
+          "year": 2022,
+          "value": 15
+        },
+        {
+          "id": "network",
+          "label": "Network",
+          "year": 2024,
+          "value": 20
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "normalize": false
+    },
+    {
+      "id": "ai-energy-bridge",
+      "version": "1.0",
+      "title": "Serving explains most of the increase",
+      "subtitle": "Synthetic energy bridge · same data as the stacked view",
+      "takeaway": "A 100 kWh baseline grows to 190 kWh, mostly through serving.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "Serving explains most of the increase. A 100 kWh baseline grows to 190 kWh, mostly through serving."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD",
+        "unit": "kWh"
+      },
+      "annotations": [
+        {
+          "id": "reconcile",
+          "text": "100 + 60 + 20 + 10 = 190 kWh. The waterfall reconciles exactly to the stacked-area endpoint."
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "contribution",
+      "data": [
+        {
+          "id": "serving",
+          "label": "Serving",
+          "value": 60
+        },
+        {
+          "id": "training",
+          "label": "Training",
+          "value": 20
+        },
+        {
+          "id": "network",
+          "label": "Network",
+          "value": 10
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "value": "value"
+      },
+      "baseline": 100,
+      "kpi": {
+        "label": "Energy per reporting window",
+        "comparison": 100,
+        "target": 180,
+        "direction": "down",
+        "sparkline": [
+          100,
+          145,
+          190
+        ]
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ai-start",
+      "visualId": "ai-energy-mix",
+      "title": "Training starts as the largest demand",
+      "caption": "The first reporting window totals 100 kWh.",
+      "state": {
+        "time": 2020
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "absolute"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "ai-growth",
+      "visualId": "ai-energy-mix",
+      "title": "Serving takes the lead",
+      "caption": "By the final window, serving uses 90 of 190 kWh.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [
+        "serving"
+      ],
+      "annotationIds": [
+        "serving-growth"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "ai-drivers",
+      "visualId": "ai-energy-bridge",
+      "title": "Reconcile the increase",
+      "caption": "The same 90 kWh increase is now separated into three drivers.",
+      "state": {},
+      "focusIds": [],
+      "annotationIds": [
+        "reconcile"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    }
+  ]
+}

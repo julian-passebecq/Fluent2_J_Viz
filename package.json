@@ -24,26 +24,23 @@
     "test:e2e": "node scripts/browser.mjs test",
     "browser:install": "node scripts/browser.mjs install chromium",
     "examples:export": "tsx scripts/export-examples.ts",
-    "format": "prettier --write src tests scripts/browser.mjs scripts/audit-bundle.mjs scripts/validate-examples.ts scripts/export-examples.ts *.ts *.json *.html *.md .github/workflows/*.yml",
+    "format": "prettier --write src tests scripts/browser.mjs scripts/audit-bundle.mjs scripts/check-react18.mjs scripts/validate-examples.ts scripts/export-examples.ts *.ts *.json *.html *.md .github/workflows/*.yml",
     "validate": "tsx scripts/validate-examples.ts",
     "build": "pnpm typecheck && vite build && tsc -p tsconfig.lib.json && node scripts/audit-bundle.mjs",
     "preview": "vite preview --host 127.0.0.1",
-    "check": "pnpm validate && pnpm test && pnpm build && pnpm test:e2e",
+    "check": "pnpm release:gate",
     "framework:bootstrap": "node --experimental-strip-types scripts/bootstrap-framework.ts",
     "framework:verify": "node --experimental-strip-types scripts/bootstrap-framework.ts --verify",
     "release:gate": "node --experimental-strip-types scripts/consumer-release-gate.ts",
     "validate:content": "pnpm validate",
     "test:unit": "vitest run",
-    "test:browser": "pnpm test:e2e"
+    "test:browser": "pnpm test:react18 && pnpm test:e2e",
+    "test:react18": "node scripts/check-react18.mjs"
   },
   "engines": {
     "node": ">=22.13.0"
   },
   "dependencies": {
-    "@datapass/code": "workspace:*",
-    "@datapass/content": "workspace:*",
-    "@datapass/figure": "workspace:*",
-    "@datapass/ui": "workspace:*",
     "d3": "7.9.0",
     "d3-sankey": "0.12.3",
     "zod": "3.24.2"
@@ -64,7 +61,11 @@
     "tsx": "4.19.3",
     "typescript": "7.0.2",
     "vite": "6.4.3",
-    "vitest": "3.2.7"
+    "vitest": "3.2.7",
+    "@datapass/ui": "workspace:*",
+    "@datapass/content": "workspace:*",
+    "@datapass/figure": "workspace:*",
+    "@datapass/code": "workspace:*"
   },
   "packageManager": "pnpm@11.19.0",
   "peerDependencies": {

@@ -60,11 +60,4 @@ export function dumbbellLayout(
     ]);
   });
   return { width, height: h, decorations, entities };
-
-  return {
-    width: context.width,
-    height: context.height,
-    entities: context.entities,
-    decorations: context.decorations,
-  };
 }

@@ -65,6 +65,9 @@ for (const family of catalog)
       JSON.stringify({ scenes: sceneReports, violations }, null, 2),
     );
     await page.screenshot({ path: `docs/qa/${testInfo.project.name}-${family.id}.png`, fullPage: true });
+    await page
+      .locator('.vf-figure')
+      .screenshot({ path: `docs/qa/${testInfo.project.name}-${family.id}-figure.png` });
     expect(violations.filter((v) => v.impact === 'critical' || v.impact === 'serious')).toEqual([]);
     expect(errors).toEqual([]);
   });

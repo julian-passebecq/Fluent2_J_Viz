@@ -1,28 +1,42 @@
-# VizForge V1 visual catalog
+# VizForge visual catalog — V1.1
 
-Every family has a canonical JSON story, renderer tests, synthetic source/note metadata, annotations, reduced-motion checks and desktop/390px production proof. Examples intentionally avoid claims about real countries, companies, flood events or forecasts.
+**15 reusable families; 22 canonical visual/story examples.** All data and region geometry are synthetic, with source/note metadata and SHA-256 provenance in `docs/DATA_PROVENANCE.json`. Every example is available in the real Datapass Studio and uses the same D3 renderer as the standalone host.
 
-| Family                      | Canonical story              | Narrative and implementation                                                                                                                                                    |
-| --------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Multi-series time evolution | `examples/time-series.json`  | Solar moves from smallest to largest; line/area, global scale, comparison baseline, moving focus, direct labels.                                                                |
-| Animated ranking / bar race | `examples/ranking.json`      | Coastal regions overtake early leaders; keyed bars, stable colors, ranks and prior-period rank deltas.                                                                          |
-| Scatter / bubble evolution  | `examples/scatter.json`      | Fictional cities gain income and lower emissions; two dimensions, area-based population size and stable entity/category colors.                                                 |
-| Dumbbell                    | `examples/dumbbell.json`     | Transit access improves unevenly; hollow before/filled after symbols, connector, numeric delta and focused comparison.                                                          |
-| KPI contribution            | `examples/contribution.json` | Baseline + new + expansion − churn − FX = current KPI; signed waterfall, current/comparison/target/status and sparkline.                                                        |
-| Sankey / flow               | `examples/flow.json`         | Follow energy from sources to uses; proper magnitude-weighted DAG layout, focus on nodes and connected bands, no ambient animation.                                             |
-| Forecast + uncertainty      | `examples/forecast.json`     | Demand moves from historical observations to an uncertain scenario; solid/dashed distinction, interval band, widening uncertainty and readable final state.                     |
-| Event / map                 | `examples/event-map.json`    | Fictional flood events move through a delta over three days; schematic geography, cumulative reveal, stable symbols and focus. Geographic longitude/latitude is also supported. |
-| Analytical table            | `examples/table.json`        | Portfolio revenue, variance, status and trend; typed alignment, explicit sort, data bars, sparkline, group subtotals and grand total.                                           |
-| Analytical matrix           | `examples/matrix.json`       | Regional teams across quarters; row/column hierarchies, leaf aggregation, subtotals, grand totals and conditional magnitude. Multiple measures are supported.                   |
+| Family                       | Canonical story                 | Analytical use                                                                |
+| ---------------------------- | ------------------------------- | ----------------------------------------------------------------------------- |
+| Time evolution               | `examples/time-series.json`     | Multi-series trajectories, optional area, fixed domains, comparison baseline  |
+| Animated ranking             | `examples/ranking.json`         | Stable bars, changing order, prior-period rank deltas                         |
+| Scatter/bubble               | `examples/scatter.json`         | Movement across two measures; circle area encodes size                        |
+| Dumbbell                     | `examples/dumbbell.json`        | Paired states and absolute change                                             |
+| KPI contribution             | `examples/contribution.json`    | Signed additive bridge, current/comparison/target and sparkline               |
+| Sankey/flow                  | `examples/flow.json`            | Weighted acyclic allocation with stable nodes/links                           |
+| Forecast/uncertainty         | `examples/forecast.json`        | Solid observed line, dashed projection and explicit interval                  |
+| Event map                    | `examples/event-map.json`       | Cumulative event sequence, schematic or geographic symbols                    |
+| Analytical table             | `examples/table.json`           | Exact values, sort, subtotal, data bars, variance, status, trend              |
+| Analytical matrix            | `examples/matrix.json`          | Hierarchies, leaf aggregation and totals without double counting              |
+| **Bump/rank trajectories**   | `examples/bump.json`            | Complete rank history, deterministic ties, direct endpoint labels             |
+| **Histogram/distribution**   | `examples/histogram.json`       | Fixed bins/domains, counts or probability, median and sample conservation     |
+| **Small multiples**          | `examples/small-multiples.json` | One panel per entity; shared x/y scales; one column on phones                 |
+| **Stacked area/composition** | `examples/stacked-area.json`    | Absolute contributions or 100% shares; stable stacking and direct labels      |
+| **Choropleth**               | `examples/choropleth.json`      | GeoJSON Polygon/MultiPolygon, holes, fixed color scale, explicit missing data |
 
-`examples/editorial.json` sequences line → ranking → KPI under one chapter/scene wrapper. This establishes the reusable editorial composition boundary without adding an article CMS or scroll-driven playback. The last commercial KPI is explicitly an independent demonstration, not a causal claim about the preceding energy examples.
+The original ten examples and `examples/editorial.json` retain V1 contracts and data. Editorial sequences line → ranking → KPI; its commercial KPI is explicitly an independent demonstration.
 
-## Selecting a family
+## Domain story packs
 
-Use line evolution for trajectories, ranking for order, bubble evolution for movement across measures, dumbbell for a small number of paired states, contribution for an additive KPI bridge, flow for allocation, forecast for uncertainty, and map stories when location is essential. Use tables and matrices when exact values and aggregation are the primary task. This is the V1 catalog; adding new families means extending the discriminated contract, layout, canonical example and tests together.
+| Pack                 | Files / reusable pattern                            | Editorial question                                                   |
+| -------------------- | --------------------------------------------------- | -------------------------------------------------------------------- |
+| Market paths         | `pack-markets.json` · time comparison               | Does the highest finish conceal a larger drawdown?                   |
+| GDP recovery         | `pack-gdp.json` · small multiples                   | Is the fastest rebound also the highest final index?                 |
+| Processor efficiency | `pack-processors.json` · bubble evolution           | Can performance rise while energy per fixed task falls?              |
+| AI energy demand     | `pack-ai-energy.json` · stacked area → contribution | Which workload explains the increase, and do both views reconcile?   |
+| Earthquake sequence  | `pack-earthquakes.json` · geographic event timeline | How does the cluster evolve while earlier events remain visible?     |
+| Franchise rise       | `pack-franchises.json` · bump → ranking → line      | When did the challenger cross over, and how large is the final lead? |
 
-## Reuse and evidence
+Pack JSON files live under `examples/`. None contains observed financial, GDP, processor or earthquake statistics. Geographic coordinates in the event pack are illustrative synthetic epicenters; circle area shows an impact index, not seismic magnitude. The new choropleth shapes are fictional and demonstrate holes, multipart islands and a missing region.
 
-The same JSON loads in the studio editor, DOM renderer, React adapter and later host adapter. Example authoring source is `src/examples/index.ts`; regenerate checked-in JSON with `npm run examples:export`, then validate it with `npm run validate`.
+## Reuse
 
-Proof images follow `docs/qa/desktop-<family>.png` and `docs/qa/phone-<family>.png`. Tests measure real bar interpolation and keyed DOM identity separately from screenshots. See `QA_REPORT.md` for actual results and the deferred integration gate.
+`timelineStory` authors absolute beats for time comparison, rank evolution, bubble evolution and event/distribution/map sequences. `chapterStory` composes the same validated visual specs into chapters and rejects conflicting reused visual IDs. Both live in the engine's pure core and return ordinary StorySpec objects; neither owns playback.
+
+Authoring modules are `src/examples/v1.ts`, `gallery.ts` and `packs/`. Regenerate JSON/provenance with `pnpm examples:export` and verify with `pnpm validate`. Every family and pack has desktop/390px screenshots and per-scene Axe evidence; numerical transition/identity tests run separately from screenshots.

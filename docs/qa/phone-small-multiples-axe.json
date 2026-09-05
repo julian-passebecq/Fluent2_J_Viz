@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "panels-start",
+      "violations": []
+    },
+    {
+      "sceneId": "panels-middle",
+      "violations": []
+    },
+    {
+      "sceneId": "panels-end",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

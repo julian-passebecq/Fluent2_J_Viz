@@ -1,31 +1,33 @@
 # VizForge
 
-A web-first D3 engine and editorial studio for semantic analytical figures. Ten visualization families share versioned specs, keyed entities and a deterministic scene player. Renderer modules do not import React, Fluent, Datapass or Power BI.
+A framework-independent D3 engine and Fluent/Datapass editorial studio. **15 reusable visual families and 22 canonical examples/story compositions** share strict semantic specs, stable entities, readable paused scenes, reduced motion and SVG/JSON export. All bundled datasets and map shapes are explicitly synthetic.
 
-## Run locally
+## Run the integrated Studio
 
-Use Node.js 22 or newer.
-
-```sh
-npm ci
-npm run dev
-```
-
-Open the printed local URL. The studio includes a catalog, ten narrative examples, a cross-family explainer, scene navigation, reduced motion, a validating JSON editor, JSON export and paused SVG chart export. Data is explicitly synthetic. There is no backend or account requirement.
+Use **Node 24.19.0** and **pnpm 11.19.0**:
 
 ```sh
-npm run browser:install
-npm run check
+node --experimental-strip-types scripts/bootstrap-framework.ts
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-The checks validate canonical JSON, run deterministic unit tests, typecheck, build the studio and reusable ESM library, and run production Chromium checks at 1440px and 390px. Browser binaries stay in `.local/browsers`. Proof images are written to `docs/qa/`. `npm run preview` serves the production build; `/standalone.html` demonstrates the same renderer without a React entry point.
+Bootstrap runs before install and verifies exact Datapass commit `8fef4d0b542bfbb11b0ff80ec81710db3f6c8d55`. Only allowlisted source is materialized under ignored `vendor/`. Do not edit it. The four direct Datapass packages are Studio development dependencies; the standalone engine package does not require Datapass.
+
+```sh
+pnpm browser:install
+pnpm check
+```
+
+`check` runs the official consumer release gate: immutable framework verification, frozen install, typecheck, all canonical specs/provenance, unit tests, production and typed ESM library builds, source-map/privacy/React audits, an independent packed React 18 host, and production Chromium checks at 1440px and 390px. CI installs Chromium with `pnpm browser:install --with-deps`. Evidence is in `docs/qa/`, with browser traces/reports attached to hosted runs.
+
+The real Datapass FigurePlayer is the Studio's sole playback controller. Its registry maps `frameIndex` and `reducedMotion` directly to a VizForge scene. Open **Visual catalog** to explore the five added families and story packs for markets, GDP, processors, AI energy, earthquake events and franchises. **Semantic spec** loads the official lazy JsonSpecEditor; invalid edits remain drafts. **Export current figure as SVG** snapshots the selected scene using the same renderer. Tables/matrices export JSON.
 
 ## Use the engine
 
 ```ts
 import { createRenderer, parseStory, StoryPlayer } from '@vizforge/engine';
 import input from './my-story.json';
-
 const story = parseStory(input);
 const player = new StoryPlayer(story);
 const renderer = createRenderer(document.querySelector('#figure')!);
@@ -39,26 +41,26 @@ const paint = () => {
 };
 const unsubscribe = player.subscribe(paint);
 paint();
-// Bind buttons to player.play/pause/next/previous/reset/seek.
+// Bind standalone controls to player methods.
 // On unmount: unsubscribe(); player.dispose(); renderer.destroy();
 ```
 
 ```tsx
 import { StoryView, Figure } from '@vizforge/engine/react';
-
 <StoryView story={story} />
-// Or render a single paused figure:
 <Figure spec={story.visuals[0]} />
 ```
 
-`npm run build` emits typed ESM modules in `dist/lib`; `npm pack` creates a local package for another application. Publishing is deliberately disabled with `private: true`; there is no implied public release.
+`pnpm build` emits typed ESM under `dist/lib`. `pnpm pack` produces a private local engine package with D3/Zod dependencies and React/ReactDOM peers `>=18.3 <20`. Public publishing remains disabled. The Studio/tests use React 19.2.8; the release gate also mounts, steps and unmounts the packed React adapter in an isolated React 18.3.1 consumer. `/standalone.html` uses the same renderer with no React entry point.
 
-## Documentation
+Existing renderer APIs and V1 specs remain compatible. New families explicitly use visual version `1.1`; a StorySpec containing them also uses `1.1`. `timelineStory` and `chapterStory` add reusable authoring helpers without adding a player or separate geometry.
 
-- [Architecture](VIZFORGE_ARCHITECTURE.md) and [spec reference](VIZFORGE_SPEC_REFERENCE.md)
-- [Visual catalog](VIZFORGE_VISUAL_CATALOG.md) and [canonical examples](examples/)
-- [Datapass integration boundary](DATAPASS_INTEGRATION.md) and [framework gaps](FRAMEWORK_GAPS.md)
-- [Later Power BI adapter plan](POWERBI_EXPORT_PLAN.md)
-- [QA evidence and remaining release gate](QA_REPORT.md)
+## References
 
-The original ordered brief is preserved in `docs/brief/`. The requested work stays in this repository. Real Datapass FigureView integration remains deferred until the framework seam revision and consumer mechanism are confirmed; no Datapass checkout was read or modified.
+- [Architecture](VIZFORGE_ARCHITECTURE.md), [spec reference](VIZFORGE_SPEC_REFERENCE.md), [visual catalog](VIZFORGE_VISUAL_CATALOG.md)
+- [Datapass integration](DATAPASS_INTEGRATION.md), [framework limits](FRAMEWORK_GAPS.md)
+- [Data provenance and hashes](docs/DATA_PROVENANCE.json), [canonical JSON](examples/)
+- [QA report](QA_REPORT.md), [release report](VIZFORGE_V1_1_RELEASE_REPORT.md)
+- [Future Power BI boundary](POWERBI_EXPORT_PLAN.md)
+
+This pass starts from clean VizForge `3a5bd0b7bdfb987a18f2e9154b43fc92756120b8`. Ordered instructions are preserved in `docs/brief-v1.1/`. AI/function calling and Power BI packaging are deferred.

@@ -71,15 +71,16 @@ export function storyFigure(story: StorySpec): FigureSpec {
 
 const validatedStories = new WeakMap<object, { fingerprint: string; story: StorySpec }>();
 function validated(input: unknown): StorySpec {
+  // Always validate the payload, including same-object edits and undefined extra fields.
+  const story = parseStory(input);
   if (input && typeof input === 'object') {
     const cached = validatedStories.get(input);
-    const fingerprint = JSON.stringify(input);
+    const fingerprint = JSON.stringify(story);
     if (cached?.fingerprint === fingerprint) return cached.story;
-    const story = parseStory(input);
     validatedStories.set(input, { fingerprint, story });
     return story;
   }
-  return parseStory(input);
+  return story;
 }
 export const vizforgeAdapter: FigureRendererAdapter = {
   id: 'vizforge.d3',

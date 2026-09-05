@@ -1,0 +1,22 @@
+[
+  {
+    "scene": "franchise-start",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "scene": "franchise-cross",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "scene": "franchise-gap",
+    "overflow": 0,
+    "violations": []
+  },
+  {
+    "scene": "franchise-path",
+    "overflow": 0,
+    "violations": []
+  }
+]

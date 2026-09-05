@@ -19,6 +19,20 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm browser:install --with-deps
       - run: pnpm release:gate
+      - name: Record exact hosted release identity
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          const evidence = {
+            repository: process.env.GITHUB_REPOSITORY,
+            commit: process.env.GITHUB_SHA,
+            framework: JSON.parse(readFileSync('datapass.json')).commit,
+            runId: process.env.GITHUB_RUN_ID,
+            runAttempt: process.env.GITHUB_RUN_ATTEMPT,
+            releaseGate: 'success',
+          };
+          writeFileSync('docs/qa/hosted-release.json', JSON.stringify(evidence, null, 2) + '\n');
+          NODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:

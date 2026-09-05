@@ -8,18 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@datapass/code':
-        specifier: workspace:*
-        version: link:vendor/datapass-platform/project/conceptmotion_studio/packages/code
-      '@datapass/content':
-        specifier: workspace:*
-        version: link:vendor/datapass-platform/project/conceptmotion_studio/packages/content
-      '@datapass/figure':
-        specifier: workspace:*
-        version: link:vendor/datapass-platform/project/conceptmotion_studio/packages/figure
-      '@datapass/ui':
-        specifier: workspace:*
-        version: link:vendor/datapass-platform/project/conceptmotion_studio/packages/ui
       d3:
         specifier: 7.9.0
         version: 7.9.0
@@ -33,6 +21,18 @@ importers:
       '@axe-core/playwright':
         specifier: 4.10.2
         version: 4.10.2(playwright-core@1.63.0)
+      '@datapass/code':
+        specifier: workspace:*
+        version: link:vendor/datapass-platform/project/conceptmotion_studio/packages/code
+      '@datapass/content':
+        specifier: workspace:*
+        version: link:vendor/datapass-platform/project/conceptmotion_studio/packages/content
+      '@datapass/figure':
+        specifier: workspace:*
+        version: link:vendor/datapass-platform/project/conceptmotion_studio/packages/figure
+      '@datapass/ui':
+        specifier: workspace:*
+        version: link:vendor/datapass-platform/project/conceptmotion_studio/packages/ui
       '@playwright/test':
         specifier: 1.63.0
         version: 1.63.0

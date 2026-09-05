@@ -1,0 +1,216 @@
+{
+  "id": "category-ranks-story",
+  "version": "1.1",
+  "title": "Specialists displace the early leader",
+  "description": "Keeping every trajectory reveals when the order changes.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "category-ranks",
+      "version": "1.1",
+      "title": "Specialists displace the early leader",
+      "subtitle": "Synthetic category scores · 2018–2024",
+      "takeaway": "Keeping every trajectory reveals when the order changes.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "Specialists displace the early leader. Keeping every trajectory reveals when the order changes."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "rank-trails",
+          "text": "Rank 1 is at the top. Ties break by stable ID; position describes order, not the score gap."
+        },
+        {
+          "id": "craft-leads",
+          "text": "Craft crosses the established categories and finishes first in this synthetic fixture.",
+          "entityId": "craft"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "bump",
+      "data": [
+        {
+          "id": "core",
+          "label": "Core",
+          "year": 2018,
+          "value": 90
+        },
+        {
+          "id": "core",
+          "label": "Core",
+          "year": 2020,
+          "value": 86
+        },
+        {
+          "id": "core",
+          "label": "Core",
+          "year": 2022,
+          "value": 78
+        },
+        {
+          "id": "core",
+          "label": "Core",
+          "year": 2024,
+          "value": 70
+        },
+        {
+          "id": "craft",
+          "label": "Craft",
+          "year": 2018,
+          "value": 30
+        },
+        {
+          "id": "craft",
+          "label": "Craft",
+          "year": 2020,
+          "value": 55
+        },
+        {
+          "id": "craft",
+          "label": "Craft",
+          "year": 2022,
+          "value": 82
+        },
+        {
+          "id": "craft",
+          "label": "Craft",
+          "year": 2024,
+          "value": 98
+        },
+        {
+          "id": "local",
+          "label": "Local",
+          "year": 2018,
+          "value": 55
+        },
+        {
+          "id": "local",
+          "label": "Local",
+          "year": 2020,
+          "value": 62
+        },
+        {
+          "id": "local",
+          "label": "Local",
+          "year": 2022,
+          "value": 76
+        },
+        {
+          "id": "local",
+          "label": "Local",
+          "year": 2024,
+          "value": 88
+        },
+        {
+          "id": "broad",
+          "label": "Broad",
+          "year": 2018,
+          "value": 70
+        },
+        {
+          "id": "broad",
+          "label": "Broad",
+          "year": 2020,
+          "value": 71
+        },
+        {
+          "id": "broad",
+          "label": "Broad",
+          "year": 2022,
+          "value": 73
+        },
+        {
+          "id": "broad",
+          "label": "Broad",
+          "year": 2024,
+          "value": 74
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "order": "descending"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "bump-start",
+      "visualId": "category-ranks",
+      "title": "An established order",
+      "caption": "Core begins first; Craft starts fourth.",
+      "state": {
+        "time": 2018
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "rank-trails"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "bump-cross",
+      "visualId": "category-ranks",
+      "title": "The paths cross",
+      "caption": "Craft rises to first. Lines preserve the route taken by each category.",
+      "state": {
+        "time": 2022
+      },
+      "focusIds": [
+        "craft"
+      ],
+      "annotationIds": [
+        "rank-trails"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "bump-end",
+      "visualId": "category-ranks",
+      "title": "The specialist holds the lead",
+      "caption": "Restore every category to see the final order.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "craft-leads"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

@@ -20,3 +20,11 @@ The hosted adapter directly paints the scene selected by Datapass FigurePlayer. 
 Datapass is an exact source distribution, not an npm-published SDK. The official bootstrap verifies all 91 selected files against the accepted Git commit before and after release. The engine's ESM library has no bundled React; the Studio uses one deduplicated React 19.2.8 host. The build gate analyzes all reachable Studio source maps and rejects an embedded VizForge playback clock or a second React implementation.
 
 Scene state is absolute. Focus and annotations refer to stable semantic IDs; scales use the full authored data where meaningful. Reduced motion settles immediately and disables hosted autoplay while allowing manual steps. Custom SVG export settles the current scene synchronously and serializes the same renderer output. Future Power BI remains `DataView -> adapter -> canonical VizForge spec -> SAME D3 renderer -> SVG`.
+
+## V1.1 extension
+
+The original renderer APIs have no breaking changes. `timelineStory` and `chapterStory` are additive pure authoring exports. Common grammar moved to `core/grammar.ts`; the five new strict, versioned types and their semantic checks live in `core/extensions.ts`. New family modules extend the existing layout dispatcher and keyed SVG joins. No alternate host geometry exists.
+
+The final catalog contains 15 families and 22 canonical examples, with source modules split between `examples/v1.ts`, `gallery.ts` and `packs/`. SHA-256 provenance is generated with canonical JSON and validated in the release gate. The original ten families and all eleven original JSON examples are unchanged.
+
+The four Datapass packages are Studio development dependencies. Keeping them out of engine runtime dependencies preserves private packed-engine consumption without requiring unpublished framework source packages. Release checks mount the packed adapter in an isolated React 18.3.1 host in addition to the production React 19.2.8 Studio.

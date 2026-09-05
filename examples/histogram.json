@@ -1,0 +1,987 @@
+{
+  "id": "service-distribution-story",
+  "version": "1.1",
+  "title": "The long tail contracts as the center shifts",
+  "description": "A distribution reveals spread that a single average would hide.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "service-distribution",
+      "version": "1.1",
+      "title": "The long tail contracts as the center shifts",
+      "subtitle": "Synthetic service times · minutes",
+      "takeaway": "A distribution reveals spread that a single average would hide.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "The long tail contracts as the center shifts. A distribution reveals spread that a single average would hide."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD",
+        "unit": "min"
+      },
+      "annotations": [
+        {
+          "id": "bins",
+          "text": "All scenes retain the same eight bins and count scale. The dashed line locates the median."
+        },
+        {
+          "id": "tail",
+          "text": "The final sample is more concentrated, even though its median is higher. These are synthetic distributions."
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "histogram",
+      "data": [
+        {
+          "id": "sample-0",
+          "label": "Sample 1",
+          "year": 2018,
+          "value": 65
+        },
+        {
+          "id": "sample-1",
+          "label": "Sample 2",
+          "year": 2018,
+          "value": 11
+        },
+        {
+          "id": "sample-2",
+          "label": "Sample 3",
+          "year": 2018,
+          "value": 12
+        },
+        {
+          "id": "sample-3",
+          "label": "Sample 4",
+          "year": 2018,
+          "value": 13
+        },
+        {
+          "id": "sample-4",
+          "label": "Sample 5",
+          "year": 2018,
+          "value": 14
+        },
+        {
+          "id": "sample-5",
+          "label": "Sample 6",
+          "year": 2018,
+          "value": 15
+        },
+        {
+          "id": "sample-6",
+          "label": "Sample 7",
+          "year": 2018,
+          "value": 16
+        },
+        {
+          "id": "sample-7",
+          "label": "Sample 8",
+          "year": 2018,
+          "value": 17
+        },
+        {
+          "id": "sample-8",
+          "label": "Sample 9",
+          "year": 2018,
+          "value": 73
+        },
+        {
+          "id": "sample-9",
+          "label": "Sample 10",
+          "year": 2018,
+          "value": 19
+        },
+        {
+          "id": "sample-10",
+          "label": "Sample 11",
+          "year": 2018,
+          "value": 20
+        },
+        {
+          "id": "sample-11",
+          "label": "Sample 12",
+          "year": 2018,
+          "value": 21
+        },
+        {
+          "id": "sample-12",
+          "label": "Sample 13",
+          "year": 2018,
+          "value": 22
+        },
+        {
+          "id": "sample-13",
+          "label": "Sample 14",
+          "year": 2018,
+          "value": 23
+        },
+        {
+          "id": "sample-14",
+          "label": "Sample 15",
+          "year": 2018,
+          "value": 24
+        },
+        {
+          "id": "sample-15",
+          "label": "Sample 16",
+          "year": 2018,
+          "value": 25
+        },
+        {
+          "id": "sample-16",
+          "label": "Sample 17",
+          "year": 2018,
+          "value": 81
+        },
+        {
+          "id": "sample-17",
+          "label": "Sample 18",
+          "year": 2018,
+          "value": 27
+        },
+        {
+          "id": "sample-18",
+          "label": "Sample 19",
+          "year": 2018,
+          "value": 28
+        },
+        {
+          "id": "sample-19",
+          "label": "Sample 20",
+          "year": 2018,
+          "value": 29
+        },
+        {
+          "id": "sample-20",
+          "label": "Sample 21",
+          "year": 2018,
+          "value": 30
+        },
+        {
+          "id": "sample-21",
+          "label": "Sample 22",
+          "year": 2018,
+          "value": 31
+        },
+        {
+          "id": "sample-22",
+          "label": "Sample 23",
+          "year": 2018,
+          "value": 32
+        },
+        {
+          "id": "sample-23",
+          "label": "Sample 24",
+          "year": 2018,
+          "value": 33
+        },
+        {
+          "id": "sample-24",
+          "label": "Sample 25",
+          "year": 2018,
+          "value": 65
+        },
+        {
+          "id": "sample-25",
+          "label": "Sample 26",
+          "year": 2018,
+          "value": 11
+        },
+        {
+          "id": "sample-26",
+          "label": "Sample 27",
+          "year": 2018,
+          "value": 12
+        },
+        {
+          "id": "sample-27",
+          "label": "Sample 28",
+          "year": 2018,
+          "value": 13
+        },
+        {
+          "id": "sample-28",
+          "label": "Sample 29",
+          "year": 2018,
+          "value": 14
+        },
+        {
+          "id": "sample-29",
+          "label": "Sample 30",
+          "year": 2018,
+          "value": 15
+        },
+        {
+          "id": "sample-30",
+          "label": "Sample 31",
+          "year": 2018,
+          "value": 16
+        },
+        {
+          "id": "sample-31",
+          "label": "Sample 32",
+          "year": 2018,
+          "value": 17
+        },
+        {
+          "id": "sample-32",
+          "label": "Sample 33",
+          "year": 2018,
+          "value": 73
+        },
+        {
+          "id": "sample-33",
+          "label": "Sample 34",
+          "year": 2018,
+          "value": 19
+        },
+        {
+          "id": "sample-34",
+          "label": "Sample 35",
+          "year": 2018,
+          "value": 20
+        },
+        {
+          "id": "sample-35",
+          "label": "Sample 36",
+          "year": 2018,
+          "value": 21
+        },
+        {
+          "id": "sample-36",
+          "label": "Sample 37",
+          "year": 2018,
+          "value": 22
+        },
+        {
+          "id": "sample-37",
+          "label": "Sample 38",
+          "year": 2018,
+          "value": 23
+        },
+        {
+          "id": "sample-38",
+          "label": "Sample 39",
+          "year": 2018,
+          "value": 24
+        },
+        {
+          "id": "sample-39",
+          "label": "Sample 40",
+          "year": 2018,
+          "value": 25
+        },
+        {
+          "id": "sample-40",
+          "label": "Sample 41",
+          "year": 2018,
+          "value": 81
+        },
+        {
+          "id": "sample-41",
+          "label": "Sample 42",
+          "year": 2018,
+          "value": 27
+        },
+        {
+          "id": "sample-42",
+          "label": "Sample 43",
+          "year": 2018,
+          "value": 28
+        },
+        {
+          "id": "sample-43",
+          "label": "Sample 44",
+          "year": 2018,
+          "value": 29
+        },
+        {
+          "id": "sample-44",
+          "label": "Sample 45",
+          "year": 2018,
+          "value": 30
+        },
+        {
+          "id": "sample-45",
+          "label": "Sample 46",
+          "year": 2018,
+          "value": 31
+        },
+        {
+          "id": "sample-46",
+          "label": "Sample 47",
+          "year": 2018,
+          "value": 32
+        },
+        {
+          "id": "sample-47",
+          "label": "Sample 48",
+          "year": 2018,
+          "value": 33
+        },
+        {
+          "id": "sample-0",
+          "label": "Sample 1",
+          "year": 2021,
+          "value": 55
+        },
+        {
+          "id": "sample-1",
+          "label": "Sample 2",
+          "year": 2021,
+          "value": 26
+        },
+        {
+          "id": "sample-2",
+          "label": "Sample 3",
+          "year": 2021,
+          "value": 27
+        },
+        {
+          "id": "sample-3",
+          "label": "Sample 4",
+          "year": 2021,
+          "value": 28
+        },
+        {
+          "id": "sample-4",
+          "label": "Sample 5",
+          "year": 2021,
+          "value": 29
+        },
+        {
+          "id": "sample-5",
+          "label": "Sample 6",
+          "year": 2021,
+          "value": 30
+        },
+        {
+          "id": "sample-6",
+          "label": "Sample 7",
+          "year": 2021,
+          "value": 31
+        },
+        {
+          "id": "sample-7",
+          "label": "Sample 8",
+          "year": 2021,
+          "value": 32
+        },
+        {
+          "id": "sample-8",
+          "label": "Sample 9",
+          "year": 2021,
+          "value": 63
+        },
+        {
+          "id": "sample-9",
+          "label": "Sample 10",
+          "year": 2021,
+          "value": 34
+        },
+        {
+          "id": "sample-10",
+          "label": "Sample 11",
+          "year": 2021,
+          "value": 35
+        },
+        {
+          "id": "sample-11",
+          "label": "Sample 12",
+          "year": 2021,
+          "value": 36
+        },
+        {
+          "id": "sample-12",
+          "label": "Sample 13",
+          "year": 2021,
+          "value": 37
+        },
+        {
+          "id": "sample-13",
+          "label": "Sample 14",
+          "year": 2021,
+          "value": 38
+        },
+        {
+          "id": "sample-14",
+          "label": "Sample 15",
+          "year": 2021,
+          "value": 39
+        },
+        {
+          "id": "sample-15",
+          "label": "Sample 16",
+          "year": 2021,
+          "value": 40
+        },
+        {
+          "id": "sample-16",
+          "label": "Sample 17",
+          "year": 2021,
+          "value": 71
+        },
+        {
+          "id": "sample-17",
+          "label": "Sample 18",
+          "year": 2021,
+          "value": 42
+        },
+        {
+          "id": "sample-18",
+          "label": "Sample 19",
+          "year": 2021,
+          "value": 43
+        },
+        {
+          "id": "sample-19",
+          "label": "Sample 20",
+          "year": 2021,
+          "value": 44
+        },
+        {
+          "id": "sample-20",
+          "label": "Sample 21",
+          "year": 2021,
+          "value": 25
+        },
+        {
+          "id": "sample-21",
+          "label": "Sample 22",
+          "year": 2021,
+          "value": 26
+        },
+        {
+          "id": "sample-22",
+          "label": "Sample 23",
+          "year": 2021,
+          "value": 27
+        },
+        {
+          "id": "sample-23",
+          "label": "Sample 24",
+          "year": 2021,
+          "value": 28
+        },
+        {
+          "id": "sample-24",
+          "label": "Sample 25",
+          "year": 2021,
+          "value": 59
+        },
+        {
+          "id": "sample-25",
+          "label": "Sample 26",
+          "year": 2021,
+          "value": 30
+        },
+        {
+          "id": "sample-26",
+          "label": "Sample 27",
+          "year": 2021,
+          "value": 31
+        },
+        {
+          "id": "sample-27",
+          "label": "Sample 28",
+          "year": 2021,
+          "value": 32
+        },
+        {
+          "id": "sample-28",
+          "label": "Sample 29",
+          "year": 2021,
+          "value": 33
+        },
+        {
+          "id": "sample-29",
+          "label": "Sample 30",
+          "year": 2021,
+          "value": 34
+        },
+        {
+          "id": "sample-30",
+          "label": "Sample 31",
+          "year": 2021,
+          "value": 35
+        },
+        {
+          "id": "sample-31",
+          "label": "Sample 32",
+          "year": 2021,
+          "value": 36
+        },
+        {
+          "id": "sample-32",
+          "label": "Sample 33",
+          "year": 2021,
+          "value": 67
+        },
+        {
+          "id": "sample-33",
+          "label": "Sample 34",
+          "year": 2021,
+          "value": 38
+        },
+        {
+          "id": "sample-34",
+          "label": "Sample 35",
+          "year": 2021,
+          "value": 39
+        },
+        {
+          "id": "sample-35",
+          "label": "Sample 36",
+          "year": 2021,
+          "value": 40
+        },
+        {
+          "id": "sample-36",
+          "label": "Sample 37",
+          "year": 2021,
+          "value": 41
+        },
+        {
+          "id": "sample-37",
+          "label": "Sample 38",
+          "year": 2021,
+          "value": 42
+        },
+        {
+          "id": "sample-38",
+          "label": "Sample 39",
+          "year": 2021,
+          "value": 43
+        },
+        {
+          "id": "sample-39",
+          "label": "Sample 40",
+          "year": 2021,
+          "value": 44
+        },
+        {
+          "id": "sample-40",
+          "label": "Sample 41",
+          "year": 2021,
+          "value": 55
+        },
+        {
+          "id": "sample-41",
+          "label": "Sample 42",
+          "year": 2021,
+          "value": 26
+        },
+        {
+          "id": "sample-42",
+          "label": "Sample 43",
+          "year": 2021,
+          "value": 27
+        },
+        {
+          "id": "sample-43",
+          "label": "Sample 44",
+          "year": 2021,
+          "value": 28
+        },
+        {
+          "id": "sample-44",
+          "label": "Sample 45",
+          "year": 2021,
+          "value": 29
+        },
+        {
+          "id": "sample-45",
+          "label": "Sample 46",
+          "year": 2021,
+          "value": 30
+        },
+        {
+          "id": "sample-46",
+          "label": "Sample 47",
+          "year": 2021,
+          "value": 31
+        },
+        {
+          "id": "sample-47",
+          "label": "Sample 48",
+          "year": 2021,
+          "value": 32
+        },
+        {
+          "id": "sample-0",
+          "label": "Sample 1",
+          "year": 2024,
+          "value": 48
+        },
+        {
+          "id": "sample-1",
+          "label": "Sample 2",
+          "year": 2024,
+          "value": 41
+        },
+        {
+          "id": "sample-2",
+          "label": "Sample 3",
+          "year": 2024,
+          "value": 42
+        },
+        {
+          "id": "sample-3",
+          "label": "Sample 4",
+          "year": 2024,
+          "value": 43
+        },
+        {
+          "id": "sample-4",
+          "label": "Sample 5",
+          "year": 2024,
+          "value": 44
+        },
+        {
+          "id": "sample-5",
+          "label": "Sample 6",
+          "year": 2024,
+          "value": 45
+        },
+        {
+          "id": "sample-6",
+          "label": "Sample 7",
+          "year": 2024,
+          "value": 46
+        },
+        {
+          "id": "sample-7",
+          "label": "Sample 8",
+          "year": 2024,
+          "value": 47
+        },
+        {
+          "id": "sample-8",
+          "label": "Sample 9",
+          "year": 2024,
+          "value": 56
+        },
+        {
+          "id": "sample-9",
+          "label": "Sample 10",
+          "year": 2024,
+          "value": 49
+        },
+        {
+          "id": "sample-10",
+          "label": "Sample 11",
+          "year": 2024,
+          "value": 50
+        },
+        {
+          "id": "sample-11",
+          "label": "Sample 12",
+          "year": 2024,
+          "value": 51
+        },
+        {
+          "id": "sample-12",
+          "label": "Sample 13",
+          "year": 2024,
+          "value": 52
+        },
+        {
+          "id": "sample-13",
+          "label": "Sample 14",
+          "year": 2024,
+          "value": 53
+        },
+        {
+          "id": "sample-14",
+          "label": "Sample 15",
+          "year": 2024,
+          "value": 54
+        },
+        {
+          "id": "sample-15",
+          "label": "Sample 16",
+          "year": 2024,
+          "value": 55
+        },
+        {
+          "id": "sample-16",
+          "label": "Sample 17",
+          "year": 2024,
+          "value": 64
+        },
+        {
+          "id": "sample-17",
+          "label": "Sample 18",
+          "year": 2024,
+          "value": 57
+        },
+        {
+          "id": "sample-18",
+          "label": "Sample 19",
+          "year": 2024,
+          "value": 40
+        },
+        {
+          "id": "sample-19",
+          "label": "Sample 20",
+          "year": 2024,
+          "value": 41
+        },
+        {
+          "id": "sample-20",
+          "label": "Sample 21",
+          "year": 2024,
+          "value": 42
+        },
+        {
+          "id": "sample-21",
+          "label": "Sample 22",
+          "year": 2024,
+          "value": 43
+        },
+        {
+          "id": "sample-22",
+          "label": "Sample 23",
+          "year": 2024,
+          "value": 44
+        },
+        {
+          "id": "sample-23",
+          "label": "Sample 24",
+          "year": 2024,
+          "value": 45
+        },
+        {
+          "id": "sample-24",
+          "label": "Sample 25",
+          "year": 2024,
+          "value": 54
+        },
+        {
+          "id": "sample-25",
+          "label": "Sample 26",
+          "year": 2024,
+          "value": 47
+        },
+        {
+          "id": "sample-26",
+          "label": "Sample 27",
+          "year": 2024,
+          "value": 48
+        },
+        {
+          "id": "sample-27",
+          "label": "Sample 28",
+          "year": 2024,
+          "value": 49
+        },
+        {
+          "id": "sample-28",
+          "label": "Sample 29",
+          "year": 2024,
+          "value": 50
+        },
+        {
+          "id": "sample-29",
+          "label": "Sample 30",
+          "year": 2024,
+          "value": 51
+        },
+        {
+          "id": "sample-30",
+          "label": "Sample 31",
+          "year": 2024,
+          "value": 52
+        },
+        {
+          "id": "sample-31",
+          "label": "Sample 32",
+          "year": 2024,
+          "value": 53
+        },
+        {
+          "id": "sample-32",
+          "label": "Sample 33",
+          "year": 2024,
+          "value": 62
+        },
+        {
+          "id": "sample-33",
+          "label": "Sample 34",
+          "year": 2024,
+          "value": 55
+        },
+        {
+          "id": "sample-34",
+          "label": "Sample 35",
+          "year": 2024,
+          "value": 56
+        },
+        {
+          "id": "sample-35",
+          "label": "Sample 36",
+          "year": 2024,
+          "value": 57
+        },
+        {
+          "id": "sample-36",
+          "label": "Sample 37",
+          "year": 2024,
+          "value": 40
+        },
+        {
+          "id": "sample-37",
+          "label": "Sample 38",
+          "year": 2024,
+          "value": 41
+        },
+        {
+          "id": "sample-38",
+          "label": "Sample 39",
+          "year": 2024,
+          "value": 42
+        },
+        {
+          "id": "sample-39",
+          "label": "Sample 40",
+          "year": 2024,
+          "value": 43
+        },
+        {
+          "id": "sample-40",
+          "label": "Sample 41",
+          "year": 2024,
+          "value": 52
+        },
+        {
+          "id": "sample-41",
+          "label": "Sample 42",
+          "year": 2024,
+          "value": 45
+        },
+        {
+          "id": "sample-42",
+          "label": "Sample 43",
+          "year": 2024,
+          "value": 46
+        },
+        {
+          "id": "sample-43",
+          "label": "Sample 44",
+          "year": 2024,
+          "value": 47
+        },
+        {
+          "id": "sample-44",
+          "label": "Sample 45",
+          "year": 2024,
+          "value": 48
+        },
+        {
+          "id": "sample-45",
+          "label": "Sample 46",
+          "year": 2024,
+          "value": 49
+        },
+        {
+          "id": "sample-46",
+          "label": "Sample 47",
+          "year": 2024,
+          "value": 50
+        },
+        {
+          "id": "sample-47",
+          "label": "Sample 48",
+          "year": 2024,
+          "value": 51
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "binCount": 8,
+      "normalization": "count",
+      "xDomain": [
+        0,
+        100
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "dist-start",
+      "visualId": "service-distribution",
+      "title": "A center with a long tail",
+      "caption": "Most samples finish early, but a handful extend the tail.",
+      "state": {
+        "time": 2018
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "bins"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "dist-middle",
+      "visualId": "service-distribution",
+      "title": "The center moves",
+      "caption": "The median rises while extreme values move inward.",
+      "state": {
+        "time": 2021
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "bins"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "dist-end",
+      "visualId": "service-distribution",
+      "title": "More concentrated is not always faster",
+      "caption": "The final sample has less spread and a higher median.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "tail"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

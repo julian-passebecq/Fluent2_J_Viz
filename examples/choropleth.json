@@ -1,0 +1,398 @@
+{
+  "id": "island-access-story",
+  "version": "1.1",
+  "title": "The coverage gap narrows across the islands",
+  "description": "Cove catches up while the same color scale keeps the gap comparable.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "island-access",
+      "version": "1.1",
+      "title": "The coverage gap narrows across the islands",
+      "subtitle": "Synthetic access rates on fictional GeoJSON regions",
+      "takeaway": "Cove catches up while the same color scale keeps the gap comparable.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "The coverage gap narrows across the islands. Cove catches up while the same color scale keeps the gap comparable."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "percent",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "fixed",
+          "text": "The scale stays fixed at 0–100%. Gray marks Eel as missing, not zero. Aster has a hole and Dune has two polygons."
+        },
+        {
+          "id": "catch-up",
+          "text": "Cove closes most of its gap with Aster. All shapes and access rates are synthetic.",
+          "entityId": "cove"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "choropleth",
+      "data": [
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2018,
+          "value": 0.72
+        },
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2021,
+          "value": 0.8
+        },
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2024,
+          "value": 0.88
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2018,
+          "value": 0.6
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2021,
+          "value": 0.72
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2024,
+          "value": 0.84
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2018,
+          "value": 0.28
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2021,
+          "value": 0.51
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2024,
+          "value": 0.81
+        },
+        {
+          "id": "dune",
+          "label": "Dune",
+          "year": 2018,
+          "value": 0.45
+        },
+        {
+          "id": "dune",
+          "label": "Dune",
+          "year": 2021,
+          "value": 0.62
+        },
+        {
+          "id": "dune",
+          "label": "Dune",
+          "year": 2024,
+          "value": 0.79
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "regions": [
+        {
+          "id": "aster",
+          "label": "Aster",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  10
+                ],
+                [
+                  13,
+                  25
+                ],
+                [
+                  2,
+                  28
+                ],
+                [
+                  0,
+                  12
+                ]
+              ],
+              [
+                [
+                  4,
+                  16
+                ],
+                [
+                  4,
+                  20
+                ],
+                [
+                  7,
+                  20
+                ],
+                [
+                  7,
+                  16
+                ],
+                [
+                  4,
+                  16
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  16,
+                  12
+                ],
+                [
+                  29,
+                  11
+                ],
+                [
+                  31,
+                  24
+                ],
+                [
+                  19,
+                  28
+                ],
+                [
+                  16,
+                  12
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  -8
+                ],
+                [
+                  14,
+                  -7
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  0,
+                  -8
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "dune",
+          "label": "Dune",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    18,
+                    -8
+                  ],
+                  [
+                    30,
+                    -7
+                  ],
+                  [
+                    29,
+                    6
+                  ],
+                  [
+                    19,
+                    7
+                  ],
+                  [
+                    18,
+                    -8
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    33,
+                    -3
+                  ],
+                  [
+                    36,
+                    -3
+                  ],
+                  [
+                    36,
+                    1
+                  ],
+                  [
+                    33,
+                    1
+                  ],
+                  [
+                    33,
+                    -3
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "eel",
+          "label": "Eel",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  36,
+                  14
+                ],
+                [
+                  42,
+                  15
+                ],
+                [
+                  42,
+                  22
+                ],
+                [
+                  36,
+                  22
+                ],
+                [
+                  36,
+                  14
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "valueDomain": [
+        0,
+        1
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "map-start",
+      "visualId": "island-access",
+      "title": "Coverage differs sharply",
+      "caption": "Aster starts well ahead of Cove. Eel has no observations.",
+      "state": {
+        "time": 2018
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "fixed"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "map-middle",
+      "visualId": "island-access",
+      "title": "The gap begins to close",
+      "caption": "Every measured island gains coverage on the same color scale.",
+      "state": {
+        "time": 2021
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "fixed"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "map-end",
+      "visualId": "island-access",
+      "title": "Cove nearly catches Aster",
+      "caption": "The final view restores all islands, including the explicit missing region.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "catch-up"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

@@ -1,31 +1,11 @@
-# Power BI export plan — later adapter
+# Power BI export plan — deferred
 
-V1 is a web engine. It does not produce `.pbiviz` packages, claim certification, or require Power BI to run. No Power BI API or packaging concern enters the canonical specs, player or D3 renderers.
+The future boundary is fixed:
 
-## Adapter boundary
+`Power BI DataView -> adapter -> canonical VizForge spec -> SAME D3 renderer -> SVG`
 
-```text
-Power BI data + viewport + selections + host settings
-  → Power BI adapter (data mapping, capabilities, lifecycle)
-  → the same canonical VizForge specs
-  → the same D3/SVG or analytical table renderers
-```
+No `.pbiviz`, DataView adapter, host selection manager, formatting model or certification work is part of this pass. Renderer geometry is shared; there will be no separate WebChart and PowerBIChart implementations.
 
-Host update should normalize values and validate a spec, then update the existing renderer. Use persistent category identities to derive stable entity IDs. Map theme and formatting explicitly. Bridge selection/highlight events at the adapter, and destroy the renderer/player on host disposal. A host resize updates width, not analytical identity. Export should settle the selected scene; it should not capture an arbitrary intermediate animation frame.
+First future targets, in order, are KPI contribution, animated ranking and time evolution. The adapter will normalize host values into stable canonical IDs, validate specs, map host theme/formatting, forward selections and resize, and dispose renderer state on teardown. Paused SVG export will use the same settlement path.
 
-## Subset-first rollout
-
-| Candidate                      | Proposed phase    | Main work to verify later                                                      |
-| ------------------------------ | ----------------- | ------------------------------------------------------------------------------ |
-| KPI contribution               | First             | Numeric data roles, comparison/target mapping, single-scene fallback           |
-| Analytical table/matrix        | First             | Hierarchical data mapping, explicit aggregation, host selection and scrolling  |
-| Line comparison                | First             | Numeric/date conversion, series IDs, paused story semantics                    |
-| Ranking                        | First             | Stable category IDs, explicit user playback, performance limits                |
-| Dumbbell                       | First             | Paired measures and identity mapping                                           |
-| Basic scatter/bubble           | First             | Category identities, size domain and selection behavior                        |
-| Sankey                         | Later             | Node/link roles, graph limits and interaction semantics                        |
-| Forecast + uncertainty         | Later             | Interval meaning and data roles                                                |
-| Event/map                      | Web-first for now | Geography inputs, host restrictions, footprint and accessibility               |
-| Cross-family editorial stories | Web-first for now | Scene authoring and host controls; may begin as a static selected-scene export |
-
-These phases describe an implementation plan, not present Power BI compatibility. No family is promised full parity before an adapter is packaged and tested in the target host. Packaging, certification, organizational deployment and distribution are separate release work. Validate then-current official Microsoft requirements when that lane begins.
+Other families require separate host-specific evidence before compatibility is claimed. DAX UDF/TMDL remains an optional downstream subset for static HTML/SVG components only; it is never a path for running D3 JavaScript animation. AI/function calling remains a separate deferred lane.

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "react": "18.3.1",
+  "engineVersion": "1.1.0",
+  "checks": [
+    "packed isolated consumer",
+    "mount",
+    "step",
+    "reduced motion",
+    "unmount"
+  ]
+}

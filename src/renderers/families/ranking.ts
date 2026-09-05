@@ -70,11 +70,4 @@ export function rankingLayout(spec: Extract<ChartSpec, { type: 'ranking' }>, con
     ]);
   });
   return { width, height: h, entities, decorations };
-
-  return {
-    width: context.width,
-    height: context.height,
-    entities: context.entities,
-    decorations: context.decorations,
-  };
 }

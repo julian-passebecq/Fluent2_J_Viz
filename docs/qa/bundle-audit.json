@@ -6,7 +6,7 @@
     "reports": [
       {
         "output": "dist",
-        "scannedFiles": 118,
+        "scannedFiles": 150,
         "skippedBinaryFiles": 1
       }
     ],

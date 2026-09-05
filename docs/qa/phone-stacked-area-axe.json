@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "mix-start",
+      "violations": []
+    },
+    {
+      "sceneId": "mix-middle",
+      "violations": []
+    },
+    {
+      "sceneId": "mix-end",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

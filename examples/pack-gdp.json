@@ -1,0 +1,220 @@
+{
+  "id": "gdp-recovery-story",
+  "version": "1.1",
+  "title": "The rebound differs from the level reached",
+  "description": "Common scales separate a fast rebound from a sustained lead.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "gdp-recovery",
+      "version": "1.1",
+      "title": "The rebound differs from the level reached",
+      "subtitle": "Synthetic GDP volume indices · fictional economies, 2018 = 100",
+      "takeaway": "Common scales separate a fast rebound from a sustained lead.",
+      "source": "VizForge V1.1 synthetic fixtures, authored 2026-09-05",
+      "note": "Synthetic data and fictional entities. Illustrative values, not observations or predictions.",
+      "accessibility": {
+        "summary": "The rebound differs from the level reached. Common scales separate a fast rebound from a sustained lead."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "volume",
+          "text": "These fictional volume indices share a base year. They are not GDP levels, per-capita measures or observed country statistics."
+        },
+        {
+          "id": "rebound",
+          "text": "Bay rebounds most from the 2020 trough, but Dawn still finishes at a higher index.",
+          "entityId": "bay"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "small-multiples",
+      "data": [
+        {
+          "id": "alder",
+          "label": "Alder economy",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "alder",
+          "label": "Alder economy",
+          "year": 2020,
+          "value": 90
+        },
+        {
+          "id": "alder",
+          "label": "Alder economy",
+          "year": 2022,
+          "value": 109
+        },
+        {
+          "id": "alder",
+          "label": "Alder economy",
+          "year": 2024,
+          "value": 121
+        },
+        {
+          "id": "bay",
+          "label": "Bay economy",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "bay",
+          "label": "Bay economy",
+          "year": 2020,
+          "value": 82
+        },
+        {
+          "id": "bay",
+          "label": "Bay economy",
+          "year": 2022,
+          "value": 111
+        },
+        {
+          "id": "bay",
+          "label": "Bay economy",
+          "year": 2024,
+          "value": 130
+        },
+        {
+          "id": "cedar",
+          "label": "Cedar economy",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "cedar",
+          "label": "Cedar economy",
+          "year": 2020,
+          "value": 98
+        },
+        {
+          "id": "cedar",
+          "label": "Cedar economy",
+          "year": 2022,
+          "value": 107
+        },
+        {
+          "id": "cedar",
+          "label": "Cedar economy",
+          "year": 2024,
+          "value": 114
+        },
+        {
+          "id": "dawn",
+          "label": "Dawn economy",
+          "year": 2018,
+          "value": 100
+        },
+        {
+          "id": "dawn",
+          "label": "Dawn economy",
+          "year": 2020,
+          "value": 102
+        },
+        {
+          "id": "dawn",
+          "label": "Dawn economy",
+          "year": 2022,
+          "value": 120
+        },
+        {
+          "id": "dawn",
+          "label": "Dawn economy",
+          "year": 2024,
+          "value": 144
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "columns": 2,
+      "yDomain": [
+        0,
+        150
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "gdp-base",
+      "visualId": "gdp-recovery",
+      "title": "Equal baselines, different economies",
+      "caption": "Each fictional economy begins at 100; the values are indices, not currency amounts.",
+      "state": {
+        "time": 2018
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "volume"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "gdp-trough",
+      "visualId": "gdp-recovery",
+      "title": "Bay falls furthest",
+      "caption": "The same vertical scale makes the depth of the interruption visible.",
+      "state": {
+        "time": 2020
+      },
+      "focusIds": [
+        "bay"
+      ],
+      "annotationIds": [
+        "volume"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "gdp-end",
+      "visualId": "gdp-recovery",
+      "title": "The fastest rebound is not the highest finish",
+      "caption": "Bay gains 48 index points from its trough, while Dawn ends highest at 144.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "rebound"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}
