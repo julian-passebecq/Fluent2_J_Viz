@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
-import ts from 'typescript';
 import { catalog } from '../../src/examples/index.js';
 import { parseStory } from '../../src/core/spec.js';
 import { createRenderer } from '../../src/renderers/dom.js';
@@ -11,9 +10,9 @@ describe('reusable engine boundaries', () => {
   it('core and renderer imports stay independent from every host framework', () => {
     for (const directory of ['src/core', 'src/renderers'])
       for (const file of readdirSync(directory).filter((f) => f.endsWith('.ts'))) {
-        const imports = ts.preProcessFile(readFileSync(`${directory}/${file}`, 'utf8')).importedFiles;
+        const imports = [...readFileSync(`${directory}/${file}`, 'utf8').matchAll(/\b(?:from\s*|import\s*\(?\s*)['"]([^'"]+)['"]/g)];
         for (const imported of imports)
-          expect(imported.fileName, `${directory}/${file}`).toMatch(
+          expect(imported[1], `${directory}/${file}`).toMatch(
             /^(zod$|d3$|d3-sankey$|\.\/|\.\.\/core\/)/,
           );
       }

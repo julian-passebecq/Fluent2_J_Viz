@@ -1,6 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Figure, PlaybackControls, playbackKeyboard, useStoryPlayer } from '../adapters/react.js';
+import { FigurePlayer } from '@datapass/figure';
+import { JsonSpecEditor } from '@datapass/code';
+import { AppShell, LocaleProvider, Workbench } from '@datapass/ui';
+import { RenderHandle, storyFigure, vizforgeRegistry } from './datapass.js';
+import type { Renderer } from '../renderers/dom.js';
+import '@datapass/ui/styles.css';
 import { catalog, editorialStory, type CatalogEntry } from '../examples/index.js';
 import { parseStory, type StorySpec } from '../core/spec.js';
 import './studio.css';
@@ -99,9 +104,13 @@ function Studio() {
   const [specError, setSpecError] = useState(''),
     [notice, setNotice] = useState('');
   const [reduced, setReduced] = useState(false);
-  const { player, state, scene, visual } = useStoryPlayer(story, reduced);
-  const figureHost = useRef<HTMLDivElement>(null);
+  const [frame, setFrame] = useState(0);
+  const scene = story.scenes[Math.min(frame, story.scenes.length - 1)];
+  const visual = story.visuals.find(v => v.id === scene.visualId)!;
+  const figure = useMemo(() => storyFigure(story), [story]);
+  const renderHandle = useRef<Renderer | null>(null);
   useEffect(() => {
+    setFrame(0);
     setSpecText(JSON.stringify(story, null, 2));
     setSpecError('');
   }, [story]);
@@ -122,20 +131,15 @@ function Studio() {
     }
   }
   function exportSVG() {
-    player.pause();
-    // Allow React to settle the selected semantic scene before serializing SVG.
-    requestAnimationFrame(() => {
-      const svg = figureHost.current?.querySelector('svg.vf-chart');
-      if (!svg) {
-        setNotice('This analytical table is available in the JSON export. SVG export is for chart figures.');
-        return;
-      }
-      const clone = svg.cloneNode(true) as SVGSVGElement;
-      clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-      clone.setAttribute('font-family', 'system-ui, sans-serif');
-      download(new XMLSerializer().serializeToString(clone), `${visual.id}-${scene.id}.svg`, 'image/svg+xml');
-      setNotice('Paused scene exported as SVG. Source and note are retained in the JSON spec.');
-    });
+    const renderer = renderHandle.current;
+    renderer?.settle();
+    const svg = renderer?.element.querySelector('svg.vf-chart');
+    if (!svg) { setNotice('Analytical tables are available in JSON export; SVG export supports charts.'); return; }
+    const clone = svg.cloneNode(true) as SVGSVGElement;
+    clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    clone.setAttribute('font-family', 'system-ui, sans-serif');
+    download(new XMLSerializer().serializeToString(clone), `${visual.id}-${scene.id}.svg`, 'image/svg+xml');
+    setNotice('Current scene exported as a static SVG. Source and note are retained in the JSON spec.');
   }
   const filtered = catalog.filter(
     (c) =>
@@ -143,11 +147,7 @@ function Studio() {
       `${c.name} ${c.description}`.toLowerCase().includes(query.toLowerCase()),
   );
   return (
-    <div className="app-shell">
-      <a className="skip-link" href="#main">
-        Skip to workspace
-      </a>
-      <header className="topbar">
+    <AppShell className="app-shell" mainId="main" mainLabel="VizForge workspace" topBar={<header className="topbar">
         <a
           className="brand"
           href="#"
@@ -161,7 +161,7 @@ function Studio() {
             <i />
             <i />
           </span>
-          vizforge<span className="version">V1</span>
+          vizforge<span className="version">V1.1</span>
         </a>
         <nav className="topnav" aria-label="Workspace">
           <button className={view === 'studio' ? 'active' : ''} onClick={() => setView('studio')}>
@@ -186,8 +186,7 @@ function Studio() {
         <div className="workspace-status">
           <span /> Local workspace
         </div>
-      </header>
-      <aside className="sidebar">
+      </header>} sideNav={<aside className="sidebar">
         <div className="sidebar-heading">
           <span>YOUR TOOLKIT</span>
           <span>01</span>
@@ -222,8 +221,8 @@ function Studio() {
           </p>
           <div className="core-badge">◇ &nbsp; Independent D3 core</div>
         </div>
-      </aside>
-      <main id="main" className="main">
+      </aside>}>
+      <div className="main">
         <div className="breadcrumbs">
           Workspace <span>/</span> {view === 'catalog' ? 'Visual catalog' : 'Story studio'} <span>/</span>{' '}
           <strong>{view === 'catalog' ? 'All families' : active.name}</strong>
@@ -316,57 +315,30 @@ function Studio() {
                 </button>
               </div>
             </div>
-            <div className="workbench">
-              <section
-                className="story-panel"
-                tabIndex={0}
-                role="region"
-                aria-label="Story preview"
-                onKeyDown={(e) => playbackKeyboard(e, player)}
-              >
-                <div className="figure-meta">
-                  <span className="figure-number">
-                    FIG. {String(catalog.indexOf(active) + 1).padStart(2, '0')}
-                  </span>
-                  <span>
-                    {state.reducedMotion ? 'Reduced motion · instant steps' : 'D3 / SVG'}
-                    <span className="meta-dot">·</span> Synthetic example
-                  </span>
-                  <button
-                    onClick={exportSVG}
-                    className="icon-button"
-                    aria-label="Export current figure as SVG"
-                    title="Export current figure as SVG"
-                  >
-                    ↓
-                  </button>
-                </div>
-                <div className="figure-wrapper" ref={figureHost}>
-                  <Figure
-                    spec={visual}
-                    scene={scene}
-                    options={{
-                      reducedMotion: state.reducedMotion,
-                      animate: ['next', 'previous', 'seek', 'tick'].includes(state.reason),
-                    }}
-                  />
-                </div>
-                <div className="playback-bar">
-                  <PlaybackControls player={player} />
-                  <span className="keyboard-hint">
-                    ← → to step <span>·</span> Home to reset
-                  </span>
-                  <span className="playback-state">{state.playing ? 'Playing' : 'Paused'}</span>
-                </div>
+            <Workbench className="integrated-workbench" canvasLabel="Story canvas" canvas={
+              <section className="story-panel" tabIndex={0} role="region" aria-label="Story preview"
+                onKeyDown={event => {
+                  if (event.target !== event.currentTarget || event.altKey || event.ctrlKey || event.metaKey) return;
+                  const labels: Record<string, string> = { ArrowRight: 'Next', ArrowLeft: 'Previous', Home: 'Reset' };
+                  const label = labels[event.key];
+                  const buttons = [...event.currentTarget.querySelectorAll<HTMLButtonElement>('.dp-timeline-controls button')];
+                  const button = buttons.find(b => (b.getAttribute('aria-label') ?? b.textContent)?.trim() === label);
+                  if (button && label) { event.preventDefault(); button.click(); }
+                }}>
+                <RenderHandle.Provider value={renderHandle}>
+                  <FigurePlayer key={story.id} figure={figure} registry={vizforgeRegistry}
+                    stepCount={story.scenes.length} frameIndex={frame} onFrameChange={setFrame}
+                    captions={story.scenes.map(s => s.title + '. ' + s.caption)}
+                    reducedMotion={reduced || undefined} presentationSize="compact" showInspector={false}
+                    source={visual.source} note={visual.note} fallbackMode="details"
+                    exportAction={<button className="text-button" onClick={exportSVG} disabled={visual.type === 'table' || visual.type === 'matrix'}>Export current figure as SVG</button>} />
+                </RenderHandle.Provider>
                 <div className="narrative" aria-live="polite" aria-atomic="true">
-                  <span className="narrative-index">{String(state.index + 1).padStart(2, '0')}</span>
-                  <div>
-                    <span className="eyebrow">{scene.chapter ?? 'THE STORY'}</span>
-                    <h2>{scene.title}</h2>
-                    <p>{scene.caption}</p>
-                  </div>
+                  <span className="narrative-index">{String(frame + 1).padStart(2, '0')}</span>
+                  <div><span className="eyebrow">{scene.chapter ?? 'THE STORY'}</span><h2>{scene.title}</h2><p>{scene.caption}</p></div>
                 </div>
               </section>
+            } inspector={
               <aside className="inspector" aria-label="Story inspector">
                 <div className="inspector-tabs" role="group" aria-label="Inspector mode">
                   <button aria-pressed={inspector === 'story'} onClick={() => setInspector('story')}>
@@ -388,11 +360,11 @@ function Studio() {
                         <li key={s.id}>
                           <button
                             aria-label={`Scene ${i + 1}: ${s.title}`}
-                            aria-current={i === state.index ? 'step' : undefined}
-                            onClick={() => player.seek(i)}
+                            aria-current={i === frame ? 'step' : undefined}
+                            onClick={() => setFrame(i)}
                           >
                             <span className="scene-number">
-                              {i < state.index ? '✓' : String(i + 1).padStart(2, '0')}
+                              {i < frame ? '✓' : String(i + 1).padStart(2, '0')}
                             </span>
                             <span>
                               <strong>{s.title}</strong>
@@ -437,14 +409,9 @@ function Studio() {
                   <div className="spec-editor">
                     <label htmlFor="spec-text">Canonical StorySpec · JSON</label>
                     <p>Edit the data, encodings or narrative, then validate and apply.</p>
-                    <textarea
-                      id="spec-text"
-                      spellCheck={false}
-                      value={specText}
-                      onChange={(e) => setSpecText(e.target.value)}
-                      aria-invalid={!!specError}
-                      aria-describedby={specError ? 'spec-error' : undefined}
-                    />
+                    <JsonSpecEditor ariaLabel="Canonical StorySpec · JSON" value={specText} onChange={setSpecText}
+                      height="420px" options={{ wordWrap: 'on', minimap: { enabled: false }, accessibilitySupport: 'on' }}
+                      diagnostics={specError ? [{ severity: 'error', message: specError }] : []} />
                     <button className="button primary" onClick={applySpec}>
                       Validate & apply
                     </button>
@@ -465,7 +432,7 @@ function Studio() {
                   </div>
                 )}
               </aside>
-            </div>
+            } />
             <div className="workspace-footer">
               <span>
                 <span className="live-dot" />{' '}
@@ -513,12 +480,12 @@ function Studio() {
         <div className="sr-only" role="status">
           {notice}
         </div>
-      </main>
-    </div>
+      </div>
+    </AppShell>
   );
 }
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Studio />
+    <LocaleProvider><Studio /></LocaleProvider>
   </React.StrictMode>,
 );

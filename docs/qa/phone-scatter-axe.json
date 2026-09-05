@@ -2,16 +2,92 @@
   "scenes": [
     {
       "sceneId": "cities-start",
-      "violations": []
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "nodes": [
+            {
+              "target": [
+                ".inspector"
+              ],
+              "failure": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+            }
+          ]
+        }
+      ]
     },
     {
       "sceneId": "cities-middle",
-      "violations": []
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "nodes": [
+            {
+              "target": [
+                ".inspector"
+              ],
+              "failure": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+            }
+          ]
+        }
+      ]
     },
     {
       "sceneId": "cities-end",
-      "violations": []
+      "violations": [
+        {
+          "id": "landmark-complementary-is-top-level",
+          "impact": "moderate",
+          "nodes": [
+            {
+              "target": [
+                ".inspector"
+              ],
+              "failure": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+            }
+          ]
+        }
+      ]
     }
   ],
-  "violations": []
+  "violations": [
+    {
+      "id": "landmark-complementary-is-top-level",
+      "impact": "moderate",
+      "nodes": [
+        {
+          "target": [
+            ".inspector"
+          ],
+          "failure": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+        }
+      ]
+    },
+    {
+      "id": "landmark-complementary-is-top-level",
+      "impact": "moderate",
+      "nodes": [
+        {
+          "target": [
+            ".inspector"
+          ],
+          "failure": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+        }
+      ]
+    },
+    {
+      "id": "landmark-complementary-is-top-level",
+      "impact": "moderate",
+      "nodes": [
+        {
+          "target": [
+            ".inspector"
+          ],
+          "failure": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+        }
+      ]
+    }
+  ]
 }

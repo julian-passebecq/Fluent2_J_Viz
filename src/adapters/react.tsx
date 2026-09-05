@@ -48,7 +48,7 @@ export function Figure({
   options?: RenderOptions;
 }) {
   const host = useRef<HTMLDivElement>(null),
-    renderer = useRef<Renderer>();
+    renderer = useRef<Renderer | undefined>(undefined);
   useLayoutEffect(() => {
     renderer.current = createRenderer(host.current!);
     return () => {
