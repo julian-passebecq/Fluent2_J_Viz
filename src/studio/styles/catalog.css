@@ -1,0 +1,209 @@
+.workspace-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 3px;
+  font-size: 8px;
+  color: #5c6551;
+  line-height: 1.8;
+}
+.workspace-footer .live-dot {
+  width: 4px;
+  height: 4px;
+  margin-right: 6px;
+}
+.workspace-footer > span:last-child {
+  white-space: nowrap;
+  font-size: 8px;
+}
+.workspace-footer > span:last-child > span {
+  padding: 0 7px;
+  color: #5e6454;
+}
+.next-section {
+  margin-top: 35px;
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+}
+.section-heading .eyebrow {
+  font-size: 8px;
+}
+.section-heading h2 {
+  font-family: Manrope, system-ui;
+  font-size: 18px;
+  letter-spacing: -0.6px;
+  font-weight: 600;
+  margin-top: 7px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 17px;
+}
+.related-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fbfcf6;
+  border: 1px solid #dce3d1;
+  border-radius: 6px;
+  padding: 17px;
+  text-align: left;
+  min-width: 0;
+}
+.related-card:hover {
+  background: #edf2e3;
+}
+.related-card .glyph {
+  width: 58px;
+  height: 43px;
+  color: #506846;
+  flex: none;
+}
+.related-card .eyebrow {
+  font-size: 7px;
+  letter-spacing: 0.8px;
+}
+.related-card h3 {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.related-card p {
+  font-size: 9px;
+  line-height: 1.7;
+  color: #5c6454;
+  margin-top: 5px;
+}
+.related-card > span {
+  font-size: 12px;
+  color: #5c684d;
+  margin-left: auto;
+  align-self: flex-start;
+}
+.page-footer {
+  border-top: 1px solid #e0e4d6;
+  margin-top: 36px;
+  padding: 18px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  color: #5d6554;
+}
+.page-footer > span > span {
+  padding: 0 10px;
+  color: #606459;
+}
+.catalog-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0 22px;
+}
+.catalog-filters input,
+.catalog-filters select {
+  padding: 10px 13px;
+  border: 1px solid #d3ddc7;
+  background: #fafbf6;
+  border-radius: 5px;
+  color: #526945;
+  font-size: 11px;
+}
+.catalog-filters input {
+  width: 260px;
+}
+.catalog-filters > span {
+  margin-left: auto;
+  font-size: 10px;
+  color: #5c6750;
+}
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.catalog-card {
+  padding: 0;
+  text-align: left;
+  border: 1px solid #d6dfcb;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafbf5;
+}
+.catalog-card:hover {
+  border-color: #8ca17a;
+  box-shadow: 0 5px 18px #253d3010;
+}
+.card-art {
+  background: #e9efdf;
+  height: 133px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.card-art .glyph {
+  height: 72px;
+  width: 136px;
+  color: #4b6842;
+}
+.card-art > span {
+  position: absolute;
+  right: 16px;
+  top: 13px;
+  color: #5b694d;
+}
+.catalog-card:nth-child(3n + 2) .card-art {
+  background: #eee9de;
+}
+.catalog-card:nth-child(3n + 2) .glyph {
+  color: #776042;
+}
+.catalog-card:nth-child(3n) .card-art {
+  background: #e5ece9;
+}
+.catalog-card:nth-child(3n) .glyph {
+  color: #4c6862;
+}
+.card-copy {
+  padding: 20px;
+}
+.card-copy .eyebrow {
+  font-size: 8px;
+}
+.card-copy h2 {
+  font:
+    650 19px Manrope,
+    system-ui;
+  letter-spacing: -0.7px;
+  margin: 9px 0;
+}
+.card-copy p {
+  font-size: 11px;
+  color: #5b644f;
+  line-height: 1.7;
+  min-height: 38px;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #5c6950;
+  border-top: 1px solid #e0e7d6;
+  padding-top: 14px;
+  margin-top: 18px;
+}
+.card-footer > span {
+  color: #4c6b3e;
+}
+.empty-state {
+  padding: 45px;
+  border: 1px dashed #c1d0b2;
+  color: #5a694c;
+  text-align: center;
+}

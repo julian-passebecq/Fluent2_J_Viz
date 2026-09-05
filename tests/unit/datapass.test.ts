@@ -7,7 +7,7 @@ import { catalog } from '../../src/examples/index.js';
 import { storyFigure, vizforgeAdapter, vizforgeRegistry } from '../../src/studio/datapass.js';
 
 describe('real external Figure contract', () => {
-  it.each(catalog)('validates both envelope and canonical payload for $id', entry => {
+  it.each(catalog)('validates both envelope and canonical payload for $id', (entry) => {
     const figure = storyFigure(entry.story);
     expect(validateFigureSpec(figure).valid).toBe(true);
     expect(vizforgeAdapter.validate!(figure)).toEqual([]);

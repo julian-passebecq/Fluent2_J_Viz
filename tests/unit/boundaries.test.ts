@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
+import { dirname, resolve, sep } from 'node:path';
 import { catalog } from '../../src/examples/index.js';
 import { parseStory } from '../../src/core/spec.js';
 import { createRenderer } from '../../src/renderers/dom.js';
@@ -9,12 +10,24 @@ import { StoryPlayer } from '../../src/core/player.js';
 describe('reusable engine boundaries', () => {
   it('core and renderer imports stay independent from every host framework', () => {
     for (const directory of ['src/core', 'src/renderers'])
-      for (const file of readdirSync(directory).filter((f) => f.endsWith('.ts'))) {
-        const imports = [...readFileSync(`${directory}/${file}`, 'utf8').matchAll(/\b(?:from\s*|import\s*\(?\s*)['"]([^'"]+)['"]/g)];
-        for (const imported of imports)
-          expect(imported[1], `${directory}/${file}`).toMatch(
-            /^(zod$|d3$|d3-sankey$|\.\/|\.\.\/core\/)/,
-          );
+      for (const file of (readdirSync(directory, { recursive: true }) as string[]).filter((f) =>
+        f.endsWith('.ts'),
+      )) {
+        const imports = [
+          ...readFileSync(`${directory}/${file}`, 'utf8').matchAll(
+            /\b(?:from\s*|import\s*\(?\s*)['"]([^'"]+)['"]/g,
+          ),
+        ];
+        for (const imported of imports) {
+          const name = imported[1];
+          if (name.startsWith('.')) {
+            const target = resolve(dirname(`${directory}/${file}`), name);
+            expect(
+              ['src/core', 'src/renderers'].some((root) => target.startsWith(resolve(root) + sep)),
+              target,
+            ).toBe(true);
+          } else expect(name, `${directory}/${file}`).toMatch(/^(zod|d3|d3-sankey)$/);
+        }
       }
   });
   it('protects playback snapshots from external mutation', () => {
