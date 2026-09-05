@@ -1,0 +1,6 @@
+package-lock.json
+docs/brief
+docs/qa
+examples
+dist
+.local

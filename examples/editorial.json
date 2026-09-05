@@ -1,0 +1,472 @@
+{
+  "id": "energy-explainer",
+  "version": "1.0",
+  "title": "One transition, three perspectives",
+  "description": "An editorial wrapper across line, ranking and contribution figures.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "energy-lines",
+      "version": "1.0",
+      "title": "The next chapter belongs to solar",
+      "subtitle": "Electricity generation index · 2016–2024",
+      "takeaway": "Solar accelerates while established sources grow more slowly.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "The next chapter belongs to solar. Solar accelerates while established sources grow more slowly."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "starting",
+          "text": "Begin with the gap. Solar starts at less than a third of the hydro index.",
+          "entityId": "solar"
+        },
+        {
+          "id": "turn",
+          "text": "The turning point: solar’s slope steepens after 2020.",
+          "entityId": "solar"
+        },
+        {
+          "id": "lead",
+          "text": "By the final scene, solar has moved from the smallest series to the largest.",
+          "entityId": "solar"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "time-series",
+      "data": [
+        {
+          "id": "solar",
+          "label": "Solar",
+          "year": 2016,
+          "value": 18
+        },
+        {
+          "id": "solar",
+          "label": "Solar",
+          "year": 2018,
+          "value": 26
+        },
+        {
+          "id": "solar",
+          "label": "Solar",
+          "year": 2020,
+          "value": 43
+        },
+        {
+          "id": "solar",
+          "label": "Solar",
+          "year": 2022,
+          "value": 69
+        },
+        {
+          "id": "solar",
+          "label": "Solar",
+          "year": 2024,
+          "value": 110
+        },
+        {
+          "id": "wind",
+          "label": "Wind",
+          "year": 2016,
+          "value": 40
+        },
+        {
+          "id": "wind",
+          "label": "Wind",
+          "year": 2018,
+          "value": 48
+        },
+        {
+          "id": "wind",
+          "label": "Wind",
+          "year": 2020,
+          "value": 60
+        },
+        {
+          "id": "wind",
+          "label": "Wind",
+          "year": 2022,
+          "value": 78
+        },
+        {
+          "id": "wind",
+          "label": "Wind",
+          "year": 2024,
+          "value": 94
+        },
+        {
+          "id": "hydro",
+          "label": "Hydro",
+          "year": 2016,
+          "value": 64
+        },
+        {
+          "id": "hydro",
+          "label": "Hydro",
+          "year": 2018,
+          "value": 67
+        },
+        {
+          "id": "hydro",
+          "label": "Hydro",
+          "year": 2020,
+          "value": 66
+        },
+        {
+          "id": "hydro",
+          "label": "Hydro",
+          "year": 2022,
+          "value": 70
+        },
+        {
+          "id": "hydro",
+          "label": "Hydro",
+          "year": 2024,
+          "value": 73
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "area": true,
+      "comparisonBaseline": 64
+    },
+    {
+      "id": "clean-ranking",
+      "version": "1.0",
+      "title": "A new order in clean energy",
+      "subtitle": "Clean generation index · synthetic regions",
+      "takeaway": "Fast-growing coastal regions overtake the early leaders.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "A new order in clean energy. Fast-growing coastal regions overtake the early leaders."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "rank-start",
+          "text": "Northland begins in first place, with the Alpine Region close behind."
+        },
+        {
+          "id": "rank-change",
+          "text": "Watch the same bars move: Coast Union and Delta States climb the ranking."
+        },
+        {
+          "id": "rank-end",
+          "text": "Coast Union finishes first. Arrows show rank changes from the previous period.",
+          "entityId": "coast"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "ranking",
+      "data": [
+        {
+          "id": "north",
+          "label": "Northland",
+          "year": 2016,
+          "value": 76
+        },
+        {
+          "id": "north",
+          "label": "Northland",
+          "year": 2020,
+          "value": 84
+        },
+        {
+          "id": "north",
+          "label": "Northland",
+          "year": 2024,
+          "value": 91
+        },
+        {
+          "id": "coast",
+          "label": "Coast Union",
+          "year": 2016,
+          "value": 52
+        },
+        {
+          "id": "coast",
+          "label": "Coast Union",
+          "year": 2020,
+          "value": 73
+        },
+        {
+          "id": "coast",
+          "label": "Coast Union",
+          "year": 2024,
+          "value": 108
+        },
+        {
+          "id": "alpine",
+          "label": "Alpine Region",
+          "year": 2016,
+          "value": 69
+        },
+        {
+          "id": "alpine",
+          "label": "Alpine Region",
+          "year": 2020,
+          "value": 77
+        },
+        {
+          "id": "alpine",
+          "label": "Alpine Region",
+          "year": 2024,
+          "value": 86
+        },
+        {
+          "id": "delta",
+          "label": "Delta States",
+          "year": 2016,
+          "value": 42
+        },
+        {
+          "id": "delta",
+          "label": "Delta States",
+          "year": 2020,
+          "value": 65
+        },
+        {
+          "id": "delta",
+          "label": "Delta States",
+          "year": 2024,
+          "value": 98
+        },
+        {
+          "id": "islands",
+          "label": "Island Group",
+          "year": 2016,
+          "value": 34
+        },
+        {
+          "id": "islands",
+          "label": "Island Group",
+          "year": 2020,
+          "value": 53
+        },
+        {
+          "id": "islands",
+          "label": "Island Group",
+          "year": 2024,
+          "value": 71
+        },
+        {
+          "id": "central",
+          "label": "Central Region",
+          "year": 2016,
+          "value": 58
+        },
+        {
+          "id": "central",
+          "label": "Central Region",
+          "year": 2020,
+          "value": 59
+        },
+        {
+          "id": "central",
+          "label": "Central Region",
+          "year": 2024,
+          "value": 63
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "topN": 8
+    },
+    {
+      "id": "revenue-bridge",
+      "version": "1.0",
+      "title": "Growth is doing the heavy lifting",
+      "subtitle": "Annual recurring revenue bridge · $m",
+      "takeaway": "New business offsets churn and brings revenue above target.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "Growth is doing the heavy lifting. New business offsets churn and brings revenue above target."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "currency",
+        "digits": 0,
+        "currency": "USD",
+        "unit": "m"
+      },
+      "annotations": [
+        {
+          "id": "new-business",
+          "text": "Start at $80m. New business adds $35m to the same baseline.",
+          "entityId": "new"
+        },
+        {
+          "id": "offset",
+          "text": "Expansion adds $18m. Churn and currency remove $15m, leaving $118m."
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "contribution",
+      "data": [
+        {
+          "id": "new",
+          "label": "New",
+          "value": 35
+        },
+        {
+          "id": "expand",
+          "label": "Expand",
+          "value": 18
+        },
+        {
+          "id": "churn",
+          "label": "Churn",
+          "value": -12
+        },
+        {
+          "id": "fx",
+          "label": "FX",
+          "value": -3
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "value": "value"
+      },
+      "baseline": 80,
+      "kpi": {
+        "label": "Recurring revenue",
+        "comparison": 80,
+        "target": 110,
+        "direction": "up",
+        "sparkline": [
+          62,
+          70,
+          74,
+          80,
+          98,
+          118
+        ]
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "chapter-trend",
+      "visualId": "energy-lines",
+      "chapter": "01 · The trend",
+      "title": "First, see the shift over time",
+      "caption": "A comparison of trajectories explains the shape of change.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "lead"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "chapter-rank",
+      "visualId": "clean-ranking",
+      "chapter": "02 · The leaders",
+      "title": "Then, see who leads",
+      "caption": "A ranking answers a different analytical question with the same story controls.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "rank-end"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "chapter-kpi",
+      "visualId": "revenue-bridge",
+      "chapter": "03 · The drivers",
+      "title": "Finally, explain a headline KPI",
+      "caption": "This independent commercial example shows how the wrapper can cross figure families without a CMS.",
+      "state": {},
+      "focusIds": [],
+      "annotationIds": [
+        "offset"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "scenes": [
+    {
+      "sceneId": "opening",
+      "violations": []
+    },
+    {
+      "sceneId": "momentum",
+      "violations": []
+    },
+    {
+      "sceneId": "crossover",
+      "violations": []
+    },
+    {
+      "sceneId": "new-order",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

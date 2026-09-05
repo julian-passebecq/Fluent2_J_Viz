@@ -1,0 +1,211 @@
+{
+  "id": "city-bubbles-story",
+  "version": "1.0",
+  "title": "Prosperity with a smaller footprint",
+  "description": "Cities can gain income while reducing emissions.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "city-bubbles",
+      "version": "1.0",
+      "title": "Prosperity with a smaller footprint",
+      "subtitle": "Income index × emissions per resident · bubble area = population",
+      "takeaway": "Cities can gain income while reducing emissions.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "Prosperity with a smaller footprint. Cities can gain income while reducing emissions."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "bubble-start",
+          "text": "Each circle is a city. Circle area encodes population, while position compares two measures."
+        },
+        {
+          "id": "bubble-end",
+          "text": "Aster moves furthest down and right: higher income, lower emissions.",
+          "entityId": "aster"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "scatter",
+      "data": [
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2016,
+          "x": 40,
+          "y": 12,
+          "population": 8,
+          "category": "aster"
+        },
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2020,
+          "x": 61,
+          "y": 9,
+          "population": 8,
+          "category": "aster"
+        },
+        {
+          "id": "aster",
+          "label": "Aster",
+          "year": 2024,
+          "x": 91,
+          "y": 5,
+          "population": 8,
+          "category": "aster"
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2016,
+          "x": 60,
+          "y": 10,
+          "population": 5,
+          "category": "birch"
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2020,
+          "x": 70,
+          "y": 8,
+          "population": 5,
+          "category": "birch"
+        },
+        {
+          "id": "birch",
+          "label": "Birch",
+          "year": 2024,
+          "x": 87,
+          "y": 7,
+          "population": 5,
+          "category": "birch"
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2016,
+          "x": 31,
+          "y": 8,
+          "population": 3,
+          "category": "cove"
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2020,
+          "x": 48,
+          "y": 7,
+          "population": 3,
+          "category": "cove"
+        },
+        {
+          "id": "cove",
+          "label": "Cove",
+          "year": 2024,
+          "x": 66,
+          "y": 4,
+          "population": 3,
+          "category": "cove"
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "x": "x",
+        "y": "y",
+        "size": "population",
+        "category": "category"
+      },
+      "xLabel": "Income index",
+      "yLabel": "Emissions per resident",
+      "xDomain": [
+        20,
+        110
+      ],
+      "yDomain": [
+        0,
+        15
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "cities-start",
+      "visualId": "city-bubbles",
+      "title": "Three cities, different starting points",
+      "caption": "Compare income and emissions before following the trajectories.",
+      "state": {
+        "time": 2016
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "bubble-start"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "cities-middle",
+      "visualId": "city-bubbles",
+      "title": "Progress has a direction",
+      "caption": "Down and right means lower emissions and higher income.",
+      "state": {
+        "time": 2020
+      },
+      "focusIds": [
+        "aster"
+      ],
+      "annotationIds": [],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "cities-end",
+      "visualId": "city-bubbles",
+      "title": "Aster travels the furthest",
+      "caption": "The final snapshot makes each city’s position directly comparable.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "bubble-end"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

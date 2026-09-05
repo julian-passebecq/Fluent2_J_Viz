@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "demand-past",
+      "violations": []
+    },
+    {
+      "sceneId": "demand-near",
+      "violations": []
+    },
+    {
+      "sceneId": "demand-future",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

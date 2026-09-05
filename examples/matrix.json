@@ -1,0 +1,226 @@
+{
+  "id": "regional-matrix-story",
+  "version": "1.0",
+  "title": "See where the quarter was made",
+  "description": "North contributes more revenue; South has the larger second-quarter increase.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "regional-matrix",
+      "version": "1.0",
+      "title": "See where the quarter was made",
+      "subtitle": "Revenue by region, team and quarter · $m",
+      "takeaway": "North contributes more revenue; South has the larger second-quarter increase.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "See where the quarter was made. North contributes more revenue; South has the larger second-quarter increase."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "matrix-read",
+          "text": "Indented rows are leaf teams. Region and year subtotals aggregate the underlying cells once."
+        },
+        {
+          "id": "matrix-south",
+          "text": "South grows from $16m to $28m. Grand totals use leaves, so subtotals are never double-counted.",
+          "entityId": "south"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "matrix",
+      "rowLabel": "Region / team",
+      "rows": [
+        {
+          "id": "north",
+          "label": "North"
+        },
+        {
+          "id": "north-direct",
+          "label": "Direct",
+          "parentId": "north"
+        },
+        {
+          "id": "north-partner",
+          "label": "Partner",
+          "parentId": "north"
+        },
+        {
+          "id": "south",
+          "label": "South"
+        },
+        {
+          "id": "south-direct",
+          "label": "Direct",
+          "parentId": "south"
+        },
+        {
+          "id": "south-partner",
+          "label": "Partner",
+          "parentId": "south"
+        }
+      ],
+      "columns": [
+        {
+          "id": "year",
+          "label": "2024"
+        },
+        {
+          "id": "q1",
+          "label": "Q1",
+          "parentId": "year"
+        },
+        {
+          "id": "q2",
+          "label": "Q2",
+          "parentId": "year"
+        }
+      ],
+      "measures": [
+        {
+          "key": "revenue",
+          "label": "Revenue",
+          "format": {
+            "style": "currency",
+            "digits": 0,
+            "currency": "USD",
+            "unit": "m"
+          },
+          "aggregate": "sum",
+          "dataBar": true
+        }
+      ],
+      "data": [
+        {
+          "rowId": "north-direct",
+          "columnId": "q1",
+          "values": {
+            "revenue": 21
+          }
+        },
+        {
+          "rowId": "north-direct",
+          "columnId": "q2",
+          "values": {
+            "revenue": 25
+          }
+        },
+        {
+          "rowId": "north-partner",
+          "columnId": "q1",
+          "values": {
+            "revenue": 13
+          }
+        },
+        {
+          "rowId": "north-partner",
+          "columnId": "q2",
+          "values": {
+            "revenue": 15
+          }
+        },
+        {
+          "rowId": "south-direct",
+          "columnId": "q1",
+          "values": {
+            "revenue": 10
+          }
+        },
+        {
+          "rowId": "south-direct",
+          "columnId": "q2",
+          "values": {
+            "revenue": 18
+          }
+        },
+        {
+          "rowId": "south-partner",
+          "columnId": "q1",
+          "values": {
+            "revenue": 6
+          }
+        },
+        {
+          "rowId": "south-partner",
+          "columnId": "q2",
+          "values": {
+            "revenue": 10
+          }
+        }
+      ],
+      "grandTotals": true
+    }
+  ],
+  "scenes": [
+    {
+      "id": "regions-overview",
+      "visualId": "regional-matrix",
+      "title": "From teams to regions",
+      "caption": "Rows and columns retain their hierarchy, with subtotals after their children.",
+      "state": {},
+      "focusIds": [],
+      "annotationIds": [
+        "matrix-read"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "regions-south",
+      "visualId": "regional-matrix",
+      "title": "South’s second quarter stands out",
+      "caption": "Focus on South and its teams to compare quarters.",
+      "state": {},
+      "focusIds": [
+        "south"
+      ],
+      "annotationIds": [
+        "matrix-south"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "regions-end",
+      "visualId": "regional-matrix",
+      "title": "Return to the overall picture",
+      "caption": "Grand totals reconcile the two regions and their underlying teams.",
+      "state": {},
+      "focusIds": [],
+      "annotationIds": [
+        "matrix-read",
+        "matrix-south"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

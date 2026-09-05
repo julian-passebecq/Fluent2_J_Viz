@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "portfolio-overview",
+      "violations": []
+    },
+    {
+      "sceneId": "portfolio-focus",
+      "violations": []
+    },
+    {
+      "sceneId": "portfolio-end",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

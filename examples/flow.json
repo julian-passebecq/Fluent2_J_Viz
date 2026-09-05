@@ -1,0 +1,159 @@
+{
+  "id": "energy-flow-story",
+  "version": "1.0",
+  "title": "Follow the energy to its destination",
+  "description": "Most renewable generation goes directly to homes and industry.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "energy-flow",
+      "version": "1.0",
+      "title": "Follow the energy to its destination",
+      "subtitle": "Energy allocation · illustrative units",
+      "takeaway": "Most renewable generation goes directly to homes and industry.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "Follow the energy to its destination. Most renewable generation goes directly to homes and industry."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "flow-read",
+          "text": "Band width encodes allocation. The diagram stays still at each scene."
+        },
+        {
+          "id": "storage",
+          "text": "Seventeen units are directed to storage. Connected bands remain visible when a node is focused.",
+          "entityId": "storage"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "flow",
+      "nodes": [
+        {
+          "id": "renewable",
+          "label": "Renewable"
+        },
+        {
+          "id": "grid",
+          "label": "Other"
+        },
+        {
+          "id": "homes",
+          "label": "Homes"
+        },
+        {
+          "id": "industry",
+          "label": "Industry"
+        },
+        {
+          "id": "storage",
+          "label": "Storage"
+        }
+      ],
+      "links": [
+        {
+          "id": "r-h",
+          "source": "renewable",
+          "target": "homes",
+          "value": 48
+        },
+        {
+          "id": "r-i",
+          "source": "renewable",
+          "target": "industry",
+          "value": 35
+        },
+        {
+          "id": "r-s",
+          "source": "renewable",
+          "target": "storage",
+          "value": 17
+        },
+        {
+          "id": "g-h",
+          "source": "grid",
+          "target": "homes",
+          "value": 22
+        },
+        {
+          "id": "g-i",
+          "source": "grid",
+          "target": "industry",
+          "value": 38
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "flow-overview",
+      "visualId": "energy-flow",
+      "title": "Read the whole allocation",
+      "caption": "Each band connects a source to its destination.",
+      "state": {},
+      "focusIds": [],
+      "annotationIds": [
+        "flow-read"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "flow-renewable",
+      "visualId": "energy-flow",
+      "title": "Follow renewable generation",
+      "caption": "Highlight the renewable source and its connected bands.",
+      "state": {},
+      "focusIds": [
+        "renewable"
+      ],
+      "annotationIds": [],
+      "transition": {
+        "intent": "focus-reveal",
+        "durationMs": 400
+      }
+    },
+    {
+      "id": "flow-storage",
+      "visualId": "energy-flow",
+      "title": "A smaller share goes to storage",
+      "caption": "Storage accounts for 17 of the 100 renewable units.",
+      "state": {},
+      "focusIds": [
+        "storage"
+      ],
+      "annotationIds": [
+        "storage"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

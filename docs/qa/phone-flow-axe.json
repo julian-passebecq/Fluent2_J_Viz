@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "flow-overview",
+      "violations": []
+    },
+    {
+      "sceneId": "flow-renewable",
+      "violations": []
+    },
+    {
+      "sceneId": "flow-storage",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

@@ -1,0 +1,240 @@
+{
+  "id": "delta-events-story",
+  "version": "1.0",
+  "title": "A flood moves through the delta",
+  "description": "Events spread from the upper basin toward the estuary.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "delta-events",
+      "version": "1.0",
+      "title": "A flood moves through the delta",
+      "subtitle": "A fictional event sequence · day 1 to day 3",
+      "takeaway": "Events spread from the upper basin toward the estuary.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "A flood moves through the delta. Events spread from the upper basin toward the estuary."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "upstream",
+          "text": "Day 1: the first event appears in the upper basin.",
+          "entityId": "upper"
+        },
+        {
+          "id": "spread",
+          "text": "Day 2: two downstream events appear. Earlier events remain in place."
+        },
+        {
+          "id": "estuary",
+          "text": "Day 3: the largest impact is recorded at the estuary. Circle area represents impact units.",
+          "entityId": "mouth"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "event-map",
+      "data": [
+        {
+          "id": "upper",
+          "label": "Upper basin",
+          "day": 1,
+          "x": 29,
+          "y": 77,
+          "impact": 4
+        },
+        {
+          "id": "east",
+          "label": "Eastbank",
+          "day": 2,
+          "x": 70,
+          "y": 56,
+          "impact": 9
+        },
+        {
+          "id": "low",
+          "label": "Lowbank",
+          "day": 2,
+          "x": 39,
+          "y": 37,
+          "impact": 6
+        },
+        {
+          "id": "mouth",
+          "label": "Estuary",
+          "day": 3,
+          "x": 72,
+          "y": 17,
+          "impact": 12
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "day",
+        "x": "x",
+        "y": "y",
+        "size": "impact"
+      },
+      "coordinates": "schematic",
+      "regions": [
+        {
+          "id": "west",
+          "label": "UPLAND",
+          "points": [
+            [
+              8,
+              90
+            ],
+            [
+              49,
+              97
+            ],
+            [
+              56,
+              72
+            ],
+            [
+              45,
+              59
+            ],
+            [
+              52,
+              38
+            ],
+            [
+              32,
+              9
+            ],
+            [
+              9,
+              25
+            ]
+          ]
+        },
+        {
+          "id": "east-region",
+          "label": "LOWLAND",
+          "points": [
+            [
+              59,
+              85
+            ],
+            [
+              91,
+              75
+            ],
+            [
+              96,
+              37
+            ],
+            [
+              83,
+              4
+            ],
+            [
+              51,
+              9
+            ],
+            [
+              61,
+              39
+            ],
+            [
+              52,
+              59
+            ]
+          ]
+        }
+      ],
+      "xDomain": [
+        0,
+        100
+      ],
+      "yDomain": [
+        0,
+        100
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "flood-start",
+      "visualId": "delta-events",
+      "title": "An event in the upper basin",
+      "caption": "The first report sets the geographic context on this fictional map.",
+      "state": {
+        "time": 1
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "upstream"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "flood-spread",
+      "visualId": "delta-events",
+      "title": "The event spreads downstream",
+      "caption": "Two more reports appear while the first remains visible.",
+      "state": {
+        "time": 2
+      },
+      "focusIds": [
+        "east",
+        "low"
+      ],
+      "annotationIds": [
+        "spread"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "flood-estuary",
+      "visualId": "delta-events",
+      "title": "The largest impact reaches the estuary",
+      "caption": "Focus on the final event, with the preceding sequence retained for context.",
+      "state": {
+        "time": 3
+      },
+      "focusIds": [
+        "mouth"
+      ],
+      "annotationIds": [
+        "estuary"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

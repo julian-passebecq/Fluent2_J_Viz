@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "rank-opening",
+      "violations": []
+    },
+    {
+      "sceneId": "rank-middle",
+      "violations": []
+    },
+    {
+      "sceneId": "rank-final",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

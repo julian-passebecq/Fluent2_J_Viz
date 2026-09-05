@@ -1,0 +1,146 @@
+{
+  "id": "before-after-story",
+  "version": "1.0",
+  "title": "Every district closes part of the gap",
+  "description": "The biggest improvement occurs in Eastbank.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "before-after",
+      "version": "1.0",
+      "title": "Every district closes part of the gap",
+      "subtitle": "Access to frequent transit · percent of residents",
+      "takeaway": "The biggest improvement occurs in Eastbank.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "Every district closes part of the gap. The biggest improvement occurs in Eastbank."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD",
+        "unit": "%"
+      },
+      "annotations": [
+        {
+          "id": "access",
+          "text": "Hollow dots show the starting point; filled dots show the final state."
+        },
+        {
+          "id": "east-gap",
+          "text": "Eastbank gains 48 percentage points, the largest improvement.",
+          "entityId": "east"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "dumbbell",
+      "data": [
+        {
+          "id": "east",
+          "label": "Eastbank",
+          "start": 29,
+          "end": 77,
+          "group": "Outer"
+        },
+        {
+          "id": "north",
+          "label": "Northside",
+          "start": 44,
+          "end": 72,
+          "group": "Outer"
+        },
+        {
+          "id": "center",
+          "label": "Central",
+          "start": 68,
+          "end": 87,
+          "group": "Inner"
+        },
+        {
+          "id": "south",
+          "label": "Southgate",
+          "start": 37,
+          "end": 61,
+          "group": "Outer"
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "start": "start",
+        "end": "end",
+        "group": "group"
+      },
+      "startLabel": "2016",
+      "endLabel": "2024"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "access-overview",
+      "visualId": "before-after",
+      "title": "Access improves across districts",
+      "caption": "Read each line from the hollow starting dot to the filled final dot.",
+      "state": {},
+      "focusIds": [],
+      "annotationIds": [
+        "access"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "access-east",
+      "visualId": "before-after",
+      "title": "Eastbank makes the largest gain",
+      "caption": "Focus reveals a 48-point improvement.",
+      "state": {},
+      "focusIds": [
+        "east"
+      ],
+      "annotationIds": [
+        "east-gap"
+      ],
+      "transition": {
+        "intent": "focus-reveal",
+        "durationMs": 400
+      }
+    },
+    {
+      "id": "access-final",
+      "visualId": "before-after",
+      "title": "Compare the final positions",
+      "caption": "Central still has the highest access level, despite Eastbank’s larger gain.",
+      "state": {},
+      "focusIds": [],
+      "annotationIds": [
+        "access",
+        "east-gap"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

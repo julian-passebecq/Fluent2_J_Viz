@@ -1,0 +1,233 @@
+{
+  "id": "clean-ranking-story",
+  "version": "1.0",
+  "title": "A new order in clean energy",
+  "description": "Fast-growing coastal regions overtake the early leaders.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "clean-ranking",
+      "version": "1.0",
+      "title": "A new order in clean energy",
+      "subtitle": "Clean generation index · synthetic regions",
+      "takeaway": "Fast-growing coastal regions overtake the early leaders.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "A new order in clean energy. Fast-growing coastal regions overtake the early leaders."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "rank-start",
+          "text": "Northland begins in first place, with the Alpine Region close behind."
+        },
+        {
+          "id": "rank-change",
+          "text": "Watch the same bars move: Coast Union and Delta States climb the ranking."
+        },
+        {
+          "id": "rank-end",
+          "text": "Coast Union finishes first. Arrows show rank changes from the previous period.",
+          "entityId": "coast"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "ranking",
+      "data": [
+        {
+          "id": "north",
+          "label": "Northland",
+          "year": 2016,
+          "value": 76
+        },
+        {
+          "id": "north",
+          "label": "Northland",
+          "year": 2020,
+          "value": 84
+        },
+        {
+          "id": "north",
+          "label": "Northland",
+          "year": 2024,
+          "value": 91
+        },
+        {
+          "id": "coast",
+          "label": "Coast Union",
+          "year": 2016,
+          "value": 52
+        },
+        {
+          "id": "coast",
+          "label": "Coast Union",
+          "year": 2020,
+          "value": 73
+        },
+        {
+          "id": "coast",
+          "label": "Coast Union",
+          "year": 2024,
+          "value": 108
+        },
+        {
+          "id": "alpine",
+          "label": "Alpine Region",
+          "year": 2016,
+          "value": 69
+        },
+        {
+          "id": "alpine",
+          "label": "Alpine Region",
+          "year": 2020,
+          "value": 77
+        },
+        {
+          "id": "alpine",
+          "label": "Alpine Region",
+          "year": 2024,
+          "value": 86
+        },
+        {
+          "id": "delta",
+          "label": "Delta States",
+          "year": 2016,
+          "value": 42
+        },
+        {
+          "id": "delta",
+          "label": "Delta States",
+          "year": 2020,
+          "value": 65
+        },
+        {
+          "id": "delta",
+          "label": "Delta States",
+          "year": 2024,
+          "value": 98
+        },
+        {
+          "id": "islands",
+          "label": "Island Group",
+          "year": 2016,
+          "value": 34
+        },
+        {
+          "id": "islands",
+          "label": "Island Group",
+          "year": 2020,
+          "value": 53
+        },
+        {
+          "id": "islands",
+          "label": "Island Group",
+          "year": 2024,
+          "value": 71
+        },
+        {
+          "id": "central",
+          "label": "Central Region",
+          "year": 2016,
+          "value": 58
+        },
+        {
+          "id": "central",
+          "label": "Central Region",
+          "year": 2020,
+          "value": 59
+        },
+        {
+          "id": "central",
+          "label": "Central Region",
+          "year": 2024,
+          "value": 63
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "topN": 8
+    }
+  ],
+  "scenes": [
+    {
+      "id": "rank-opening",
+      "visualId": "clean-ranking",
+      "title": "Meet the early leaders",
+      "caption": "Northland and the Alpine Region begin ahead of the pack.",
+      "state": {
+        "time": 2016
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "rank-start"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "rank-middle",
+      "visualId": "clean-ranking",
+      "title": "The challengers move up",
+      "caption": "The coastal regions gain ground. Entity colors and keys remain stable as bars move.",
+      "state": {
+        "time": 2020
+      },
+      "focusIds": [
+        "coast",
+        "delta"
+      ],
+      "annotationIds": [
+        "rank-change"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "rank-final",
+      "visualId": "clean-ranking",
+      "title": "A new leader emerges",
+      "caption": "Coast Union reaches first place, while Delta States rises to second.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "rank-end"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

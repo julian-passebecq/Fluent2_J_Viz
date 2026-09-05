@@ -1,0 +1,183 @@
+{
+  "id": "demand-outlook-story",
+  "version": "1.0",
+  "title": "The direction is clearer than the destination",
+  "description": "Uncertainty widens as the forecast horizon grows.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "demand-outlook",
+      "version": "1.0",
+      "title": "The direction is clearer than the destination",
+      "subtitle": "Electricity demand index · observed and scenario values",
+      "takeaway": "Uncertainty widens as the forecast horizon grows.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "The direction is clearer than the destination. Uncertainty widens as the forecast horizon grows."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "observed",
+          "text": "The solid segment shows the observed portion of this synthetic scenario."
+        },
+        {
+          "id": "uncertain",
+          "text": "The dashed segment is a projection; the shaded band is the 80% illustrative scenario interval. It is not a guarantee."
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "forecast",
+      "data": [
+        {
+          "id": "demand",
+          "label": "Demand",
+          "year": 2020,
+          "value": 90,
+          "low": 90,
+          "high": 90,
+          "projected": false
+        },
+        {
+          "id": "demand",
+          "label": "Demand",
+          "year": 2021,
+          "value": 95,
+          "low": 95,
+          "high": 95,
+          "projected": false
+        },
+        {
+          "id": "demand",
+          "label": "Demand",
+          "year": 2022,
+          "value": 101,
+          "low": 101,
+          "high": 101,
+          "projected": false
+        },
+        {
+          "id": "demand",
+          "label": "Demand",
+          "year": 2023,
+          "value": 109,
+          "low": 109,
+          "high": 109,
+          "projected": false
+        },
+        {
+          "id": "demand",
+          "label": "Demand",
+          "year": 2024,
+          "value": 121,
+          "low": 111,
+          "high": 134,
+          "projected": true
+        },
+        {
+          "id": "demand",
+          "label": "Demand",
+          "year": 2025,
+          "value": 135,
+          "low": 115,
+          "high": 161,
+          "projected": true
+        },
+        {
+          "id": "demand",
+          "label": "Demand",
+          "year": 2026,
+          "value": 151,
+          "low": 121,
+          "high": 190,
+          "projected": true
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value",
+        "lower": "low",
+        "upper": "high",
+        "forecast": "projected"
+      },
+      "intervalLabel": "80% illustrative scenario interval"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "demand-past",
+      "visualId": "demand-outlook",
+      "title": "Start with the observed period",
+      "caption": "A solid line describes the historical part of this demonstration.",
+      "state": {
+        "time": 2023
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "observed"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "demand-near",
+      "visualId": "demand-outlook",
+      "title": "Cross into the scenario",
+      "caption": "A dashed line and a shaded interval distinguish projected values.",
+      "state": {
+        "time": 2024
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "uncertain"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "demand-future",
+      "visualId": "demand-outlook",
+      "title": "The range grows with the horizon",
+      "caption": "The final state shows the entire interval so the central estimate never stands alone.",
+      "state": {
+        "time": 2026
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "uncertain"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

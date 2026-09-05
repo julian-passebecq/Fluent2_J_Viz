@@ -1,0 +1,17 @@
+{
+  "scenes": [
+    {
+      "sceneId": "cities-start",
+      "violations": []
+    },
+    {
+      "sceneId": "cities-middle",
+      "violations": []
+    },
+    {
+      "sceneId": "cities-end",
+      "violations": []
+    }
+  ],
+  "violations": []
+}

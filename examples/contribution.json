@@ -1,0 +1,152 @@
+{
+  "id": "revenue-bridge-story",
+  "version": "1.0",
+  "title": "Growth is doing the heavy lifting",
+  "description": "New business offsets churn and brings revenue above target.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "revenue-bridge",
+      "version": "1.0",
+      "title": "Growth is doing the heavy lifting",
+      "subtitle": "Annual recurring revenue bridge · $m",
+      "takeaway": "New business offsets churn and brings revenue above target.",
+      "source": "VizForge synthetic demonstration data, 2026",
+      "note": "Illustrative values, not observed statistics or a prediction.",
+      "accessibility": {
+        "summary": "Growth is doing the heavy lifting. New business offsets churn and brings revenue above target."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "currency",
+        "digits": 0,
+        "currency": "USD",
+        "unit": "m"
+      },
+      "annotations": [
+        {
+          "id": "new-business",
+          "text": "Start at $80m. New business adds $35m to the same baseline.",
+          "entityId": "new"
+        },
+        {
+          "id": "offset",
+          "text": "Expansion adds $18m. Churn and currency remove $15m, leaving $118m."
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "contribution",
+      "data": [
+        {
+          "id": "new",
+          "label": "New",
+          "value": 35
+        },
+        {
+          "id": "expand",
+          "label": "Expand",
+          "value": 18
+        },
+        {
+          "id": "churn",
+          "label": "Churn",
+          "value": -12
+        },
+        {
+          "id": "fx",
+          "label": "FX",
+          "value": -3
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "value": "value"
+      },
+      "baseline": 80,
+      "kpi": {
+        "label": "Recurring revenue",
+        "comparison": 80,
+        "target": 110,
+        "direction": "up",
+        "sparkline": [
+          62,
+          70,
+          74,
+          80,
+          98,
+          118
+        ]
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "revenue-new",
+      "visualId": "revenue-bridge",
+      "title": "New business creates headroom",
+      "caption": "Add new business to the $80m starting baseline.",
+      "state": {
+        "revealCount": 1
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "new-business"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "revenue-expand",
+      "visualId": "revenue-bridge",
+      "title": "Expansion adds another layer",
+      "caption": "Existing customers contribute another $18m before losses are accounted for.",
+      "state": {
+        "revealCount": 2
+      },
+      "focusIds": [
+        "expand"
+      ],
+      "annotationIds": [],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "revenue-final",
+      "visualId": "revenue-bridge",
+      "title": "Net growth clears the target",
+      "caption": "After churn and currency effects, the final KPI reaches $118m against a $110m target.",
+      "state": {
+        "revealCount": 4
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "offset"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}
