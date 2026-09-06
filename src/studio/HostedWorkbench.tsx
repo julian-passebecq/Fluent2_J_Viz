@@ -46,6 +46,7 @@ export function HostedWorkbench({
   const [frame, setFrame] = useState(0);
   const scene = story.scenes[frame];
   const visual = story.visuals.find((visual) => visual.id === scene.visualId)!;
+  const annotations = visual.annotations.filter((annotation) => scene.annotationIds.includes(annotation.id));
   const figure = useMemo(() => storyFigure(story), [story]);
   const renderHandle = useRef<Renderer | null>(null);
   const playerHost = useRef<HTMLElement>(null);
@@ -98,6 +99,25 @@ export function HostedWorkbench({
                   <h2>{scene.title}</h2>
                 </div>
               </div>
+              <aside className="scene-explanation" aria-label="Current scene explanation">
+                <div className="scene-explanation-copy">
+                  <span className="scene-explanation-label">WHAT HAPPENS IN THIS STEP</span>
+                  <p>{scene.caption}</p>
+                </div>
+                {annotations.length > 0 && (
+                  <div className="scene-focus-copy">
+                    <span className="scene-explanation-label">LOOK HERE</span>
+                    <ul>
+                      {annotations.map((annotation) => (
+                        <li key={annotation.id}>
+                          <span className={annotation.shortText ? 'annotation-full' : undefined}>{annotation.text}</span>
+                          {annotation.shortText && <span className="annotation-short">{annotation.shortText}</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </aside>
               <RenderHandle.Provider value={renderHandle}>
                 <FigurePlayer
                   figure={figure}
