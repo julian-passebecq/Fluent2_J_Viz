@@ -1,0 +1,12 @@
+[build]
+  command = "node --experimental-strip-types scripts/bootstrap-framework.ts && pnpm install --frozen-lockfile && pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24.19.0"
+  PNPM_VERSION = "11.19.0"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
