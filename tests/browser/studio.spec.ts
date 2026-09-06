@@ -10,11 +10,13 @@ test.beforeEach(async ({ page }) => {
 test('primary React flow, keyboard playback, deterministic reset and no autoplay', async ({ page }) => {
   const preview = page.getByRole('region', { name: 'Story preview', exact: true });
   await expect(page.locator('.vf-figure')).toHaveAttribute('data-scene-id', 'opening');
+  await expect(page.locator('.scene-explanation')).toContainText(catalog[0].story.scenes[0].caption);
   await page.waitForTimeout(2700);
   await expect(page.locator('.vf-figure')).toHaveAttribute('data-scene-id', 'opening');
   await preview.focus();
   await page.keyboard.press('ArrowRight');
   await expect(page.locator('.vf-figure')).toHaveAttribute('data-scene-id', 'momentum');
+  await expect(page.locator('.scene-explanation')).toContainText(catalog[0].story.scenes[1].caption);
   await page.keyboard.press('ArrowLeft');
   await expect(page.locator('.vf-figure')).toHaveAttribute('data-scene-id', 'opening');
   await page.getByRole('button', { name: 'Play', exact: true }).click();
@@ -46,6 +48,7 @@ for (const family of catalog)
         .click();
       await expect(page.locator('.vf-figure')).toHaveAttribute('data-scene-id', family.story.scenes[i].id);
       await expect(page.locator('.vf-figure')).toHaveAttribute('data-transition-ms', '0');
+      await expect(page.locator('.scene-explanation')).toContainText(family.story.scenes[i].caption);
       expect(await page.locator('.vf-figure').innerHTML()).not.toMatch(/NaN|Infinity/);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       const axe = await new AxeBuilder({ page }).exclude('[data-tabster-dummy]').analyze();
