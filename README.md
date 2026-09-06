@@ -62,7 +62,7 @@ Existing renderer APIs and V1 specs remain compatible. New families explicitly u
 - [Architecture](VIZFORGE_ARCHITECTURE.md), [spec reference](VIZFORGE_SPEC_REFERENCE.md), [visual catalog](VIZFORGE_VISUAL_CATALOG.md)
 - [Datapass integration](DATAPASS_INTEGRATION.md), [framework limits](FRAMEWORK_GAPS.md)
 - [Data provenance and hashes](docs/DATA_PROVENANCE.json), [canonical JSON](examples/)
-- [QA report](QA_REPORT.md), [release report](VIZFORGE_V1_1_RELEASE_REPORT.md)
+- [QA report](QA_REPORT.md), [release report](VIZFORGE_V1_2_RELEASE_REPORT.md)
 - [Future Power BI boundary](POWERBI_EXPORT_PLAN.md)
 
 V1.2 starts from exact merged VizForge `423e7ecaedbe4f922665938eb013f6bf1bd11e7b`. Its ordered brief is preserved in `docs/brief-v1.2/`. AI/function calling, article ingestion, a full scrollytelling CMS and Power BI packaging remain deferred.

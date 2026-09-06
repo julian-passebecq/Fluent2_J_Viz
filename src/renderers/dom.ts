@@ -50,6 +50,7 @@ export function createRenderer(host: HTMLElement): Renderer {
   host.append(figure);
   const media = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : undefined;
   let last: { spec: VisualizationSpec; scene?: Scene; options: RenderOptions } | undefined;
+  let paintedWidth: number | undefined;
   let dead = false;
   function paint(spec: VisualizationSpec, scene?: Scene, options: RenderOptions = {}) {
     if (dead) return;
@@ -57,6 +58,7 @@ export function createRenderer(host: HTMLElement): Renderer {
       same = last?.spec.id === spec.id;
     last = { spec, scene, options };
     const width = options.width ?? (host.getBoundingClientRect().width || 800);
+    paintedWidth = width;
     const reduced = options.reducedMotion === true || media?.matches === true;
     const duration =
       reduced || options.animate === false || !hadLast || (!same && scene?.transition.intent !== 'scene')
@@ -160,7 +162,10 @@ export function createRenderer(host: HTMLElement): Renderer {
   const resize =
     typeof ResizeObserver === 'function'
       ? new ResizeObserver(() => {
-          if (last && !last.options.width) settle();
+          if (!last || last.options.width || paintedWidth === undefined) return;
+          const nextWidth = host.getBoundingClientRect().width;
+          // Layout is width-driven. Narrative/annotation height reflow must not interrupt an active D3 transition.
+          if (Number.isFinite(nextWidth) && nextWidth > 0 && Math.abs(nextWidth - paintedWidth) > 0.5) settle();
         })
       : undefined;
   resize?.observe(host);

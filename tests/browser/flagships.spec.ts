@@ -86,17 +86,36 @@ for (const [id, selector, attribute] of [
     await page.goto(`/?story=${id}`);
     const mark = page.locator(selector);
     const start = Number(await mark.getAttribute(attribute));
-    await mark.evaluate((element) => {
-      (window as any).__flagshipMark = element;
-    });
+    await mark.evaluate(
+      (element, sampledAttribute) => {
+        const state = { values: [] as number[], done: false };
+        (window as any).__flagshipMotion = state;
+        (window as any).__flagshipMark = element;
+        const started = performance.now();
+        const sample = () => {
+          const value = Number(element.getAttribute(sampledAttribute));
+          if (Number.isFinite(value)) state.values.push(value);
+          if (performance.now() - started < 900) requestAnimationFrame(sample);
+          else state.done = true;
+        };
+        requestAnimationFrame(sample);
+      },
+      attribute,
+    );
     await page.getByRole('button', { name: 'Next', exact: true }).click();
-    await page.waitForTimeout(200);
-    const middle = Number(await mark.getAttribute(attribute));
-    await page.waitForTimeout(650);
+    await expect
+      .poll(() => page.evaluate(() => (window as any).__flagshipMotion?.done === true), {
+        timeout: 1500,
+      })
+      .toBe(true);
+    const samples = await page.evaluate(() => (window as any).__flagshipMotion.values as number[]);
     const end = Number(await mark.getAttribute(attribute));
     expect(end).not.toBe(start);
-    expect(middle).toBeGreaterThan(Math.min(start, end));
-    expect(middle).toBeLessThan(Math.max(start, end));
+    const low = Math.min(start, end),
+      high = Math.max(start, end),
+      epsilon = Math.max(1e-6, Math.abs(end - start) * 1e-6);
+    expect(samples.some((value) => value > low + epsilon && value < high - epsilon)).toBe(true);
+    expect(Number(await page.locator('.vf-figure').getAttribute('data-transition-ms'))).toBeGreaterThan(0);
     expect(await mark.evaluate((element) => element === (window as any).__flagshipMark)).toBe(true);
     await page.getByRole('region', { name: 'Story preview', exact: true }).focus();
     await page.keyboard.press(' ');

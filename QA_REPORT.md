@@ -1,14 +1,14 @@
 # QA report
 
-## V1.2 checkpoint — pushed at user request before usage exhaustion
+## V1.2 release finalization
 
-Implemented four real-data flagships, provenance/hash verification, canonical Datapass lineage coexistence, phone annotations and geographic context. Exact start: `423e7ecaedbe4f922665938eb013f6bf1bd11e7b`; exact Datapass pin: `30e69639bfc3929c348fd8f9c6c38a2cb61984d8`, 107 unmodified files. All 22 original canonical fixture hashes match the baseline.
+Checkpoint `ddcb9d6067a70db2a4b03c566039f7c169789308` was audited against hosted PR run `34000531270`. The exact checkpoint passed Datapass bootstrap (107 immutable files at `30e69639bfc3929c348fd8f9c6c38a2cb61984d8`), frozen install, typecheck, provenance/spec validation, 138 unit tests, production/library build, bundle audit, the independent packed React 18 proof, and 79 of 80 production browser tests.
 
-Verified locally: frozen install, spec/provenance validation, 137 unit tests, production/library build, independent packed React 18 mount/step/reduced-motion/unmount, and the initial 14 flagship production browser checks at desktop/390px. Those flagship checks had zero serious/critical Axe findings, zero page overflow, no external requests and no page errors. The broader 80-test release run is recorded in `.local/v1.2-release-gate.log`.
+The sole hosted failure was the 390px `flagship-time` intermediate-motion proof. Trace evidence showed this was a real phone-only jump, not a delayed first frame: the China focus point started at `cy=271.7204586722432`; after advancing to 2010 it was already at the final `cy=229.98245505459238`, and the rendered figure reported `data-transition-ms="0"` before the old 200ms sample. The renderer's `ResizeObserver` settled on any host resize. On the narrow layout, narrative/annotation height reflow therefore interrupted the active D3 transition even though visualization geometry depends only on width.
 
-Final review then corrected the React 18 evidence report's hardcoded version, made phone annotation priority follow scene order (one additional unit regression), labeled the main Japan polygon, refined the four-card layout, and added keyboard verification for the lineage scrolling viewport. **The final candidate still requires the complete release gate on its exact SHA.** Existing screenshot/evidence files precede those last refinements and must not be represented as exact final-SHA proof.
+The release-finalization fix restricts resize settlement to a genuine host-width change. The browser acceptance test no longer assumes one magic 200ms sampling instant: it samples animation frames for a bounded 900ms window, requires at least one coordinate strictly between start and final values, requires a nonzero scheduled transition, and proves the same DOM node survives. A direct jump from start to end cannot satisfy this test.
 
-Resume by inspecting the PR's exact-head push CI. Fix any failures, run `pnpm release:gate`, and require successful push CI on the exact delivered branch SHA before merging. After merge, verify `main` push CI and its `hosted-release.json` artifact. The user requested an immediate push to preserve work with only 1% usage remaining; this checkpoint is not a completed release or merge approval bypass.
+No V1.2 scope was expanded during finalization. The 15 visual families, 22 original canonical examples, four real-data flagships, provenance, cross-engine lineage workbench, React 18 packed-host proof, single Datapass FigurePlayer ownership, and deferred Power BI/AI/article/CMS boundaries remain unchanged. Delivery still requires a green complete `pnpm release:gate` on the exact continuation SHA, then PR #2 at that same head, followed by green post-merge `main` CI and the generated `docs/qa/hosted-release.json` artifact.
 
 ## Historical V1/V1.1 evidence
 
