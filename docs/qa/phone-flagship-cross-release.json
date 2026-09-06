@@ -1,0 +1,26 @@
+{
+  "reports": [
+    {
+      "scene": "cross-path",
+      "overflow": 0,
+      "seriousCritical": 0
+    },
+    {
+      "scene": "cross-order",
+      "overflow": 0,
+      "seriousCritical": 0
+    },
+    {
+      "scene": "cross-share-start",
+      "overflow": 0,
+      "seriousCritical": 0
+    },
+    {
+      "scene": "cross-share-end",
+      "overflow": 0,
+      "seriousCritical": 0
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": []
+}

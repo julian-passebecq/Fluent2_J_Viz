@@ -1,6 +1,17 @@
-# VizForge visual catalog — V1.1
+# VizForge visual catalog — V1.2
 
-**15 reusable families; 22 canonical visual/story examples.** All data and region geometry are synthetic, with source/note metadata and SHA-256 provenance in `docs/DATA_PROVENANCE.json`. Every example is available in the real Datapass Studio and uses the same D3 renderer as the standalone host.
+**15 reusable families; 22 original synthetic examples plus four real-data flagship stories (26 total).** Source/note metadata and canonical hashes are in `docs/DATA_PROVENANCE.json`; real source snapshots, licenses and transformation hashes are in `data/provenance.json` and `DATA_PROVENANCE.md`. Every example is available in the real Datapass Studio and uses the same D3 renderer as the standalone host.
+
+## Real-data flagship collection
+
+| Story                            | Canonical file / direct Studio entry                          | Narrative                                                                        |
+| -------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| The changing GDP gap             | `examples/flagship-time.json` · `/?story=flagship-time`       | Annual dollar paths; moving country focus and evidence-based gap comparison.     |
+| When the GDP order changes       | `examples/flagship-ranking.json` · `/?story=flagship-ranking` | Five-country order, annual rank deltas, Germany/Japan crossing.                  |
+| Tohoku, event by event           | `examples/flagship-events.json` · `/?story=flagship-events`   | Four observed UTC event steps on a pinned coarse Japan coastline.                |
+| One GDP dataset, three questions | `examples/flagship-cross.json` · `/?story=flagship-cross`     | Canonical Datapass lineage plus VizForge line → ranking → selected-group shares. |
+
+The original synthetic examples below remain intact. Flagships are authored with the existing pure `timelineStory` and `chapterStory` helpers in `src/examples/flagships.ts`, not a new family or story grammar. All four have readable manual steps, no autoplay, direct labels, sources, notes and phone-specific concise annotations with full disclosure.
 
 | Family                       | Canonical story                 | Analytical use                                                                |
 | ---------------------------- | ------------------------------- | ----------------------------------------------------------------------------- |

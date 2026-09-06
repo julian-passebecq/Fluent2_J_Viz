@@ -1,3 +1,57 @@
+.evidence-canvas {
+  min-width: 0;
+}
+.lineage-panel {
+  padding: 22px;
+  border-bottom: 1px solid #d7ddce;
+  background: #f8faf5;
+}
+.lineage-panel .dp-figure-frame {
+  margin-top: 12px;
+}
+.flagships {
+  margin-bottom: 36px;
+}
+.flagships .story-pack-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 540px) {
+  .flagships .story-pack-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.flagship-card {
+  position: relative;
+  border-top: 3px solid #207466;
+}
+.flagship-number {
+  display: block;
+  font-size: 32px;
+  color: #207466;
+  margin-bottom: 16px;
+  font-weight: 350;
+}
+@media (max-width: 540px) {
+  .lineage-panel {
+    padding: 12px;
+  }
+}
+.lineage-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  outline-offset: 3px;
+}
+.lineage-scroll:focus-visible {
+  outline: 2px solid #207466;
+}
+.lineage-readable {
+  min-width: 760px;
+}
+.lineage-hint {
+  color: #4f5d64;
+  font-size: 12px;
+  line-height: 1.6;
+}
 .studio-toolbar {
   display: flex;
   align-items: center;

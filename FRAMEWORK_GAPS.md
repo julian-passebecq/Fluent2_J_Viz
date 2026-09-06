@@ -1,5 +1,15 @@
 # Framework gaps and intentional boundaries
 
+## V1.2 evidence at the accepted pin
+
+Current Datapass dependency: `30e69639bfc3929c348fd8f9c6c38a2cb61984d8`; all 107 selected files are byte-verified before/after release. No framework patches.
+
+New concrete reproduction: render the canonical `medallion-asset-lineage` through `FigureView`, `presentationSize="compact"`, inside a 390px Fluent workbench. `packages/svg/src/renderers/lineage.ts:lineageGeometry` sets width to at least 960 even for a single vertical lane. `recommendedSceneViewport` retains that width, and the React SVG scales to its container. At a 328px inner width, 12px scene text becomes about 4px on screen; changing compact/regular does not solve it. Impact: the source-to-KPI proof is technically visible but its diagram text is unreadable on phones. The consumer uses a labeled horizontal scrolling surface with 760px minimum content width and shortened authored labels. Full semantics remain in the Figure fallback. A framework content-fitted viewport could improve this later; no renderer or geometry is patched here.
+
+Retained evidence: authored VizForge `intervalMs` still differs from FigurePlayer's native 1200ms/speed cadence; no second timer is added. An optional imperative player handle would avoid the existing consumer shortcut bridge to native buttons. Renderer-specific export remains a consumer action; the registry supplies no generic VizForge export implementation. Selecting the canonical subpath deliberately imports its supported source dependency closure (107 files); no alternate bootstrap is introduced. TypeScript unused-code policy and the large lazy Monaco chunk remain unchanged.
+
+## Historical V1.1 observations
+
 The external registry/bootstrap seam is accepted and integrated at `8fef4d0b542bfbb11b0ff80ec81710db3f6c8d55`. There is no remaining integration blocker and no framework source was patched.
 
 - FigurePlayer owns the hosted clock, controls and reduced-motion autoplay policy. Its accepted cadence is 1200 ms divided by the selected speed. VizForge `intervalMs` continues to govern standalone playback only; the consumer does not add a timer to emulate that interval inside Datapass.

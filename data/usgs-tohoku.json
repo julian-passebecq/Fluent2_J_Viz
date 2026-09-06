@@ -1,0 +1,50 @@
+[
+  {
+    "id": "usp000hvhj",
+    "label": "03-09 · M7.3",
+    "place": "120 km SE of ?funato, Japan",
+    "time": 1299638720330,
+    "longitude": 142.842,
+    "latitude": 38.435,
+    "depth": 32,
+    "magnitude": 7.3,
+    "magnitudeType": "mww",
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000hvhj"
+  },
+  {
+    "id": "official20110311054624120_30",
+    "label": "03-11 · M9.1",
+    "place": "2011 Great Tohoku Earthquake, Japan",
+    "time": 1299822384120,
+    "longitude": 142.373,
+    "latitude": 38.297,
+    "depth": 29,
+    "magnitude": 9.1,
+    "magnitudeType": "mww",
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30"
+  },
+  {
+    "id": "usp000hvpa",
+    "label": "03-11 · M7.9",
+    "place": "47 km E of ?arai, Japan",
+    "time": 1299824140280,
+    "longitude": 141.111,
+    "latitude": 36.281,
+    "depth": 42.6,
+    "magnitude": 7.9,
+    "magnitudeType": "mwc",
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000hvpa"
+  },
+  {
+    "id": "usp000hvpg",
+    "label": "03-11 · M7.7",
+    "place": "272 km ESE of Kamaishi, Japan",
+    "time": 1299824750300,
+    "longitude": 144.59,
+    "latitude": 38.058,
+    "depth": 18.6,
+    "magnitude": 7.7,
+    "magnitudeType": "mwc",
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000hvpg"
+  }
+]

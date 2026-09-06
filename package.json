@@ -1,6 +1,6 @@
 {
   "name": "@vizforge/engine",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "description": "Semantic D3 analytical figures and deterministic editorial stories",
@@ -65,7 +65,8 @@
     "@datapass/ui": "workspace:*",
     "@datapass/content": "workspace:*",
     "@datapass/figure": "workspace:*",
-    "@datapass/code": "workspace:*"
+    "@datapass/code": "workspace:*",
+    "@datapass/canonical": "workspace:*"
   },
   "packageManager": "pnpm@11.19.0",
   "peerDependencies": {

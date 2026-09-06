@@ -6,6 +6,7 @@ import type { Renderer } from '../renderers/dom.js';
 import { RenderHandle, storyFigure, vizforgeRegistry } from './datapass.js';
 import { download, exportSvg } from './export.js';
 import { StoryInspector } from './StoryInspector.js';
+import { DataLineage } from './DataLineage.js';
 // Shortcuts activate native actions; only FigurePlayer owns playback.
 function playbackShortcut(event: KeyboardEvent<HTMLElement>) {
   if (event.target !== event.currentTarget || event.altKey || event.ctrlKey || event.metaKey) return;
@@ -80,50 +81,53 @@ export function HostedWorkbench({
         className="integrated-workbench"
         canvasLabel="Story canvas"
         canvas={
-          <section
-            ref={playerHost}
-            className="story-panel"
-            tabIndex={0}
-            role="region"
-            aria-label="Story preview"
-            onKeyDown={playbackShortcut}
-          >
-            <div className="narrative">
-              <span className="narrative-index">{String(frame + 1).padStart(2, '0')}</span>
-              <div>
-                <span className="eyebrow">{scene.chapter ?? 'THE STORY'}</span>
-                <h2>{scene.title}</h2>
+          <div className="evidence-canvas">
+            {story.id === 'real-gdp-editorial' && <DataLineage />}
+            <section
+              ref={playerHost}
+              className="story-panel"
+              tabIndex={0}
+              role="region"
+              aria-label="Story preview"
+              onKeyDown={playbackShortcut}
+            >
+              <div className="narrative">
+                <span className="narrative-index">{String(frame + 1).padStart(2, '0')}</span>
+                <div>
+                  <span className="eyebrow">{scene.chapter ?? 'THE STORY'}</span>
+                  <h2>{scene.title}</h2>
+                </div>
               </div>
-            </div>
-            <RenderHandle.Provider value={renderHandle}>
-              <FigurePlayer
-                figure={figure}
-                registry={vizforgeRegistry}
-                stepCount={story.scenes.length}
-                frameIndex={frame}
-                onFrameChange={setFrame}
-                captions={story.scenes.map((scene) => scene.caption)}
-                reducedMotion={reduced || undefined}
-                presentationSize="compact"
-                showInspector={false}
-                source={visual.source}
-                note={visual.note}
-                fallbackMode="details"
-                exportAction={
-                  <button
-                    className="text-button"
-                    disabled={visual.type === 'table' || visual.type === 'matrix'}
-                    onClick={() => {
-                      if (exportSvg(renderHandle.current, `${visual.id}-${scene.id}.svg`))
-                        notify('Current scene exported as a static SVG. Source and note are retained.');
-                    }}
-                  >
-                    Export current figure as SVG
-                  </button>
-                }
-              />
-            </RenderHandle.Provider>
-          </section>
+              <RenderHandle.Provider value={renderHandle}>
+                <FigurePlayer
+                  figure={figure}
+                  registry={vizforgeRegistry}
+                  stepCount={story.scenes.length}
+                  frameIndex={frame}
+                  onFrameChange={setFrame}
+                  captions={story.scenes.map((scene) => scene.caption)}
+                  reducedMotion={reduced || undefined}
+                  presentationSize="compact"
+                  showInspector={false}
+                  source={visual.source}
+                  note={visual.note}
+                  fallbackMode="details"
+                  exportAction={
+                    <button
+                      className="text-button"
+                      disabled={visual.type === 'table' || visual.type === 'matrix'}
+                      onClick={() => {
+                        if (exportSvg(renderHandle.current, `${visual.id}-${scene.id}.svg`))
+                          notify('Current scene exported as a static SVG. Source and note are retained.');
+                      }}
+                    >
+                      Export current figure as SVG
+                    </button>
+                  }
+                />
+              </RenderHandle.Provider>
+            </section>
+          </div>
         }
         inspector={<StoryInspector story={story} frame={frame} seek={seek} load={load} />}
       />

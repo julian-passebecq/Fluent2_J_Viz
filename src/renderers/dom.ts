@@ -50,6 +50,7 @@ export function createRenderer(host: HTMLElement): Renderer {
   host.append(figure);
   const media = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : undefined;
   let last: { spec: VisualizationSpec; scene?: Scene; options: RenderOptions } | undefined;
+  let paintedWidth: number | undefined;
   let dead = false;
   function paint(spec: VisualizationSpec, scene?: Scene, options: RenderOptions = {}) {
     if (dead) return;
@@ -57,6 +58,7 @@ export function createRenderer(host: HTMLElement): Renderer {
       same = last?.spec.id === spec.id;
     last = { spec, scene, options };
     const width = options.width ?? (host.getBoundingClientRect().width || 800);
+    paintedWidth = width;
     const reduced = options.reducedMotion === true || media?.matches === true;
     const duration =
       reduced || options.animate === false || !hadLast || (!same && scene?.transition.intent !== 'scene')
@@ -81,12 +83,12 @@ export function createRenderer(host: HTMLElement): Renderer {
     source.textContent = `Source: ${spec.source} · Note: ${spec.note}`;
     annotations.replaceChildren();
     const selected = scene
-      ? spec.annotations.filter((a) => scene.annotationIds.includes(a.id))
+      ? scene.annotationIds.flatMap((id) => spec.annotations.filter((annotation) => annotation.id === id))
       : spec.annotations;
     // Phone annotations are concise and progressively disclosed; every annotation stays available.
     const visible = width < 540 ? selected.slice(0, 1) : selected;
     for (const annotation of visible) {
-      const p = el('p', annotation.text);
+      const p = el('p', width < 540 ? (annotation.shortText ?? annotation.text) : annotation.text);
       p.dataset.annotationId = annotation.id;
       annotations.append(p);
     }
@@ -95,6 +97,13 @@ export function createRenderer(host: HTMLElement): Renderer {
       more.append(el('summary', `${selected.length - visible.length} more annotation(s)`));
       for (const annotation of selected.slice(visible.length)) more.append(el('p', annotation.text));
       annotations.append(more);
+    }
+    if (width < 540 && visible.some((annotation) => annotation.shortText)) {
+      const full = el('details');
+      full.append(el('summary', 'Full annotation'));
+      for (const annotation of visible.filter((annotation) => annotation.shortText))
+        full.append(el('p', annotation.text));
+      annotations.append(full);
     }
     annotations.hidden = !selected.length;
     kpi.replaceChildren();
@@ -153,7 +162,10 @@ export function createRenderer(host: HTMLElement): Renderer {
   const resize =
     typeof ResizeObserver === 'function'
       ? new ResizeObserver(() => {
-          if (last && !last.options.width) settle();
+          if (!last || last.options.width || paintedWidth === undefined) return;
+          const nextWidth = host.getBoundingClientRect().width;
+          // Layout is width-driven. Narrative/annotation height reflow must not interrupt an active D3 transition.
+          if (Number.isFinite(nextWidth) && nextWidth > 0 && Math.abs(nextWidth - paintedWidth) > 0.5) settle();
         })
       : undefined;
   resize?.observe(host);
