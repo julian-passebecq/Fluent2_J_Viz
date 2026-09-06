@@ -1,8 +1,8 @@
-import { geoEquirectangular, geoGraticule10, geoPath, line, scaleSqrt } from 'd3';
+import { geoEquirectangular, geoGraticule, geoPath, line, scaleSqrt } from 'd3';
 import type { ChartSpec } from '../../core/spec.js';
 import { mark, text, short, domain, type Layout, type LayoutContext } from '../layout-shared.js';
 export function mapLayout(spec: Extract<ChartSpec, { type: 'event-map' }>, context: LayoutContext): Layout {
-  const { width, phone, height, decorations, ink, muted, grid, color, add, snapshot } = context;
+  const { width, phone, height, decorations, ink, muted, grid, color, add, snapshot, scene } = context;
 
   const e = spec.encodings;
   const points = [
@@ -48,11 +48,30 @@ export function mapLayout(spec: Extract<ChartSpec, { type: 'event-map' }>, conte
       .translate([width / 2 - ((px[0] + px[1]) / 2) * factor, height / 2 - ((py[0] + py[1]) / 2) * factor]);
     decorations.push(
       mark('graticule', 'path', {
-        d: geoPath(mapProjection)(geoGraticule10()) ?? '',
+        d:
+          geoPath(mapProjection)(
+            geoGraticule()
+              .extent([
+                [Math.max(-180, xd[0]), Math.max(-89.9, yd[0])],
+                [Math.min(180, xd[1]), Math.min(89.9, yd[1])],
+              ])
+              .step([xd[1] - xd[0] < 20 ? 1 : 10, yd[1] - yd[0] < 20 ? 1 : 10])(),
+          ) ?? '',
         fill: 'none',
         stroke: grid,
         opacity: 0.6,
       }),
+    );
+    const coordinate = (value: number, positive: string, negative: string) =>
+      `${Math.abs(value)}°${value < 0 ? negative : positive}`;
+    decorations.push(
+      text(
+        'map-bounds',
+        12,
+        20,
+        `${coordinate(yd[0], 'N', 'S')}–${coordinate(yd[1], 'N', 'S')} · ${coordinate(xd[0], 'E', 'W')}–${coordinate(xd[1], 'E', 'W')}`,
+        { fill: muted, 'font-size': 10 },
+      ),
     );
   }
   for (const region of spec.regions) {
@@ -99,10 +118,12 @@ export function mapLayout(spec: Extract<ChartSpec, { type: 'event-map' }>, conte
         'stroke-width': 2,
       }),
       mark('center', 'circle', { cx, cy, r: 2.5, fill: color(id) }),
-      text('label', Math.max(40, Math.min(width - 40, cx)), cy - r - 7, short(label, phone ? 11 : 20), {
+      text('label', Math.max(60, Math.min(width - 60, cx)), cy - r - 7, short(label, phone ? 16 : 24), {
         fill: ink,
         'text-anchor': 'middle',
         'font-size': 11,
+        // Dense nearby events retain their markers; focus selects the direct label.
+        opacity: scene?.focusIds.length && !scene.focusIds.includes(id) ? 0 : 1,
       }),
     ]);
   }

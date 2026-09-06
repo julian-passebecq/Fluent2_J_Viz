@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { LocaleProvider } from '@datapass/ui';
-import { catalog, type CatalogEntry } from '../examples/index.js';
+import { catalog, flagshipStories, type CatalogEntry } from '../examples/index.js';
 import type { StorySpec } from '../core/spec.js';
 import { StudioShell } from './StudioShell.js';
 import { Catalog, RelatedStories } from './Catalog.js';
@@ -10,7 +10,10 @@ import '@datapass/ui/styles.css';
 import './studio.css';
 
 function Studio() {
-  const [active, setActive] = useState(catalog[0]);
+  const [active, setActive] = useState(
+    flagshipStories.find((entry) => entry.id === new URLSearchParams(location.search).get('story')) ??
+      catalog[0],
+  );
   const [story, setStory] = useState(active.story);
   const [revision, setRevision] = useState(0);
   const [view, setView] = useState<'studio' | 'catalog'>('studio');
@@ -39,7 +42,7 @@ function Studio() {
             <h1>{view === 'catalog' ? 'A language for every insight.' : 'Make the change visible.'}</h1>
             <p>
               {view === 'catalog'
-                ? `${catalog.length} analytical families. One shared language for data and storytelling.`
+                ? `${catalog.length} analytical families, 22 synthetic examples and four real-data flagship stories.`
                 : 'Turn a sequence of numbers into a story worth following.'}
             </p>
           </div>
@@ -66,7 +69,10 @@ function Studio() {
             <div className="workspace-footer">
               <span>
                 <span className="live-dot" />{' '}
-                {notice || 'Canonical spec validated · Synthetic demonstration data'}
+                {notice ||
+                  (active.id.startsWith('flagship-')
+                    ? 'Canonical spec validated · Pinned real data · No runtime data requests'
+                    : 'Canonical spec validated · Synthetic demonstration data')}
               </span>
               <span>Web-first / Adapter-ready</span>
             </div>

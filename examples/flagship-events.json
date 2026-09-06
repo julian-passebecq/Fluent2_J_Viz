@@ -1,0 +1,499 @@
+{
+  "id": "real-tohoku-map-story",
+  "version": "1.0",
+  "title": "Four large events unfold off eastern Japan",
+  "description": "The largest event is followed within 40 minutes by two more events above M7.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "real-tohoku-map",
+      "version": "1.0",
+      "title": "Four large events unfold off eastern Japan",
+      "subtitle": "9–11 March 2011 · UTC · selected ComCat events M≥7",
+      "takeaway": "The largest event is followed within 40 minutes by two more events above M7.",
+      "source": "USGS ComCat · Natural Earth outline · pinned 6 September 2026 · public domain",
+      "note": "All four results in 30–42°N, 135–145°E from March 9 to March 12 00:00 UTC, M≥7. Equal-size location symbols; not energy, damage or shaking extent. Earlier events remain visible. Coarse Natural Earth 1:110m coastline; no tiles.",
+      "accessibility": {
+        "summary": "Four large events unfold off eastern Japan. 9–11 March 2011 · UTC · selected ComCat events M≥7. The largest event is followed within 40 minutes by two more events above M7."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "event-0",
+          "text": "2011-03-09 02:45:20.330 UTC · M7.3 (mww) · 38.435°N, 142.842°E · depth 32 km. This filtered catalog is not the full earthquake sequence.",
+          "shortText": "03-09 02:45:20 UTC · M7.3 · 38.44°N, 142.84°E.",
+          "entityId": "usp000hvhj"
+        },
+        {
+          "id": "event-1",
+          "text": "2011-03-11 05:46:24.120 UTC · M9.1 (mww) · 38.297°N, 142.373°E · depth 29 km. This is the largest magnitude in the pinned selection.",
+          "shortText": "03-11 05:46:24 UTC · M9.1 · 38.30°N, 142.37°E.",
+          "entityId": "official20110311054624120_30"
+        },
+        {
+          "id": "event-2",
+          "text": "2011-03-11 06:15:40.280 UTC · M7.9 (mwc) · 36.281°N, 141.111°E · depth 42.6 km. The new location is distinct from the largest event; earlier locations remain visible.",
+          "shortText": "03-11 06:15:40 UTC · M7.9 · 36.28°N, 141.11°E.",
+          "entityId": "usp000hvpa"
+        },
+        {
+          "id": "event-3",
+          "text": "2011-03-11 06:25:50.300 UTC · M7.7 (mwc) · 38.058°N, 144.590°E · depth 18.6 km. The new location is distinct from the largest event; earlier locations remain visible.",
+          "shortText": "03-11 06:25:50 UTC · M7.7 · 38.06°N, 144.59°E.",
+          "entityId": "usp000hvpg"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "event-map",
+      "data": [
+        {
+          "id": "usp000hvhj",
+          "label": "03-09 · M7.3",
+          "place": "120 km SE of ?funato, Japan",
+          "time": 1299638720330,
+          "longitude": 142.842,
+          "latitude": 38.435,
+          "depth": 32,
+          "magnitude": 7.3,
+          "magnitudeType": "mww",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000hvhj"
+        },
+        {
+          "id": "official20110311054624120_30",
+          "label": "03-11 · M9.1",
+          "place": "2011 Great Tohoku Earthquake, Japan",
+          "time": 1299822384120,
+          "longitude": 142.373,
+          "latitude": 38.297,
+          "depth": 29,
+          "magnitude": 9.1,
+          "magnitudeType": "mww",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30"
+        },
+        {
+          "id": "usp000hvpa",
+          "label": "03-11 · M7.9",
+          "place": "47 km E of ?arai, Japan",
+          "time": 1299824140280,
+          "longitude": 141.111,
+          "latitude": 36.281,
+          "depth": 42.6,
+          "magnitude": 7.9,
+          "magnitudeType": "mwc",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000hvpa"
+        },
+        {
+          "id": "usp000hvpg",
+          "label": "03-11 · M7.7",
+          "place": "272 km ESE of Kamaishi, Japan",
+          "time": 1299824750300,
+          "longitude": 144.59,
+          "latitude": 38.058,
+          "depth": 18.6,
+          "magnitude": 7.7,
+          "magnitudeType": "mwc",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000hvpg"
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "time",
+        "x": "longitude",
+        "y": "latitude"
+      },
+      "coordinates": "geographic",
+      "regions": [
+        {
+          "id": "japan-0",
+          "label": "JAPAN",
+          "points": [
+            [
+              141.884601,
+              39.180865
+            ],
+            [
+              140.959489,
+              38.174001
+            ],
+            [
+              140.976388,
+              37.142074
+            ],
+            [
+              140.59977,
+              36.343983
+            ],
+            [
+              140.774074,
+              35.842877
+            ],
+            [
+              140.253279,
+              35.138114
+            ],
+            [
+              138.975528,
+              34.6676
+            ],
+            [
+              137.217599,
+              34.606286
+            ],
+            [
+              135.792983,
+              33.464805
+            ],
+            [
+              135.120983,
+              33.849071
+            ],
+            [
+              135.079435,
+              34.596545
+            ],
+            [
+              133.340316,
+              34.375938
+            ],
+            [
+              132.156771,
+              33.904933
+            ],
+            [
+              130.986145,
+              33.885761
+            ],
+            [
+              132.000036,
+              33.149992
+            ],
+            [
+              131.33279,
+              31.450355
+            ],
+            [
+              130.686318,
+              31.029579
+            ],
+            [
+              130.20242,
+              31.418238
+            ],
+            [
+              130.447676,
+              32.319475
+            ],
+            [
+              129.814692,
+              32.61031
+            ],
+            [
+              129.408463,
+              33.296056
+            ],
+            [
+              130.353935,
+              33.604151
+            ],
+            [
+              130.878451,
+              34.232743
+            ],
+            [
+              131.884229,
+              34.749714
+            ],
+            [
+              132.617673,
+              35.433393
+            ],
+            [
+              134.608301,
+              35.731618
+            ],
+            [
+              135.677538,
+              35.527134
+            ],
+            [
+              136.723831,
+              37.304984
+            ],
+            [
+              137.390612,
+              36.827391
+            ],
+            [
+              138.857602,
+              37.827485
+            ],
+            [
+              139.426405,
+              38.215962
+            ],
+            [
+              140.05479,
+              39.438807
+            ],
+            [
+              139.883379,
+              40.563312
+            ],
+            [
+              140.305783,
+              41.195005
+            ],
+            [
+              141.368973,
+              41.37856
+            ],
+            [
+              141.914263,
+              39.991616
+            ],
+            [
+              141.884601,
+              39.180865
+            ]
+          ]
+        },
+        {
+          "id": "japan-1",
+          "label": "",
+          "points": [
+            [
+              144.613427,
+              43.960883
+            ],
+            [
+              145.320825,
+              44.384733
+            ],
+            [
+              145.543137,
+              43.262088
+            ],
+            [
+              144.059662,
+              42.988358
+            ],
+            [
+              143.18385,
+              41.995215
+            ],
+            [
+              141.611491,
+              42.678791
+            ],
+            [
+              141.067286,
+              41.584594
+            ],
+            [
+              139.955106,
+              41.569556
+            ],
+            [
+              139.817544,
+              42.563759
+            ],
+            [
+              140.312087,
+              43.333273
+            ],
+            [
+              141.380549,
+              43.388825
+            ],
+            [
+              141.671952,
+              44.772125
+            ],
+            [
+              141.967645,
+              45.551483
+            ],
+            [
+              143.14287,
+              44.510358
+            ],
+            [
+              143.910162,
+              44.1741
+            ],
+            [
+              144.613427,
+              43.960883
+            ]
+          ]
+        },
+        {
+          "id": "japan-2",
+          "label": "",
+          "points": [
+            [
+              132.371176,
+              33.463642
+            ],
+            [
+              132.924373,
+              34.060299
+            ],
+            [
+              133.492968,
+              33.944621
+            ],
+            [
+              133.904106,
+              34.364931
+            ],
+            [
+              134.638428,
+              34.149234
+            ],
+            [
+              134.766379,
+              33.806335
+            ],
+            [
+              134.203416,
+              33.201178
+            ],
+            [
+              133.79295,
+              33.521985
+            ],
+            [
+              133.280268,
+              33.28957
+            ],
+            [
+              133.014858,
+              32.704567
+            ],
+            [
+              132.363115,
+              32.989382
+            ],
+            [
+              132.371176,
+              33.463642
+            ]
+          ]
+        }
+      ],
+      "xDomain": [
+        136,
+        146
+      ],
+      "yDomain": [
+        34,
+        41
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "tohoku-0",
+      "visualId": "real-tohoku-map",
+      "chapter": "2011-03-09 / UTC",
+      "title": "9 March: a M7.3 event",
+      "caption": "Begin with the first event in this filtered snapshot. Each marker is a location, not a shaking footprint.",
+      "state": {
+        "time": 1299638720330
+      },
+      "focusIds": [
+        "usp000hvhj"
+      ],
+      "annotationIds": [
+        "event-0"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "tohoku-1",
+      "visualId": "real-tohoku-map",
+      "chapter": "2011-03-11 / UTC",
+      "title": "11 March, 05:46: the M9.1 event",
+      "caption": "The largest event appears near the earlier location. Focus follows the new event while the first remains in place.",
+      "state": {
+        "time": 1299822384120
+      },
+      "focusIds": [
+        "official20110311054624120_30"
+      ],
+      "annotationIds": [
+        "event-1"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "tohoku-2",
+      "visualId": "real-tohoku-map",
+      "chapter": "2011-03-11 / UTC",
+      "title": "29 minutes later: M7.9 to the south",
+      "caption": "The next selected event is farther south. The timestamp advances; the geography stays fixed.",
+      "state": {
+        "time": 1299824140280
+      },
+      "focusIds": [
+        "usp000hvpa"
+      ],
+      "annotationIds": [
+        "event-2"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "tohoku-3",
+      "visualId": "real-tohoku-map",
+      "chapter": "2011-03-11 / UTC",
+      "title": "40 minutes after M9.1: M7.7 farther east",
+      "caption": "All four locations remain visible. This magnitude-filtered view omits the many smaller events.",
+      "state": {
+        "time": 1299824750300
+      },
+      "focusIds": [
+        "usp000hvpg"
+      ],
+      "annotationIds": [
+        "event-3"
+      ],
+      "transition": {
+        "intent": "morph-update",
+        "durationMs": 650
+      }
+    }
+  ]
+}

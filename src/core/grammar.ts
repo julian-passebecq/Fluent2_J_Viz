@@ -37,7 +37,9 @@ export const themeSchema = z
       .default(['#207466', '#a8542a', '#536c91', '#9b657c', '#766e32', '#456a78']),
   })
   .strict();
-const annotationSchema = z.object({ id, text: z.string().min(1), entityId: id.optional() }).strict();
+const annotationSchema = z
+  .object({ id, text: z.string().min(1), shortText: z.string().min(1).optional(), entityId: id.optional() })
+  .strict();
 export const base = {
   id,
   version: z.literal('1.0'),

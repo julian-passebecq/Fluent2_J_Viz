@@ -35,7 +35,7 @@ export function StudioShell({
               <i />
               <i />
             </span>
-            vizforge<span className="version">V1.1</span>
+            vizforge<span className="version">V1.2</span>
           </a>
           <nav className="topnav" aria-label="Workspace">
             <button className={view === 'studio' ? 'active' : ''} onClick={() => setView('studio')}>

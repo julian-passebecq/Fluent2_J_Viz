@@ -46,6 +46,8 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import React, { act } from 'react';
 import { createRoot } from 'react-dom/client';
 import { StoryView } from '@vizforge/engine/react';
+const installedEngine = JSON.parse(readFileSync(new URL('../../../package.json', import.meta.resolve('@vizforge/engine/react'))));
+assert.equal(installedEngine.version, ${JSON.stringify(JSON.parse(readFileSync('package.json', 'utf8')).version)});
 const dom = new JSDOM('<div id="root"></div>');
 Object.assign(globalThis, { window: dom.window, document: dom.window.document, IS_REACT_ACT_ENVIRONMENT: true });
 assert.equal(React.version, '18.3.1');
@@ -58,7 +60,7 @@ assert.equal(document.querySelector('.vf-figure').dataset.sceneId, 'rank-middle'
 assert.equal(document.querySelector('.vf-figure').dataset.transitionMs, '0');
 await act(async () => root.unmount());
 assert.equal(document.querySelector('.vf-figure'), null);
-writeFileSync('result.json', JSON.stringify({ passed: true, react: React.version, engineVersion: '1.1.0', checks: ['packed isolated consumer', 'mount', 'step', 'reduced motion', 'unmount'] }, null, 2) + '\\n');
+writeFileSync('result.json', JSON.stringify({ passed: true, react: React.version, engineVersion: installedEngine.version, checks: ['packed isolated consumer', 'mount', 'step', 'reduced motion', 'unmount'] }, null, 2) + '\\n');
 console.log('Independent React 18 packed-host proof passed.');
 `,
 );

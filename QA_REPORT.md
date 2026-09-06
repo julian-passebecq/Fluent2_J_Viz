@@ -1,5 +1,17 @@
 # QA report
 
+## V1.2 checkpoint — pushed at user request before usage exhaustion
+
+Implemented four real-data flagships, provenance/hash verification, canonical Datapass lineage coexistence, phone annotations and geographic context. Exact start: `423e7ecaedbe4f922665938eb013f6bf1bd11e7b`; exact Datapass pin: `30e69639bfc3929c348fd8f9c6c38a2cb61984d8`, 107 unmodified files. All 22 original canonical fixture hashes match the baseline.
+
+Verified locally: frozen install, spec/provenance validation, 137 unit tests, production/library build, independent packed React 18 mount/step/reduced-motion/unmount, and the initial 14 flagship production browser checks at desktop/390px. Those flagship checks had zero serious/critical Axe findings, zero page overflow, no external requests and no page errors. The broader 80-test release run is recorded in `.local/v1.2-release-gate.log`.
+
+Final review then corrected the React 18 evidence report's hardcoded version, made phone annotation priority follow scene order (one additional unit regression), labeled the main Japan polygon, refined the four-card layout, and added keyboard verification for the lineage scrolling viewport. **The final candidate still requires the complete release gate on its exact SHA.** Existing screenshot/evidence files precede those last refinements and must not be represented as exact final-SHA proof.
+
+Resume by inspecting the PR's exact-head push CI. Fix any failures, run `pnpm release:gate`, and require successful push CI on the exact delivered branch SHA before merging. After merge, verify `main` push CI and its `hosted-release.json` artifact. The user requested an immediate push to preserve work with only 1% usage remaining; this checkpoint is not a completed release or merge approval bypass.
+
+## Historical V1/V1.1 evidence
+
 Baseline hosted V1 CI `33989227514` succeeded on `3a5bd0b7bdfb987a18f2e9154b43fc92756120b8`; accepted Datapass CI `33988679372` succeeded on `8fef4d0b542bfbb11b0ff80ec81710db3f6c8d55`. Both were verified through GitHub API in this pass.
 
 The real Datapass integration checkpoint passes spec validation, 87 unit tests, typecheck, production/library build, a frozen pnpm install, 32 desktop/390px browser tests and exact source verification (91 files). Every scene in all ten V1 families was checked, with serious/critical Axe = 0 and page overflow = 0. Fluent's established `[data-tabster-dummy]` sentinel exclusion is the only Axe exclusion.

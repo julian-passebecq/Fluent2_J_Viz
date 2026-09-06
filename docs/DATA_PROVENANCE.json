@@ -1,5 +1,5 @@
 {
-  "description": "All 22 fixtures are consumer-authored synthetic demonstrations. No third-party dataset or observed statistics are included.",
+  "description": "22 original synthetic examples and four real-data flagship stories. Dataset sources, licenses, raw/output hashes and transformations: data/provenance.json.",
   "fixtures": [
     {
       "file": "examples/time-series.json",
@@ -175,6 +175,38 @@
       "sha256": "2dcf6b9a7417bd8efedf4638ed4ad64fe7578a27de35ea620a5d62e819175ed2",
       "sources": [
         "VizForge synthetic demonstration data, 2026"
+      ]
+    },
+    {
+      "file": "examples/flagship-time.json",
+      "synthetic": false,
+      "sha256": "cab37282f4f10de267d29b1b098c7d061dd7cba649851f76143d99b547789852",
+      "sources": [
+        "World Bank · NY.GDP.MKTP.CD · pinned 6 September 2026 · CC BY 4.0"
+      ]
+    },
+    {
+      "file": "examples/flagship-ranking.json",
+      "synthetic": false,
+      "sha256": "2185bd72dacb4baf3436e3e89efc3678b884142aaaee42090791e7dbbae08b4b",
+      "sources": [
+        "World Bank · NY.GDP.MKTP.CD · pinned 6 September 2026 · CC BY 4.0"
+      ]
+    },
+    {
+      "file": "examples/flagship-events.json",
+      "synthetic": false,
+      "sha256": "8ea985f5ab82662d8552d777c211f8b2aca592cc51188f0af2720ec8a630b61f",
+      "sources": [
+        "USGS ComCat · Natural Earth outline · pinned 6 September 2026 · public domain"
+      ]
+    },
+    {
+      "file": "examples/flagship-cross.json",
+      "synthetic": false,
+      "sha256": "2607c2ee17036ac8070967d4a58cb629bfe0295e0efa1709db395983b5232e3d",
+      "sources": [
+        "World Bank · NY.GDP.MKTP.CD · pinned 6 September 2026 · CC BY 4.0"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 # VizForge
 
-A framework-independent D3 engine and Fluent/Datapass editorial studio. **15 reusable visual families and 22 canonical examples/story compositions** share strict semantic specs, stable entities, readable paused scenes, reduced motion and SVG/JSON export. All bundled datasets and map shapes are explicitly synthetic.
+A framework-independent D3 engine and Fluent/Datapass editorial studio. **15 reusable visual families, 22 original synthetic examples and four real-data flagship stories** share semantic specs, stable entities, readable paused scenes, reduced motion and SVG/JSON export. World Bank GDP, USGS events and a Natural Earth Japan outline are pinned with reproducible provenance.
 
 ## Run the integrated Studio
 
@@ -12,7 +12,9 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Bootstrap runs before install and verifies exact Datapass commit `8fef4d0b542bfbb11b0ff80ec81710db3f6c8d55`. Only allowlisted source is materialized under ignored `vendor/`. Do not edit it. The four direct Datapass packages are Studio development dependencies; the standalone engine package does not require Datapass.
+Bootstrap runs before install and verifies exact Datapass commit `30e69639bfc3929c348fd8f9c6c38a2cb61984d8`. Only allowlisted source is materialized under ignored `vendor/`. Do not edit it. The five direct Datapass packages are Studio development dependencies; the standalone engine package does not require Datapass.
+
+Open **Visual catalog** for the flagship collection. `/?story=flagship-cross` opens the shared workbench: a real Datapass source-to-KPI lineage Figure above a VizForge line → ranking → share story, with one playback owner. Other direct links use `flagship-time`, `flagship-ranking` and `flagship-events`. See [data provenance](DATA_PROVENANCE.md) and the [V1.2 release report](VIZFORGE_V1_2_RELEASE_REPORT.md).
 
 ```sh
 pnpm browser:install
@@ -63,4 +65,4 @@ Existing renderer APIs and V1 specs remain compatible. New families explicitly u
 - [QA report](QA_REPORT.md), [release report](VIZFORGE_V1_1_RELEASE_REPORT.md)
 - [Future Power BI boundary](POWERBI_EXPORT_PLAN.md)
 
-This pass starts from clean VizForge `3a5bd0b7bdfb987a18f2e9154b43fc92756120b8`. Ordered instructions are preserved in `docs/brief-v1.1/`. AI/function calling and Power BI packaging are deferred.
+V1.2 starts from exact merged VizForge `423e7ecaedbe4f922665938eb013f6bf1bd11e7b`. Its ordered brief is preserved in `docs/brief-v1.2/`. AI/function calling, article ingestion, a full scrollytelling CMS and Power BI packaging remain deferred.

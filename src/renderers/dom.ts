@@ -81,12 +81,12 @@ export function createRenderer(host: HTMLElement): Renderer {
     source.textContent = `Source: ${spec.source} · Note: ${spec.note}`;
     annotations.replaceChildren();
     const selected = scene
-      ? spec.annotations.filter((a) => scene.annotationIds.includes(a.id))
+      ? scene.annotationIds.flatMap((id) => spec.annotations.filter((annotation) => annotation.id === id))
       : spec.annotations;
     // Phone annotations are concise and progressively disclosed; every annotation stays available.
     const visible = width < 540 ? selected.slice(0, 1) : selected;
     for (const annotation of visible) {
-      const p = el('p', annotation.text);
+      const p = el('p', width < 540 ? (annotation.shortText ?? annotation.text) : annotation.text);
       p.dataset.annotationId = annotation.id;
       annotations.append(p);
     }
@@ -95,6 +95,13 @@ export function createRenderer(host: HTMLElement): Renderer {
       more.append(el('summary', `${selected.length - visible.length} more annotation(s)`));
       for (const annotation of selected.slice(visible.length)) more.append(el('p', annotation.text));
       annotations.append(more);
+    }
+    if (width < 540 && visible.some((annotation) => annotation.shortText)) {
+      const full = el('details');
+      full.append(el('summary', 'Full annotation'));
+      for (const annotation of visible.filter((annotation) => annotation.shortText))
+        full.append(el('p', annotation.text));
+      annotations.append(full);
     }
     annotations.hidden = !selected.length;
     kpi.replaceChildren();

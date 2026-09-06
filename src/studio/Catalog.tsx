@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { CatalogShell, SearchFilterBar } from '@datapass/ui';
-import { catalog, storyPacks, editorialStory, type CatalogEntry } from '../examples/index.js';
+import {
+  catalog,
+  storyPacks,
+  editorialStory,
+  flagshipStories,
+  type CatalogEntry,
+} from '../examples/index.js';
 import { Glyph } from './Glyph.js';
 export function Catalog({ choose }: { choose: (entry: CatalogEntry) => void }) {
   const [query, setQuery] = useState('');
@@ -12,6 +18,31 @@ export function Catalog({ choose }: { choose: (entry: CatalogEntry) => void }) {
   );
   return (
     <>
+      <section className="flagships" aria-label="Flagship stories">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">REAL DATA / EDITORIAL COLLECTION</span>
+            <h2>Four questions. Evidence you can trace.</h2>
+            <p>Two pinned datasets · four reusable stories · 15 existing visual families</p>
+          </div>
+        </div>
+        <div className="story-pack-grid">
+          {flagshipStories.map((entry, index) => (
+            <button
+              key={entry.id}
+              className="story-pack-card flagship-card"
+              aria-label={`Open flagship: ${entry.name}`}
+              onClick={() => choose(entry)}
+            >
+              <span className="flagship-number">0{index + 1}</span>
+              <span className="eyebrow">{entry.tag}</span>
+              <h3>{entry.name}</h3>
+              <p>{entry.description}</p>
+              <span>{entry.story.scenes.length} scenes · Open story →</span>
+            </button>
+          ))}
+        </div>
+      </section>
       <CatalogShell
         resultsLabel="Visual catalog"
         header={
@@ -84,7 +115,10 @@ function StoryPacks({ choose }: { choose: (entry: CatalogEntry) => void }) {
         <div>
           <span className="eyebrow">EDITORIAL STORY PACKS</span>
           <h2>Ask a bigger question.</h2>
-          <p>{catalog.length + examples.length} canonical stories and examples · all fixtures synthetic</p>
+          <p>
+            {catalog.length + examples.length} original canonical stories and examples · deterministic
+            synthetic fixtures
+          </p>
         </div>
       </div>
       <div className="story-pack-grid">

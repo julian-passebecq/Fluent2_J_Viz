@@ -1,5 +1,11 @@
 # VizForge spec reference — 1.0 and 1.1
 
+V1.2 retains these spec versions and all existing renderer APIs. Its sole grammar addition is optional annotation `shortText: string` (nonempty). At renderer widths below 540px it replaces the visible annotation sentence, while **Full annotation** discloses the original `text`. Full text remains in SVG descriptions and exported specs. Existing annotations without `shortText` behave as before. Example: `{ "id": "gap", "text": "Full evidence and qualification.", "shortText": "Concise evidence.", "entityId": "CHN" }`.
+
+The four flagship authoring examples are in `src/examples/flagships.ts`; no CMS or universal grammar is introduced. `timelineStory` selects exact observed times. `chapterStory` moves between visuals; authors retain the same ISO3 IDs and complete entity sets to preserve country color assignments across families. DOM identity is keyed by visual ID plus entity ID: stable within a visual, intentionally remounted when a different visual is selected. Provenance stays outside ChartSpec/StorySpec in `data/provenance.json`; required `source` and `note` accompany every visual.
+
+Scene `annotationIds` order sets display priority, including the single initially visible phone annotation. This lets a scene put its evidence before a secondary reading key. Geographic event maps now bound the graticule to the authored domains, using one-degree spacing for spans below 20 degrees and ten-degree spacing otherwise. Coordinate bounds are labeled. When a scene has focus IDs, only those events show direct labels to avoid collisions; all event symbols, accessible labels and underlying observations remain. Canonical synthetic fixture specs and data are unchanged.
+
 The executable source of truth is `src/core/spec.ts`, with common grammar in `grammar.ts` and additive V1.1 families in `extensions.ts`. Canonical fully defaulted JSON examples live in `examples/`. Unknown properties are rejected on contract objects. Data rows allow additional data fields. Parsing clones and normalizes the input; renderers do not mutate canonical data. Strings are rendered with text APIs, not injected HTML.
 
 ## Common visualization metadata

@@ -1,0 +1,32 @@
+[
+  {
+    "file": "00_READ_FIRST.md",
+    "bytes": 565,
+    "sha256": "f86522d32480129a1d3364a11df8ac94bd0b4f44a037b333afc34588ec3067f4"
+  },
+  {
+    "file": "01_BASELINE_AND_BOUNDARIES.md",
+    "bytes": 543,
+    "sha256": "39d13025c2e3316595bd9e2eb482528de105be9bebd0d8085f8191a15582b21a"
+  },
+  {
+    "file": "02_CODEX_MASTER_PROMPT.md",
+    "bytes": 5837,
+    "sha256": "7822791d5244e7427b6ccbe317ce5ec3527d22ceb0cbd3c5f14e9a75cd51ef5a"
+  },
+  {
+    "file": "03_STORY_QUALITY_BAR.md",
+    "bytes": 476,
+    "sha256": "63ad09adcfd5cb3028dccb151d3cbaad73faff84ffc83710484f1fb5fa37e475"
+  },
+  {
+    "file": "04_REAL_DATA_RULES.md",
+    "bytes": 535,
+    "sha256": "6b7451c9928f7cac3e309d2e445b07caf1a61fa67d395ed457fd0647dde3228c"
+  },
+  {
+    "file": "05_POWERBI_STAYS_NEXT.md",
+    "bytes": 427,
+    "sha256": "eced9f7b7e58c960a70d19c864171d1071dad8cf8c4afa66dc6a2e96016201f6"
+  }
+]

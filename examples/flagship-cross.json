@@ -1,0 +1,2422 @@
+{
+  "id": "real-gdp-editorial",
+  "version": "1.1",
+  "title": "Size, order and share tell different stories",
+  "description": "Follow a pinned dataset from source to KPI. Compare the same five economies through three analytical lenses.",
+  "reducedMotion": "instant",
+  "intervalMs": 4000,
+  "visuals": [
+    {
+      "id": "real-gdp-paths",
+      "version": "1.0",
+      "title": "China closes much of the dollar GDP gap",
+      "subtitle": "GDP · current US$ trillions · five selected economies",
+      "takeaway": "The US remains largest in this selection; China moves from fourth to second.",
+      "source": "World Bank · NY.GDP.MKTP.CD · pinned 6 September 2026 · CC BY 4.0",
+      "note": "Five selected economies, 2000–2023. Current US dollars include price and exchange-rate effects; not real growth or living standards. No missing values or interpolation.",
+      "accessibility": {
+        "summary": "China closes much of the dollar GDP gap. GDP · current US$ trillions · five selected economies. The US remains largest in this selection; China moves from fourth to second."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 2,
+        "currency": "USD",
+        "unit": "US$ tn"
+      },
+      "annotations": [
+        {
+          "id": "baseline",
+          "text": "In 2000, US GDP is $10.25tn and China’s is $1.22tn. These are dollar levels, not a shared growth index.",
+          "shortText": "Current-dollar levels; not inflation-adjusted growth."
+        },
+        {
+          "id": "overtake",
+          "text": "By 2010, China ($6.19tn) exceeds Japan ($5.81tn). The annual paths show when the ordering changes.",
+          "shortText": "2010: China $6.19tn; Japan $5.81tn.",
+          "entityId": "CHN"
+        },
+        {
+          "id": "gap",
+          "text": "China rises from 11.9% of US dollar GDP in 2000 to 65.7% in 2023. This is not a purchasing-power comparison.",
+          "shortText": "China / US dollar GDP: 11.9% → 65.7%.",
+          "entityId": "CHN"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "time-series",
+      "data": [
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2000,
+          "value": 1.22375491997105
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2001,
+          "value": 1.35503659025152
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2002,
+          "value": 1.48982168205054
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2003,
+          "value": 1.68390330984385
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2004,
+          "value": 1.98419655130044
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2005,
+          "value": 2.3175512980520496
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2006,
+          "value": 2.79149847280433
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2007,
+          "value": 3.6040558225716297
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2008,
+          "value": 4.66734641452195
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2009,
+          "value": 5.18957709499758
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2010,
+          "value": 6.19256487445329
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2011,
+          "value": 7.67175720785129
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2012,
+          "value": 8.67366471318924
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2013,
+          "value": 9.74312424726724
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2014,
+          "value": 10.674533168257401
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2015,
+          "value": 11.2808147874689
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2016,
+          "value": 11.456024084962
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2017,
+          "value": 12.5375590622829
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2018,
+          "value": 14.147765772963801
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2019,
+          "value": 14.560167101283401
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2020,
+          "value": 14.9964141667151
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2021,
+          "value": 18.201698719564
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2022,
+          "value": 18.3167650216902
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2023,
+          "value": 18.2703566545332
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2000,
+          "value": 1.9669807011451002
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2001,
+          "value": 1.96638149664173
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2002,
+          "value": 2.10235079830589
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2003,
+          "value": 2.5347155183490098
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2004,
+          "value": 2.8523177680617797
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2005,
+          "value": 2.89339318736187
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2006,
+          "value": 3.04630875367058
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2007,
+          "value": 3.48405668085491
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2008,
+          "value": 3.808197720125
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2009,
+          "value": 3.4785455166835897
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2010,
+          "value": 3.4670937696666697
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2011,
+          "value": 3.82357580379378
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2012,
+          "value": 3.59648323340625
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2013,
+          "value": 3.80702379705099
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2014,
+          "value": 3.96487073576077
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2015,
+          "value": 3.42509957874609
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2016,
+          "value": 3.536787895179
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2017,
+          "value": 3.76535162610589
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2018,
+          "value": 4.05543321530196
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2019,
+          "value": 3.9598947940392097
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2020,
+          "value": 3.94139895707394
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2021,
+          "value": 4.35525195341078
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2022,
+          "value": 4.20102170647862
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2023,
+          "value": 4.56220753249028
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2000,
+          "value": 0.468395521654458
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2001,
+          "value": 0.485440139204171
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2002,
+          "value": 0.514939140318756
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2003,
+          "value": 0.607700687237318
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2004,
+          "value": 0.7091527288307751
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2005,
+          "value": 0.8203837635114449
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2006,
+          "value": 0.9402598887877209
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2007,
+          "value": 1.21673643883496
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2008,
+          "value": 1.19889513900592
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2009,
+          "value": 1.3418880169949
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2010,
+          "value": 1.67561551948496
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2011,
+          "value": 1.82305182989455
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2012,
+          "value": 1.8276375904104099
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2013,
+          "value": 1.8567215076215802
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2014,
+          "value": 2.03912647915452
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2015,
+          "value": 2.10358836004494
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2016,
+          "value": 2.29479688566316
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2017,
+          "value": 2.65147426275545
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2018,
+          "value": 2.70292964164874
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2019,
+          "value": 2.83560625655819
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2020,
+          "value": 2.67485157858727
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2021,
+          "value": 3.16727062326047
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2022,
+          "value": 3.24993849201347
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2023,
+          "value": 3.5009060306447597
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2000,
+          "value": 5.042381838343441
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2001,
+          "value": 4.438792748062401
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2002,
+          "value": 4.2459469805723
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2003,
+          "value": 4.573413206709019
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2004,
+          "value": 4.9414851238065305
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2005,
+          "value": 4.875648486366139
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2006,
+          "value": 4.64805893070724
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2007,
+          "value": 4.62467017965496
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2008,
+          "value": 5.16019717587643
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2009,
+          "value": 5.33676569758929
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2010,
+          "value": 5.81157810944707
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2011,
+          "value": 6.2794225502187
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2012,
+          "value": 6.33380392878776
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2013,
+          "value": 5.27229703739696
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2014,
+          "value": 4.9857632895608095
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2015,
+          "value": 4.534438580494941
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2016,
+          "value": 5.11035738325444
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2017,
+          "value": 5.03823163166071
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2018,
+          "value": 5.15429372162956
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2019,
+          "value": 5.24575500047903
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2020,
+          "value": 5.189197543645379
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2021,
+          "value": 5.2259335207531
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2022,
+          "value": 4.44797620731478
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2023,
+          "value": 4.38485426996193
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2000,
+          "value": 10.250952
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2001,
+          "value": 10.581929
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2002,
+          "value": 10.929108
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2003,
+          "value": 11.45645
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2004,
+          "value": 12.217196
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2005,
+          "value": 13.039197
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2006,
+          "value": 13.815583
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2007,
+          "value": 14.474228
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2008,
+          "value": 14.769862
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2009,
+          "value": 14.478067
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2010,
+          "value": 15.048971
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2011,
+          "value": 15.599732
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2012,
+          "value": 16.25397
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2013,
+          "value": 16.880683
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2014,
+          "value": 17.608138
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2015,
+          "value": 18.295019
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2016,
+          "value": 18.804913
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2017,
+          "value": 19.612102
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2018,
+          "value": 20.656516
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2019,
+          "value": 21.539982
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2020,
+          "value": 21.375281
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2021,
+          "value": 23.725645
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2022,
+          "value": 26.054614
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2023,
+          "value": 27.811517
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "area": false,
+      "yDomain": [
+        0,
+        30
+      ]
+    },
+    {
+      "id": "real-gdp-ranks",
+      "version": "1.0",
+      "title": "Germany passes Japan in current-dollar GDP",
+      "subtitle": "Rank among five selected economies · current US$ trillions",
+      "takeaway": "Rank changes describe dollar size; they do not isolate production growth.",
+      "source": "World Bank · NY.GDP.MKTP.CD · pinned 6 September 2026 · CC BY 4.0",
+      "note": "Five selected economies, 2000–2023. Current US dollars include price and exchange-rate effects; not real growth or living standards. No missing values or interpolation.",
+      "accessibility": {
+        "summary": "Germany passes Japan in current-dollar GDP. Rank among five selected economies · current US$ trillions. Rank changes describe dollar size; they do not isolate production growth."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 2,
+        "currency": "USD",
+        "unit": "US$ tn"
+      },
+      "annotations": [
+        {
+          "id": "rank-key",
+          "text": "All five economies remain visible. Arrows compare rank with the preceding annual observation, not the preceding chapter. A dot means unchanged rank.",
+          "shortText": "Arrows: rank change since the previous year. Dot: unchanged."
+        },
+        {
+          "id": "rank-change",
+          "text": "2023: Germany $4.56tn, Japan $4.38tn. Germany gains one place while Japan loses one. Exchange rates and domestic prices affect this comparison.",
+          "shortText": "2023: Germany $4.56tn passes Japan $4.38tn.",
+          "entityId": "DEU"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "ranking",
+      "data": [
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2000,
+          "value": 1.22375491997105
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2001,
+          "value": 1.35503659025152
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2002,
+          "value": 1.48982168205054
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2003,
+          "value": 1.68390330984385
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2004,
+          "value": 1.98419655130044
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2005,
+          "value": 2.3175512980520496
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2006,
+          "value": 2.79149847280433
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2007,
+          "value": 3.6040558225716297
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2008,
+          "value": 4.66734641452195
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2009,
+          "value": 5.18957709499758
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2010,
+          "value": 6.19256487445329
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2011,
+          "value": 7.67175720785129
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2012,
+          "value": 8.67366471318924
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2013,
+          "value": 9.74312424726724
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2014,
+          "value": 10.674533168257401
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2015,
+          "value": 11.2808147874689
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2016,
+          "value": 11.456024084962
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2017,
+          "value": 12.5375590622829
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2018,
+          "value": 14.147765772963801
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2019,
+          "value": 14.560167101283401
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2020,
+          "value": 14.9964141667151
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2021,
+          "value": 18.201698719564
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2022,
+          "value": 18.3167650216902
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2023,
+          "value": 18.2703566545332
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2000,
+          "value": 1.9669807011451002
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2001,
+          "value": 1.96638149664173
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2002,
+          "value": 2.10235079830589
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2003,
+          "value": 2.5347155183490098
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2004,
+          "value": 2.8523177680617797
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2005,
+          "value": 2.89339318736187
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2006,
+          "value": 3.04630875367058
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2007,
+          "value": 3.48405668085491
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2008,
+          "value": 3.808197720125
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2009,
+          "value": 3.4785455166835897
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2010,
+          "value": 3.4670937696666697
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2011,
+          "value": 3.82357580379378
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2012,
+          "value": 3.59648323340625
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2013,
+          "value": 3.80702379705099
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2014,
+          "value": 3.96487073576077
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2015,
+          "value": 3.42509957874609
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2016,
+          "value": 3.536787895179
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2017,
+          "value": 3.76535162610589
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2018,
+          "value": 4.05543321530196
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2019,
+          "value": 3.9598947940392097
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2020,
+          "value": 3.94139895707394
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2021,
+          "value": 4.35525195341078
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2022,
+          "value": 4.20102170647862
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2023,
+          "value": 4.56220753249028
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2000,
+          "value": 0.468395521654458
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2001,
+          "value": 0.485440139204171
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2002,
+          "value": 0.514939140318756
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2003,
+          "value": 0.607700687237318
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2004,
+          "value": 0.7091527288307751
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2005,
+          "value": 0.8203837635114449
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2006,
+          "value": 0.9402598887877209
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2007,
+          "value": 1.21673643883496
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2008,
+          "value": 1.19889513900592
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2009,
+          "value": 1.3418880169949
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2010,
+          "value": 1.67561551948496
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2011,
+          "value": 1.82305182989455
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2012,
+          "value": 1.8276375904104099
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2013,
+          "value": 1.8567215076215802
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2014,
+          "value": 2.03912647915452
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2015,
+          "value": 2.10358836004494
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2016,
+          "value": 2.29479688566316
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2017,
+          "value": 2.65147426275545
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2018,
+          "value": 2.70292964164874
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2019,
+          "value": 2.83560625655819
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2020,
+          "value": 2.67485157858727
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2021,
+          "value": 3.16727062326047
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2022,
+          "value": 3.24993849201347
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2023,
+          "value": 3.5009060306447597
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2000,
+          "value": 5.042381838343441
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2001,
+          "value": 4.438792748062401
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2002,
+          "value": 4.2459469805723
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2003,
+          "value": 4.573413206709019
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2004,
+          "value": 4.9414851238065305
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2005,
+          "value": 4.875648486366139
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2006,
+          "value": 4.64805893070724
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2007,
+          "value": 4.62467017965496
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2008,
+          "value": 5.16019717587643
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2009,
+          "value": 5.33676569758929
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2010,
+          "value": 5.81157810944707
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2011,
+          "value": 6.2794225502187
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2012,
+          "value": 6.33380392878776
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2013,
+          "value": 5.27229703739696
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2014,
+          "value": 4.9857632895608095
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2015,
+          "value": 4.534438580494941
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2016,
+          "value": 5.11035738325444
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2017,
+          "value": 5.03823163166071
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2018,
+          "value": 5.15429372162956
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2019,
+          "value": 5.24575500047903
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2020,
+          "value": 5.189197543645379
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2021,
+          "value": 5.2259335207531
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2022,
+          "value": 4.44797620731478
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2023,
+          "value": 4.38485426996193
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2000,
+          "value": 10.250952
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2001,
+          "value": 10.581929
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2002,
+          "value": 10.929108
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2003,
+          "value": 11.45645
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2004,
+          "value": 12.217196
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2005,
+          "value": 13.039197
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2006,
+          "value": 13.815583
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2007,
+          "value": 14.474228
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2008,
+          "value": 14.769862
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2009,
+          "value": 14.478067
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2010,
+          "value": 15.048971
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2011,
+          "value": 15.599732
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2012,
+          "value": 16.25397
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2013,
+          "value": 16.880683
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2014,
+          "value": 17.608138
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2015,
+          "value": 18.295019
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2016,
+          "value": 18.804913
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2017,
+          "value": 19.612102
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2018,
+          "value": 20.656516
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2019,
+          "value": 21.539982
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2020,
+          "value": 21.375281
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2021,
+          "value": 23.725645
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2022,
+          "value": 26.054614
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2023,
+          "value": 27.811517
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "topN": 5
+    },
+    {
+      "id": "real-gdp-mix",
+      "version": "1.1",
+      "title": "China’s share rises within this five-economy group",
+      "subtitle": "Share of combined current-dollar GDP · selected economies only",
+      "takeaway": "The denominator changes the question: this is a share of the selected group, not the world.",
+      "source": "World Bank · NY.GDP.MKTP.CD · pinned 6 September 2026 · CC BY 4.0",
+      "note": "Five selected economies, 2000–2023. Current US dollars include price and exchange-rate effects; not real growth or living standards. No missing values or interpolation.",
+      "accessibility": {
+        "summary": "China’s share rises within this five-economy group. Share of combined current-dollar GDP · selected economies only. The denominator changes the question: this is a share of the selected group, not the world."
+      },
+      "theme": {
+        "ink": "#203d3b",
+        "muted": "#596762",
+        "grid": "#e1e6de",
+        "background": "#ffffff",
+        "palette": [
+          "#207466",
+          "#a8542a",
+          "#536c91",
+          "#9b657c",
+          "#766e32",
+          "#456a78"
+        ]
+      },
+      "formatting": {
+        "style": "number",
+        "digits": 0,
+        "currency": "USD"
+      },
+      "annotations": [
+        {
+          "id": "denominator",
+          "text": "China’s share of these five economies rises from 6.5% in 2000 to 31.2% in 2023. The same country IDs and colors carry across each view.",
+          "shortText": "China: 6.5% → 31.2% of this group; not world share.",
+          "entityId": "CHN"
+        }
+      ],
+      "animation": {
+        "durationMs": 650
+      },
+      "type": "stacked-area",
+      "data": [
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2000,
+          "value": 1.22375491997105
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2001,
+          "value": 1.35503659025152
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2002,
+          "value": 1.48982168205054
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2003,
+          "value": 1.68390330984385
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2004,
+          "value": 1.98419655130044
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2005,
+          "value": 2.3175512980520496
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2006,
+          "value": 2.79149847280433
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2007,
+          "value": 3.6040558225716297
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2008,
+          "value": 4.66734641452195
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2009,
+          "value": 5.18957709499758
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2010,
+          "value": 6.19256487445329
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2011,
+          "value": 7.67175720785129
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2012,
+          "value": 8.67366471318924
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2013,
+          "value": 9.74312424726724
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2014,
+          "value": 10.674533168257401
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2015,
+          "value": 11.2808147874689
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2016,
+          "value": 11.456024084962
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2017,
+          "value": 12.5375590622829
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2018,
+          "value": 14.147765772963801
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2019,
+          "value": 14.560167101283401
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2020,
+          "value": 14.9964141667151
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2021,
+          "value": 18.201698719564
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2022,
+          "value": 18.3167650216902
+        },
+        {
+          "id": "CHN",
+          "label": "China",
+          "year": 2023,
+          "value": 18.2703566545332
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2000,
+          "value": 1.9669807011451002
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2001,
+          "value": 1.96638149664173
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2002,
+          "value": 2.10235079830589
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2003,
+          "value": 2.5347155183490098
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2004,
+          "value": 2.8523177680617797
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2005,
+          "value": 2.89339318736187
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2006,
+          "value": 3.04630875367058
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2007,
+          "value": 3.48405668085491
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2008,
+          "value": 3.808197720125
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2009,
+          "value": 3.4785455166835897
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2010,
+          "value": 3.4670937696666697
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2011,
+          "value": 3.82357580379378
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2012,
+          "value": 3.59648323340625
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2013,
+          "value": 3.80702379705099
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2014,
+          "value": 3.96487073576077
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2015,
+          "value": 3.42509957874609
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2016,
+          "value": 3.536787895179
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2017,
+          "value": 3.76535162610589
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2018,
+          "value": 4.05543321530196
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2019,
+          "value": 3.9598947940392097
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2020,
+          "value": 3.94139895707394
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2021,
+          "value": 4.35525195341078
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2022,
+          "value": 4.20102170647862
+        },
+        {
+          "id": "DEU",
+          "label": "Germany",
+          "year": 2023,
+          "value": 4.56220753249028
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2000,
+          "value": 0.468395521654458
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2001,
+          "value": 0.485440139204171
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2002,
+          "value": 0.514939140318756
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2003,
+          "value": 0.607700687237318
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2004,
+          "value": 0.7091527288307751
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2005,
+          "value": 0.8203837635114449
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2006,
+          "value": 0.9402598887877209
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2007,
+          "value": 1.21673643883496
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2008,
+          "value": 1.19889513900592
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2009,
+          "value": 1.3418880169949
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2010,
+          "value": 1.67561551948496
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2011,
+          "value": 1.82305182989455
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2012,
+          "value": 1.8276375904104099
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2013,
+          "value": 1.8567215076215802
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2014,
+          "value": 2.03912647915452
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2015,
+          "value": 2.10358836004494
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2016,
+          "value": 2.29479688566316
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2017,
+          "value": 2.65147426275545
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2018,
+          "value": 2.70292964164874
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2019,
+          "value": 2.83560625655819
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2020,
+          "value": 2.67485157858727
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2021,
+          "value": 3.16727062326047
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2022,
+          "value": 3.24993849201347
+        },
+        {
+          "id": "IND",
+          "label": "India",
+          "year": 2023,
+          "value": 3.5009060306447597
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2000,
+          "value": 5.042381838343441
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2001,
+          "value": 4.438792748062401
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2002,
+          "value": 4.2459469805723
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2003,
+          "value": 4.573413206709019
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2004,
+          "value": 4.9414851238065305
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2005,
+          "value": 4.875648486366139
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2006,
+          "value": 4.64805893070724
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2007,
+          "value": 4.62467017965496
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2008,
+          "value": 5.16019717587643
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2009,
+          "value": 5.33676569758929
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2010,
+          "value": 5.81157810944707
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2011,
+          "value": 6.2794225502187
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2012,
+          "value": 6.33380392878776
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2013,
+          "value": 5.27229703739696
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2014,
+          "value": 4.9857632895608095
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2015,
+          "value": 4.534438580494941
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2016,
+          "value": 5.11035738325444
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2017,
+          "value": 5.03823163166071
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2018,
+          "value": 5.15429372162956
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2019,
+          "value": 5.24575500047903
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2020,
+          "value": 5.189197543645379
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2021,
+          "value": 5.2259335207531
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2022,
+          "value": 4.44797620731478
+        },
+        {
+          "id": "JPN",
+          "label": "Japan",
+          "year": 2023,
+          "value": 4.38485426996193
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2000,
+          "value": 10.250952
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2001,
+          "value": 10.581929
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2002,
+          "value": 10.929108
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2003,
+          "value": 11.45645
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2004,
+          "value": 12.217196
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2005,
+          "value": 13.039197
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2006,
+          "value": 13.815583
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2007,
+          "value": 14.474228
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2008,
+          "value": 14.769862
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2009,
+          "value": 14.478067
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2010,
+          "value": 15.048971
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2011,
+          "value": 15.599732
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2012,
+          "value": 16.25397
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2013,
+          "value": 16.880683
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2014,
+          "value": 17.608138
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2015,
+          "value": 18.295019
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2016,
+          "value": 18.804913
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2017,
+          "value": 19.612102
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2018,
+          "value": 20.656516
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2019,
+          "value": 21.539982
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2020,
+          "value": 21.375281
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2021,
+          "value": 23.725645
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2022,
+          "value": 26.054614
+        },
+        {
+          "id": "USA",
+          "label": "United States",
+          "year": 2023,
+          "value": 27.811517
+        }
+      ],
+      "encodings": {
+        "id": "id",
+        "label": "label",
+        "time": "year",
+        "value": "value"
+      },
+      "normalize": true
+    }
+  ],
+  "scenes": [
+    {
+      "id": "cross-path",
+      "visualId": "real-gdp-paths",
+      "chapter": "01 / SIZE",
+      "title": "How large is the gap?",
+      "caption": "The annual paths put 2023 in context: US $27.81tn, China $18.27tn.",
+      "state": {
+        "time": 2023
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "gap"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "cross-order",
+      "visualId": "real-gdp-ranks",
+      "chapter": "02 / ORDER",
+      "title": "Who stands where?",
+      "caption": "The same countries become bars. Germany’s third place is easier to read; the journey is no longer visible.",
+      "state": {
+        "time": 2023
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "rank-change"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "cross-share-start",
+      "visualId": "real-gdp-mix",
+      "chapter": "03 / DENOMINATOR",
+      "title": "Start with the group’s 2000 mix",
+      "caption": "China accounts for 6.5% of the combined GDP of these five economies. Every band uses the same denominator.",
+      "state": {
+        "time": 2000
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "denominator"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    },
+    {
+      "id": "cross-share-end",
+      "visualId": "real-gdp-mix",
+      "chapter": "04 / SHARE",
+      "title": "China occupies a larger part of the group",
+      "caption": "Its share reaches 31.2% in 2023. A rising share and second place can both be true.",
+      "state": {
+        "time": 2023
+      },
+      "focusIds": [],
+      "annotationIds": [
+        "denominator"
+      ],
+      "transition": {
+        "intent": "scene",
+        "durationMs": 650
+      }
+    }
+  ]
+}

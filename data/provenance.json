@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "datasets": [
+    {
+      "id": "world-bank-gdp",
+      "organization": "World Bank, World Development Indicators",
+      "url": "https://api.worldbank.org/v2/country/USA;CHN;DEU;JPN;IND/indicator/NY.GDP.MKTP.CD?date=2000:2023&format=json&per_page=1000",
+      "raw": "data/raw/world-bank-gdp.json",
+      "output": "data/world-bank-gdp.json",
+      "license": "CC BY 4.0; credit World Bank and underlying national accounts providers.",
+      "licenseUrl": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD",
+      "fields": {
+        "id": "ISO3",
+        "label": "country name",
+        "year": "calendar year",
+        "value": "GDP, current US dollars"
+      },
+      "transformation": "Keep the five requested economies and all 24 years, 2000–2023. Sort ISO3 then year. Preserve observed values without rounding. Story display divides by 1e12; composition divides by the five-economy sum, never world GDP.",
+      "missingValues": "Reject missing, nonfinite, duplicate or incomplete observations; no interpolation.",
+      "retrievedAt": "2026-09-05T23:48:38.814Z",
+      "rawSha256": "b6cc5d134472a55282fef6065ae7fe3a2a44d65cf4ee411af58034500f9e06d3",
+      "sha256": "54af2367979007b1c407a183b96e9aaee6977e1b56e9f3f22938d2408980947e"
+    },
+    {
+      "id": "usgs-tohoku",
+      "organization": "U.S. Geological Survey, ComCat",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2011-03-09&endtime=2011-03-12&minmagnitude=7&minlatitude=30&maxlatitude=42&minlongitude=135&maxlongitude=145&orderby=time-asc",
+      "raw": "data/raw/usgs-tohoku.geojson",
+      "output": "data/usgs-tohoku.json",
+      "license": "USGS-produced data: U.S. public domain. Credit USGS; only catalog facts, no third-party images.",
+      "licenseUrl": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "fields": {
+        "id": "ComCat event ID",
+        "label": "UTC date and preferred magnitude",
+        "place": "ComCat place",
+        "time": "UTC Unix milliseconds",
+        "longitude": "degrees east",
+        "latitude": "degrees north",
+        "depth": "km",
+        "magnitude": "preferred catalog magnitude",
+        "magnitudeType": "USGS magnitude type",
+        "url": "event record"
+      },
+      "transformation": "Keep every returned event; sort UTC time then ID. Select catalog fields and derive a short UTC date/magnitude label. Equal-size symbols; magnitude is not encoded as energy, intensity or damage. Cumulative scenes retain earlier events.",
+      "missingValues": "Reject absent IDs, time, magnitude or coordinates. No invented events or interpolation. Query selects M≥7 in 30–42°N, 135–145°E, March 9 through March 12 00:00 UTC; not the full sequence.",
+      "retrievedAt": "2026-09-05T23:48:38.814Z",
+      "rawSha256": "22ed3cbd658c6f639a1678e13ad7cacbeca3a370c7c8c726c14133a7e120e66d",
+      "sha256": "d1f39822f95cce84bd313ea6fab92137ec04545fdbe1c3f8765012e0898db1e4"
+    },
+    {
+      "id": "natural-earth-japan",
+      "organization": "Natural Earth",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_admin_0_countries.geojson",
+      "raw": "data/raw/natural-earth-countries.geojson",
+      "output": "data/japan-outline.json",
+      "license": "Public domain. Made with Natural Earth.",
+      "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "fields": {
+        "id": "stable polygon ID",
+        "label": "country label",
+        "points": "longitude/latitude degrees"
+      },
+      "transformation": "Select ADM0_A3=JPN. Preserve all three exterior polygon rings at the original 1:110m resolution; no invented coastline or additional simplification. The story viewport crops the outline to eastern Japan.",
+      "missingValues": "Reject absent Japan MultiPolygon, holes or nonfinite positions. Coarse geographic context, not a local hazard map.",
+      "retrievedAt": "2026-09-05T23:59:59.339Z",
+      "rawSha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f",
+      "sha256": "1f8cafc0494c644f1a30f4aea6922d3ff92d6e381a24cf2d4cf2b3ade8e12d25"
+    }
+  ]
+}

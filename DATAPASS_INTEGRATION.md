@@ -1,5 +1,15 @@
 # Datapass integration
 
+## Current V1.2 integration
+
+The exact current external pin is `30e69639bfc3929c348fd8f9c6c38a2cb61984d8`. VizForge starts from merged `423e7ecaedbe4f922665938eb013f6bf1bd11e7b`. The supported `@datapass/canonical/data-platform` export is now a fifth direct Studio devDependency alongside UI, content, figure and code. The original bootstrap/release scripts are unchanged. Regenerating the vendor directory at the explicit pin expands its verified allowlist from 91 to 107 immutable files; no framework source is patched. The consumer lockfile records the extra canonical workspace package.
+
+Open `/?story=flagship-cross` (or Visual catalog → One GDP dataset, three questions). A single Fluent Workbench canvas contains a static canonical medallion Figure and the analytical FigurePlayer. `src/studio/DataLineage.tsx` adapts only the canonical content: GDP source → pinned Bronze JSON → validated Silver observations → Gold trillions → selected-economy semantic sum → share KPI. It does not claim an executing lakehouse. The static FigureView has a separate default registry with no `vizforge.d3` adapter. Its geometry and validation belong to Datapass/ConceptMotion. The analytical registry retains the existing D3 adapter and one hosted player. Browser tests advance the analytical timeline and prove the technical SVG stays unchanged.
+
+The lineage renderer's minimum 960-unit viewport would reduce text below readable size at 390px. The consumer supplies a labeled, keyboard-focusable horizontal viewport with a 760px minimum presentation width; it does not change framework geometry. See `FRAMEWORK_GAPS.md` for the source-level reproduction. Existing React 19 hosted and packed React 18 proofs, engine independence, cadence and export boundaries continue unchanged.
+
+## Historical V1.1 integration evidence
+
 The accepted seam is consumed at exact framework commit `8fef4d0b542bfbb11b0ff80ec81710db3f6c8d55`. Hosted framework CI `33988679372` was independently verified successful. The V1 VizForge baseline is `3a5bd0b7bdfb987a18f2e9154b43fc92756120b8`, hosted CI `33989227514`, also independently verified successful.
 
 A disposable external `learning` starter was generated at the accepted SHA in `.local/learning-starter`; its official bootstrap and release helpers were copied without edits. `datapass.json` pins the source workspace. Bootstrap selects 91 immutable source files in seven framework packages, including the existing ConceptMotion dependency closure. Only `@datapass/ui`, `@datapass/content`, `@datapass/figure` and `@datapass/code` are direct Datapass dependencies. No canonical learning corpus or framework install is used. `vendor/` is ignored and verified before and after release.
